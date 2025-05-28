@@ -1,1 +1,12 @@
 @import "tailwindcss";
+
+@theme {
+    --*: initial;
+    --color-homebtn: oklch(96.7% 0.003 264.542);
+    --color-homeborder: oklch(96.7% 0.003 264.542);
+    --color-homeexplore: #1a73e8;
+    --color-homeexplohover: #1666cc;
+    --color-login: #333333;
+    --color-bgimageopacity: rgba(212, 122, 29, 0.6);
+    --image-bgimage: url("/easy-image.jpg");
+}

@@ -2,7 +2,7 @@
 
 export default function LandingPage() {
   return (
-    <header className="bg-[url(./public/easy-image.jpg)] h-dvh bg-no-repeat bg-center overflow-scroll flex justify-center items-center relative object-contain object-bottom">
+    <header className="bg-[url(./public/easy-image.jpg)] bg-homeexplore h-dvh bg-no-repeat bg-center overflow-scroll flex justify-center items-center relative object-contain object-bottom">
 
         <nav className="bg-gray-100 fixed left-0 right-0 top-0 flex justify-items-center items-center px-8 top-0 justify-between  ">
             <div id="title" className="flex-1 text-homeexplohover font-bold">Easy Ticketing</div>
@@ -33,9 +33,9 @@ export default function LandingPage() {
 
         <div className="bg-gray-800 opacity-40 text-white w-2xl">
 
-            <h1>Discover. Book. Attend <span className="text-addeventbtn">Seamlessy</span></h1>
+            <h1 className="font-bold">Discover. Book. Attend <span className="text-addeventbtn font-bold">Seamlessy</span></h1>
 
-            <p>Find and book tickets for amazing local & vitual events with ease. No hassle. Just fun.</p>
+            <h2 className="font-bold">Find and book tickets for amazing local & vitual events with ease. No hassle. Just fun.</h2>
 
             <button>Explore Events</button>
             <button>Host an Event</button>

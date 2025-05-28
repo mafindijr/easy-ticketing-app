@@ -1,10 +1,10 @@
-
-
 export default function LandingPage() {
   return (
-    <header className="bg-[url(./public/easy-image.jpg)] h-dvh bg-no-repeat bg-center overflow-scroll flex justify-center items-center relative object-contain object-bottom">
+    <header className="relative bg-[url(./public/easy-image.jpg)] h-dvh bg-no-repeat bg-center overflow-scroll flex justify-center items-center object-contain object-bottom">
+      {/* Dark blue transparent overlay */}
+      <div className="absolute inset-0 bg-[rgba(15,23,42,0.7)] pointer-events-none z-0"></div>
 
-        <nav className="bg-gray-100 fixed left-0 right-0 top-0 flex px-2 py-2 items-center px-8 top-0 justify-between ">
+      <nav className="bg-gray-100 fixed left-0 right-0 top-0 flex px-2 py-2 items-center px-8 top-0 justify-between z-10">
             <div id="title" className="flex-1 text-homeexplohover font-bold">Easy Ticketing</div>
             <div id='logi-sign-box' className="flex gap-2 items-center">
               <div className="font-sm font-bold">
@@ -22,7 +22,7 @@ export default function LandingPage() {
             </div>
         </nav>
 
-         <div className="w-full inline-flex items-center justify-center absolute top-12 bg-gray-100 px-8 ">
+         <div className="w-full inline-flex items-center justify-center absolute top-12 bg-gray-100 px-8 z-10">
       
           <input type="search" className="flex-1 bg-gray-300 outline-1 outline-gray-100 rounded-sm mb-2 mt-2 py-2 px-4 font-sm inline-flex "  name="search" placeholder="Search for concerts, tech meetup or more" />
           
@@ -31,7 +31,10 @@ export default function LandingPage() {
           
           </div>
 
-        <div className="bg-gray-800 text-white w-120 px-8 pt-10 pb-6">
+        <div
+        id="content"
+        className="relative z-10 bg-[rgba(15,23,42,0.85)] text-white w-120 px-8 pt-10 pb-6 rounded-md shadow-lg"
+      >
 
             <h1 className="font-bold px-4">Discover. Book. Attend <span className="text-addeventbtn font-bold">Seamlessy</span><br />
 

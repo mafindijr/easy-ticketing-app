@@ -2,9 +2,9 @@
 
 export default function LandingPage() {
   return (
-    <header className="bg-[url(./public/easy-image.jpg)] bg-cover h-dvh bg-no-repeat bg-center overflow-scroll">
+    <header className="bg-[url(./public/easy-image.jpg)] h-dvh bg-no-repeat bg-center overflow-scroll flex justify-center items-center relative object-contain object-bottom">
 
-        <nav className="bg-gray-100 flex justify-items-center items-center px-4 top-0 justify-between h-14 ">
+        <nav className="bg-gray-100 fixed left-0 right-0 top-0 flex justify-items-center items-center px-8 top-0 justify-between  ">
             <div id="title" className="flex-1 text-homeexplohover font-bold">Easy Ticketing</div>
             <div id='logi-sign-box' className="flex justify-between ">
               <div>
@@ -14,24 +14,24 @@ export default function LandingPage() {
                  <a href="#">Sign up</a>
                  </p>
               </div>
+
               <div>
-              <button className="w-40 h-8 rounded-sm text-base font-bold bg-addeventbtn text-gray-100">Create Events</button>
+              <button className="w-30 h-8 rounded-sm text-base font-semibold cursor-pointer  bg-addeventbtn text-gray-100">Create Events</button>
               </div>
+
             </div>
         </nav>
 
-         <div id='searc-bar'>
-          <div>
-          <input type="search" name="search" placeholder="Search for concerts, tech meetup or more" />
-          </div>
-
-          <div>
+         <div className="w-full absolute top-14 bg-gray-100  ">
+      
+          <input type="search" className="bg-gray-300 outline-1 rounded-sm "  name="search" placeholder="Search for concerts, tech meetup or more" />
+          
           <button>Lagos</button>
           <button>Paid</button>
-          </div>
+          
           </div>
 
-        <div className="bg-gray-800 opacity-25 text-white w-2xl">
+        <div className="bg-gray-800 opacity-40 text-white w-2xl">
 
             <h1>Discover. Book. Attend <span className="text-addeventbtn">Seamlessy</span></h1>
 

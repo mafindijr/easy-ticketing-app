@@ -2,10 +2,10 @@
 
 export default function LandingPage() {
   return (
-    <header className="bg-[url(./public/easy-image.jpg)] w-dvw h-dvh bg-no-repeat bg-center bg-cover">
+    <header className="bg-[url(./public/easy-image.jpg)] bg-cover h-dvh bg-no-repeat bg-center overflow-scroll">
 
-        <nav className="bg-gray-100 flex px-4 top-0 justify-between">
-            <div id="title" className="">Easy Ticketing</div>
+        <nav className="bg-gray-100 flex justify-items-center items-center px-4 top-0 justify-between h-14 ">
+            <div id="title" className="flex-1 text-homeexplohover font-bold">Easy Ticketing</div>
             <div id='logi-sign-box' className="flex justify-between ">
               <div>
                 <p>
@@ -15,7 +15,7 @@ export default function LandingPage() {
                  </p>
               </div>
               <div>
-              <button>Create Events</button>
+              <button className="w-40 h-8 rounded-sm text-base font-bold bg-addeventbtn text-gray-100">Create Events</button>
               </div>
             </div>
         </nav>
@@ -31,9 +31,9 @@ export default function LandingPage() {
           </div>
           </div>
 
-        <div className="">
+        <div className="bg-gray-800 opacity-25 text-white w-2xl">
 
-            <h1>Discover. Book. Attend <span>Seamlessy</span></h1>
+            <h1>Discover. Book. Attend <span className="text-addeventbtn">Seamlessy</span></h1>
 
             <p>Find and book tickets for amazing local & vitual events with ease. No hassle. Just fun.</p>
 

@@ -33,7 +33,7 @@ export default function LandingPage() {
 
         <div
         id="content"
-        className="relative z-10 bg-[rgba(15,23,42,0.85)] text-white w-120 px-8 pt-10 pb-6 rounded-md shadow-lg"
+        className="relative z-10 bg-[rgba(15,23,42,0.85)] text-gray-100 w-120 px-8 pt-10 pb-6 rounded-md shadow-lg"
       >
 
             <h1 className="font-bold px-4">Discover. Book. Attend <span className="text-addeventbtn font-bold">Seamlessy</span><br />

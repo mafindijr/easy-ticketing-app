@@ -8,5 +8,6 @@
     --color-homeexplohover: #1666cc;
     --color-login: #333333;
     --color-bgimageopacity: rgba(212, 122, 29, 0.6);
+    --color-addeventbtn: #ff6700;
     --image-bgimage: url("/easy-image.jpg");
 }

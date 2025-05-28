@@ -2,11 +2,10 @@
 
 export default function LandingPage() {
   return (
-    <div>
+    <header className="bg-[url(./public/easy-image.jpg)] w-dvw h-dvh bg-no-repeat bg-center bg-cover">
 
-        <header className="bg-gray-100 flex px-4 top-0 justify-between">
+        <nav className="bg-gray-100 flex px-4 top-0 justify-between">
             <div id="title" className="">Easy Ticketing</div>
-            <div id='searc-bar'><input type="search" name="search" placeholder="Search for concerts, tech meetup or more" /></div>
             <div id='logi-sign-box' className="flex justify-between ">
               <div>
                 <p>
@@ -19,7 +18,18 @@ export default function LandingPage() {
               <button>Create Events</button>
               </div>
             </div>
-        </header>
+        </nav>
+
+         <div id='searc-bar'>
+          <div>
+          <input type="search" name="search" placeholder="Search for concerts, tech meetup or more" />
+          </div>
+
+          <div>
+          <button>Lagos</button>
+          <button>Paid</button>
+          </div>
+          </div>
 
         <div className="">
 
@@ -30,6 +40,6 @@ export default function LandingPage() {
             <button>Explore Events</button>
             <button>Host an Event</button>
         </div>
-    </div>
+    </header>
   )
 }

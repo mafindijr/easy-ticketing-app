@@ -31,14 +31,14 @@ export default function LandingPage() {
           
           </div>
 
-        <div className="bg-gray-800 text-white w-120 px-8 py-10">
+        <div className="bg-gray-800 text-white w-120 px-8 pt-10 pb-6">
 
-            <h1 className="font-bold">Discover. Book. Attend <span className="text-addeventbtn font-bold">Seamlessy</span><br />
+            <h1 className="font-bold px-4">Discover. Book. Attend <span className="text-addeventbtn font-bold">Seamlessy</span><br />
 
             Find and book tickets for amazing local & vitual events with ease. No hassle. Just fun.</h1>
 
-            <button>Explore Events</button>
-            <button className="px-4 py-1 rounded-sm text-base font-semibold cursor-pointer  bg-addeventbtn text-gray-100">Host an Event</button>
+            <button className="px-4  m-2 mt-4 py-1 rounded-sm text-base font-semibold cursor-pointer  bg-homeexplore hover:bg-homeexplohover text-gray-100">Explore Events</button>
+            <button className="px-4 m-2 py-1 rounded-sm text-base font-semibold cursor-pointer  border-2 border-gray-100 hover:bg-gray-100 hover:text-homeexplohover hover:border-homeexplohover text-gray-100">Host an Event</button>
         </div>
     </header>
   )

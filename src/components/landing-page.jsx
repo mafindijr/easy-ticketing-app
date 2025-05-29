@@ -1,8 +1,8 @@
 export default function LandingPage() {
   return (
-    <header className="relative bg-[url(./public/easy-image.jpg)] h-dvh bg-no-repeat bg-center overflow-scroll flex justify-center items-center object-contain object-bottom">
+    <header className="relative bg-[url(/easy-image.jpg)] h-dvh bg-no-repeat bg-center overflow-scroll flex justify-center items-center object-contain object-bottom">
       {/* Dark blue transparent overlay */}
-      <div className="absolute inset-0 bg-[rgba(15,23,42,0.7)] pointer-events-none z-0"></div>
+      <div className="absolute inset-0 bg-[rgba(41,62,112,0.7)] pointer-events-none z-0"></div>
 
       <nav className="bg-gray-100 fixed left-0 right-0 top-0 flex px-2 py-2 items-center px-8 top-0 justify-between z-10">
             <div id="title" className="flex-1 text-homeexplohover font-bold">Easy Ticketing</div>
@@ -33,7 +33,7 @@ export default function LandingPage() {
 
         <div
         id="content"
-        className="relative z-10 bg-[rgba(15,23,42,0.85)] text-gray-100 w-120 px-8 pt-10 pb-6 rounded-md shadow-lg"
+        className="relative z-10 bg-[rgba(15,23,42,0.7)] text-gray-100 w-120 px-8 pt-10 pb-6 rounded-md shadow-lg"
       >
 
             <h1 className="font-bold px-4">Discover. Book. Attend <span className="text-addeventbtn font-bold">Seamlessy</span><br />

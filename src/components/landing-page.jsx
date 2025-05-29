@@ -25,12 +25,12 @@ export default function LandingPage() {
             </div>
         </nav>
 
-         <div className="w-full inline-flex items-center justify-center absolute top-12 bg-gray-100 px-8 z-10">
+         <div className="right-0 left-0 inline-flex  absolute top-12 bg-gray-100 px-8 z-10">
       
-          <input type="search" className="flex-1 bg-gray-300 outline-1 outline-gray-100 rounded-sm mb-2 mt-2 py-2 px-4 font-sm inline-flex "  name="search" placeholder="Search for concerts, tech meetup or more" />
+          <input type="search" className="flex-1 bg-gray-200 border-none rounded-sm mb-2 mt-2 py-2 px-4 font-sm inline-flex "  name="search" placeholder="Search for concerts, tech meetup or more" />
           
-          <button className="bg-gray-300 border-1 border-gray-100 cursor-pointer w-20 px-4 py-2 mt-2 mb-2">Lagos</button>
-          <button className="bg-gray-300 border-1 border-gray-100 cursor-pointer w-20 px-4 py-2 mt-2 mb-2">Paid</button>
+          <button className="bg-gray-200 border-1 border-gray-100 cursor-pointer w-20 px-4 py-2 mt-2 mb-2">Lagos</button>
+          <button className="bg-gray-200 border-1 border-gray-100 cursor-pointer w-20 px-4 py-2 mt-2 mb-2">Paid</button>
           
           </div>
 

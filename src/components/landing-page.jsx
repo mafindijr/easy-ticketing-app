@@ -1,3 +1,6 @@
+
+
+
 export default function LandingPage() {
   return (
     <header className="relative bg-[url(/easy-image.jpg)] h-dvh bg-no-repeat bg-center overflow-scroll flex justify-center items-center object-contain object-bottom">

@@ -7,8 +7,8 @@ export default function LandingPage() {
       {/* Dark blue transparent overlay */}
       <div className="absolute inset-0 bg-[rgba(41,62,112,0.7)] pointer-events-none z-0"></div>
 
-      <nav className="bg-gray-100 fixed left-0 right-0 top-0 flex px-2 py-2 items-center px-8 top-0 justify-between z-10">
-            <div id="title" className="flex-1 text-homeexplohover font-bold">Easy Ticketing</div>
+      <nav className="bg-gray-100 fixed left-0 right-0 top-0 flex px-2 py-2 items-center px-10 top-0 justify-between z-10">
+            <div id="title" className="flex-1 text-homeexplohover font-md font-bold">Easy Ticketing</div>
             <div id='logi-sign-box' className="flex gap-2 items-center">
               <div className="font-sm font-bold">
                 <p>
@@ -19,13 +19,13 @@ export default function LandingPage() {
               </div>
 
               <div>
-              <button className="px-4 py-1 rounded-sm text-base font-semibold cursor-pointer  bg-addeventbtn text-gray-100">Create Events</button>
+              <button className="px-4 py-1 mr-3 rounded-sm text-base font-semibold cursor-pointer  bg-addeventbtn text-gray-100">Create Events</button>
               </div>
 
             </div>
         </nav>
 
-         <div className="right-0 left-0 inline-flex  absolute top-12 bg-gray-100 px-8 z-10">
+         <div className="right-0 left-0 inline-flex  absolute top-12 bg-gray-100 px-10 z-10">
       
           <input type="search" className="flex-1 bg-gray-200 border-none rounded-sm mb-2 mt-2 py-2 px-4 font-sm inline-flex "  name="search" placeholder="Search for concerts, tech meetup or more" />
           

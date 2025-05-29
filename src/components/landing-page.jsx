@@ -12,9 +12,9 @@ export default function LandingPage() {
             <div id='logi-sign-box' className="flex gap-2 items-center">
               <div className="font-sm font-bold">
                 <p>
-                 <a href="#">Log in</a>
+                 <a href="#" className="p-1 font-sm">Log in</a>
                   |
-                 <a href="#">Sign up</a>
+                 <a href="#" className="p-1 font-sm">Sign up</a>
                  </p>
               </div>
 

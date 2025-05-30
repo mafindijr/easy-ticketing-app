@@ -39,7 +39,7 @@ export default function LandingPage() {
       
         <input
   type="search"
-  className="flex-1 h-9 border-1 border-gray-200 rounded-sm mb-2 mt-2 px-4 font-sm shadow-inset-sm inline-flex"
+  className="flex-1 h-9 border-1 border-gray-200 rounded-l-full max-w-2xl mb-2 mt-2 px-4 font-sm shadow-inset-sm inline-flex"
   name="search"
   placeholder="Search for concerts, tech meetup or more"
 />
@@ -75,8 +75,16 @@ export default function LandingPage() {
     </div>
   )}
 </div>
-<button className="h-9 mb-2 mt-2 px-4">search icon</button>
+<button className="bg-gray-50 hover:bg-gray-100 border-1 border-gray-200 cursor-pointer rounded-r-full w-9 h-9 mb-2 mt-2 flex items-center justify-center">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-5 h-5">
+    <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+  </svg>
+</button>
         
+        </div>
+
+        <div>
+
         </div>
 
       <div

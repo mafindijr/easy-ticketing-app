@@ -13,11 +13,9 @@ export default function LandingPage() {
   };
 
   return (
-    <header className="relative bg-[url(/easy-image.jpg)] h-dvh bg-no-repeat bg-center overflow-scroll flex justify-center items-center object-contain object-bottom">
-      {/* Dark blue transparent overlay */}
-      <div className="absolute inset-0 bg-[rgba(41,62,112,0.7)] pointer-events-none z-0"></div>
+    <header className="relative  overflow-scroll flex justify-center items-center">
 
-      <nav className="bg-gray-100 fixed left-0 right-0 top-0 flex px-2 py-2 items-center px-10 top-0 justify-between z-10">
+      <nav className="bg-gray-50 fixed left-0 right-0 top-0 flex px-2 py-2 items-center px-10 top-0 justify-between z-10">
         <div id="title" className="flex-1 text-homeexplohover font-md font-bold">Easy Ticketing</div>
         <div id='logi-sign-box' className="flex gap-2 items-center">
           <div className="font-sm font-bold">
@@ -35,21 +33,21 @@ export default function LandingPage() {
         </div>
       </nav>
 
-       <div className="right-0 left-0 inline-flex  absolute top-12 bg-gray-50 px-10 z-10">
+       <div id="search-bar" className="right-0 left-0 inline-flex  absolute top-12 bg-gray-50 px-10 z-10">
       
         <input
   type="search"
-  className="flex-1 h-9 border-1 border-gray-200 rounded-l-full max-w-2xl mb-2 mt-2 px-4 font-sm shadow-inset-sm inline-flex"
+  className="flex-1 h-9 border-1 bg-gray-100 border-gray-200 rounded-l-full max-w-2xl mb-2 mt-2 px-4 font-sm shadow-inset-sm inline-flex"
   name="search"
   placeholder="Search for concerts, tech meetup or more"
 />
 
-<button className="bg-gray-50 hover:bg-gray-100 border-1 border-gray-200 cursor-pointer w-20 h-9 px-4 mb-2 mt-2">Lagos</button>
-<button className="bg-gray-50 hover:bg-gray-100 border-1 border-gray-200 cursor-pointer w-20 h-9 px-4 mb-2 mt-2">Paid</button>
+<button className="bg-gray-100 hover:bg-gray-100 border-1 border-gray-200 cursor-pointer w-20 h-9 px-4 mb-2 mt-2">Lagos</button>
+<button className="bg-gray-100 hover:bg-gray-100 border-1 border-gray-200 cursor-pointer w-20 h-9 px-4 mb-2 mt-2">Paid</button>
 <div className="relative">
   <button
     id="search-btn"
-    className="bg-gray-50 hover:bg-gray-100 border-1 border-gray-200 cursor-pointer h-9 px-4 mb-2 mt-2 flex items-center gap-2 min-w-max"
+    className="bg-gray-100 hover:bg-gray-100 border-1 border-gray-200 cursor-pointer h-9 px-4 mb-2 mt-2 flex items-center gap-2 min-w-max"
     onClick={e => {
       e.preventDefault();
       setDropdownOpen((open) => !open);
@@ -75,7 +73,7 @@ export default function LandingPage() {
     </div>
   )}
 </div>
-<button className="bg-gray-50 hover:bg-gray-100 border-1 border-gray-200 cursor-pointer rounded-r-full w-9 h-9 mb-2 mt-2 flex items-center justify-center">
+<button className="bg-homeexplore hover:bg-homeexplohover hover:bg-gray-100 border-1 border-gray-200 cursor-pointer rounded-r-full w-9 h-9 mb-2 mt-2 flex items-center justify-center">
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-5 h-5">
     <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
   </svg>
@@ -83,11 +81,12 @@ export default function LandingPage() {
         
         </div>
 
-        <div>
+        <div className="w-3xl h bg-[url(/easy-image.jpg)] bg-no-repeat bg-center object-contain object-bottom">
 
-        </div>
+          {/* Dark blue transparent overlay */}
+         <div className="absolute inset-0 bg-[rgba(41,62,112,0.7)]     pointer-events-none z-0"></div>
 
-      <div
+        <div
       id="content"
       className="relative z-10 bg-[rgba(15,23,42,0.7)] text-gray-100 w-120 px-8 pt-10 pb-6 rounded-md shadow-lg"
       >
@@ -98,7 +97,10 @@ export default function LandingPage() {
 
         <button className="px-4  m-2 mt-4 py-1 rounded-sm text-base font-semibold cursor-pointer  bg-homeexplore hover:bg-homeexplohover text-gray-100">Explore Events</button>
         <button className="px-4 m-2 py-1 rounded-sm text-base font-semibold cursor-pointer  border-2 border-gray-100 hover:bg-gray-100 hover:text-homeexplohover hover:border-homeexplohover text-gray-100">Host an Event</button>
-      </div>
+        </div>
+
+        </div>
+
     </header>
     )
   }

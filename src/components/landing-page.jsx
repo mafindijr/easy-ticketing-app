@@ -92,7 +92,7 @@ export default function LandingPage() {
 
   <div
     id="content"
-    className="relative z-10 w-full max-w-xl px-8 pt-10 pb-6 rounded-md shadow-lg flex flex-col items-start justify-center bg-gradient-to-b from-[rgba(15,23,42,0.55)] via-[rgba(15,23,42,0.35)] to-[rgba(15,23,42,0.25)] backdrop-brightness-110"
+    className="relative z-10 w-full max-w-xl px-8 pt-10 pb-6 rounded-md flex flex-col items-start justify-center"
   >
     <h1 className="font-bold text-gray-50 px-4 text-center text-3xl w-full">
       Discover. Book. Attend
@@ -100,7 +100,6 @@ export default function LandingPage() {
     <h1 className="text-addeventbtn font-bold px-4 text-center text-3xl w-full">Seamlessy</h1>
 
     <p
-      id="text"
       className="text-gray-50 text-[0.7rem] text-center w-full whitespace-nowrap px-4 mb-2"
     >
       Find and book tickets for amazing local & vitual events with ease. No hassle. Just fun.

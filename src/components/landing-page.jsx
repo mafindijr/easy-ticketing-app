@@ -37,7 +37,7 @@ export default function LandingPage() {
       
         <input
   type="search"
-  className="flex-1 h-9 border-1 bg-gray-100 border-gray-200 rounded-l-full max-w-2xl mb-2 mt-2 px-4 font-sm shadow-inset-sm inline-flex"
+  className="flex-1 h-9 border-1 bg-gray-100 border-gray-200 rounded-l-full max-w-3xl mb-2 mt-2 px-4 font-sm shadow-inset-sm inline-flex"
   name="search"
   placeholder="Search for concerts, tech meetup or more"
 />

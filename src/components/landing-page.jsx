@@ -42,12 +42,12 @@ export default function LandingPage() {
   placeholder="Search for concerts, tech meetup or more"
 />
 
-<button className="bg-gray-100 hover:bg-gray-100 border-1 border-gray-200 cursor-pointer w-20 h-9 px-4 mb-2 mt-2">Lagos</button>
-<button className="bg-gray-100 hover:bg-gray-100 border-1 border-gray-200 cursor-pointer w-20 h-9 px-4 mb-2 mt-2">Paid</button>
+<button className="bg-gray-100 hover:bg-gray-200 border-1 border-gray-200 cursor-pointer w-20 h-9 px-4 mb-2 mt-2">Lagos</button>
+<button className="bg-gray-100 hover:bg-gray-200 border-1 border-gray-200 cursor-pointer w-20 h-9 px-4 mb-2 mt-2">Paid</button>
 <div className="relative">
   <button
     id="search-btn"
-    className="bg-gray-100 hover:bg-gray-100 border-1 border-gray-200 cursor-pointer h-9 px-4 mb-2 mt-2 flex items-center gap-2 w-40"
+    className="bg-gray-100 hover:bg-gray-200 border-1 border-gray-200 cursor-pointer h-9 px-4 mb-2 mt-2 flex items-center gap-2 w-40"
     onClick={e => {
       e.preventDefault();
       setDropdownOpen((open) => !open);

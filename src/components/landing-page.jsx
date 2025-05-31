@@ -13,7 +13,7 @@ export default function LandingPage() {
   };
 
   return (
-    <header className="relative  overflow-scroll flex justify-center items-center">
+    <header className="relative flex justify-center items-center">
 
       <nav className="bg-gray-50 fixed left-0 right-0 top-0 flex px-2 py-2 items-center px-10 top-0 justify-between z-10">
         <div id="title" className="flex-1 text-homeexplohover font-md font-bold">Easy Ticketing</div>

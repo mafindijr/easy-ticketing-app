@@ -37,7 +37,7 @@ export default function LandingPage() {
       
         <input
   type="search"
-  className="flex-1 h-9 border-1 bg-gray-100 border-gray-200 rounded-l-full max-w-3xl mb-2 mt-2 px-4 font-sm shadow-inset-sm inline-flex"
+  className="flex-1 h-9 border-1 bg-gray-100 border-gray-200 rounded-l-full w-3xl mb-2 mt-2 px-4 font-sm shadow-inset-sm inline-flex"
   name="search"
   placeholder="Search for concerts, tech meetup or more"
 />
@@ -47,7 +47,7 @@ export default function LandingPage() {
 <div className="relative">
   <button
     id="search-btn"
-    className="bg-gray-100 hover:bg-gray-100 border-1 border-gray-200 cursor-pointer h-9 px-4 mb-2 mt-2 flex items-center gap-2 min-w-max"
+    className="bg-gray-100 hover:bg-gray-100 border-1 border-gray-200 cursor-pointer h-9 px-4 mb-2 mt-2 flex items-center gap-2 w-40"
     onClick={e => {
       e.preventDefault();
       setDropdownOpen((open) => !open);

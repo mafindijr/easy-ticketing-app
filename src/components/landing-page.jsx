@@ -88,20 +88,25 @@ export default function LandingPage() {
 >
 
   {/* Dark blue transparent overlay */}
-  <div className="absolute inset-0 bg-[rgba(41,62,112,0.7)] pointer-events-none z-0 rounded-2xl"></div>
+  <div className="absolute inset-0 bg-[rgba(13,71,161,0.6)] pointer-events-none z-0 rounded-2xl"></div>
 
   <div
     id="content"
     className="relative z-10 w-full max-w-xl px-8 pt-10 pb-6 rounded-md shadow-lg flex flex-col items-start justify-center bg-gradient-to-b from-[rgba(15,23,42,0.55)] via-[rgba(15,23,42,0.35)] to-[rgba(15,23,42,0.25)] backdrop-brightness-110"
   >
-    <h1 className="font-bold text-gray-50 px-4 text-left w-full">
-      Discover. Book. Attend <span className="text-addeventbtn font-bold">Seamlessy</span>
-      <p>
-      Find and book tickets for amazing local & vitual events with ease. No hassle. Just fun.
-      </p>
+    <h1 className="font-bold text-gray-50 px-4 text-center text-3xl w-full">
+      Discover. Book. Attend
     </h1>
+    <h1 className="text-addeventbtn font-bold px-4 text-center text-3xl w-full">Seamlessy</h1>
 
-    <div className="flex flex-row items-center mt-4 px-4 w-full">
+    <p
+      id="text"
+      className="text-gray-50 text-[0.7rem] text-center w-full whitespace-nowrap px-4 mb-2"
+    >
+      Find and book tickets for amazing local & vitual events with ease. No hassle. Just fun.
+    </p>
+
+    <div className="flex flex-row items-center justify-center mt-4 px-4 w-full">
       <button className="px-4 mr-4 py-1 rounded-sm text-base font-semibold cursor-pointer bg-homeexplore hover:bg-homeexplohover text-gray-100">
         Explore Events
       </button>

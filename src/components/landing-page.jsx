@@ -92,20 +92,22 @@ export default function LandingPage() {
 
   <div
     id="content"
-    className="relative z-10 bg-[rgba(15,23,42,0.7)] text-gray-100 w-full max-w-xl px-8 pt-10 pb-6 rounded-md shadow-lg flex flex-col items-center justify-center"
+    className="relative z-10 w-full max-w-xl px-8 pt-10 pb-6 rounded-md shadow-lg flex flex-col items-start justify-center bg-gradient-to-b from-[rgba(15,23,42,0.55)] via-[rgba(15,23,42,0.35)] to-[rgba(15,23,42,0.25)] backdrop-brightness-110"
   >
-    <h1 className="font-bold px-4 text-center">
+    <h1 className="font-bold px-4 text-left w-full">
       Discover. Book. Attend <span className="text-addeventbtn font-bold">Seamlessy</span>
       <br />
       Find and book tickets for amazing local & vitual events with ease. No hassle. Just fun.
     </h1>
 
-    <button className="px-4 m-2 mt-4 py-1 rounded-sm text-base font-semibold cursor-pointer bg-homeexplore hover:bg-homeexplohover text-gray-100">
-      Explore Events
-    </button>
-    <button className="px-4 m-2 py-1 rounded-sm text-base font-semibold cursor-pointer border-2 border-gray-100 hover:bg-gray-100 hover:text-homeexplohover hover:border-homeexplohover text-gray-100">
-      Host an Event
-    </button>
+    <div className="flex flex-row items-center mt-4 px-4 w-full">
+      <button className="px-4 mr-4 py-1 rounded-sm text-base font-semibold cursor-pointer bg-homeexplore hover:bg-homeexplohover text-gray-100">
+        Explore Events
+      </button>
+      <button className="px-4 py-1 rounded-sm text-base font-semibold cursor-pointer border-2 border-gray-100 hover:bg-gray-100 hover:text-homeexplohover hover:border-homeexplohover text-gray-100">
+        Host an Event
+      </button>
+    </div>
   </div>
 </div>
 

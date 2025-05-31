@@ -81,25 +81,33 @@ export default function LandingPage() {
         
         </div>
 
-        <div className="w-3xl h bg-[url(/easy-image.jpg)] bg-no-repeat bg-center object-contain object-bottom">
-
-          {/* Dark blue transparent overlay */}
-         <div className="absolute inset-0 bg-[rgba(41,62,112,0.7)]     pointer-events-none z-0"></div>
-
         <div
-      id="content"
-      className="relative z-10 bg-[rgba(15,23,42,0.7)] text-gray-100 w-120 px-8 pt-10 pb-6 rounded-md shadow-lg"
-      >
+  id="hero-sect"
+  className="relative w-full max-w-5xl h-[24rem] rounded-2xl mx-auto mt-32 flex flex-col items-center justify-center bg-[url(/easy-image.jpg)] bg-no-repeat bg-center shadow-lg"
+  style={{ marginLeft: "2.5rem", marginRight: "2.5rem" }} // px-10 equivalent for left/right
+>
 
-        <h1 className="font-bold px-4">Discover. Book. Attend <span className="text-addeventbtn font-bold">Seamlessy</span><br />
+  {/* Dark blue transparent overlay */}
+  <div className="absolute inset-0 bg-[rgba(41,62,112,0.7)] pointer-events-none z-0 rounded-2xl"></div>
 
-        Find and book tickets for amazing local & vitual events with ease. No hassle. Just fun.</h1>
+  <div
+    id="content"
+    className="relative z-10 bg-[rgba(15,23,42,0.7)] text-gray-100 w-full max-w-xl px-8 pt-10 pb-6 rounded-md shadow-lg flex flex-col items-center justify-center"
+  >
+    <h1 className="font-bold px-4 text-center">
+      Discover. Book. Attend <span className="text-addeventbtn font-bold">Seamlessy</span>
+      <br />
+      Find and book tickets for amazing local & vitual events with ease. No hassle. Just fun.
+    </h1>
 
-        <button className="px-4  m-2 mt-4 py-1 rounded-sm text-base font-semibold cursor-pointer  bg-homeexplore hover:bg-homeexplohover text-gray-100">Explore Events</button>
-        <button className="px-4 m-2 py-1 rounded-sm text-base font-semibold cursor-pointer  border-2 border-gray-100 hover:bg-gray-100 hover:text-homeexplohover hover:border-homeexplohover text-gray-100">Host an Event</button>
-        </div>
-
-        </div>
+    <button className="px-4 m-2 mt-4 py-1 rounded-sm text-base font-semibold cursor-pointer bg-homeexplore hover:bg-homeexplohover text-gray-100">
+      Explore Events
+    </button>
+    <button className="px-4 m-2 py-1 rounded-sm text-base font-semibold cursor-pointer border-2 border-gray-100 hover:bg-gray-100 hover:text-homeexplohover hover:border-homeexplohover text-gray-100">
+      Host an Event
+    </button>
+  </div>
+</div>
 
     </header>
     )

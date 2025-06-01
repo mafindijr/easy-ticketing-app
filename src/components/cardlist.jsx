@@ -8,7 +8,7 @@ const cardData = [
 
 export default function CardsList() {
   return (
-    <div>
+    <div className=''>
       {cardData.map((card, idx) => (
         <DetailCard key={idx} {...card} />
       ))}

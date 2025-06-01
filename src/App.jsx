@@ -8,11 +8,12 @@ function App() {
   return (
     <>
       <LandingPage />
-      <h1>Explore top categories</h1>
+      <h1 className='ml-30'>Explore top categories</h1>
       <Categories />
 
-        <h1>Top Events</h1>
-      <div className='grid grid-cols-4 gap-4'>
+        <h1 className='ml-30'>Top Events</h1>
+      <div className='grid grid-cols-4 gap-4 w-full px-30'>
+        <CardsList />
         <CardsList />
         <CardsList />
         <CardsList />

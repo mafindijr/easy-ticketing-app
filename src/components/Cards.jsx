@@ -9,7 +9,7 @@ export default function DetailCard({ title, summary, details }) {
 
   return (
     <>
-      <Card variant="outlined" onClick={handleOpen} style={{ cursor: 'pointer', margin: '1rem', padding: '30px 0px' }}>
+      <Card variant="outlined" onClick={handleOpen} style={{ cursor: 'pointer', margin: '1rem', }}>
         <CardContent>
           <Typography variant="h6">{title}</Typography>
           <Typography variant="body2">{summary}</Typography>

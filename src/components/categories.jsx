@@ -39,8 +39,16 @@ export default function Categories() {
         ];
 
   return (
-    <div>
+    <div className='flex flex-row gap-4 items-center justify-around pl-30 pr-30 my-4'>
+        
+        {eventsCategory.map(category => (
+            <div className='w-40 h-25 border pt-4 pb-4 overflow-hidden text-center text-sm rounded-xl'>
+               <span className='mb-4'>svgIcon</span>
+               <p>{category.title}</p>
+            </div>
+            
+        ))}
 
     </div>
-  )
+  );
 }

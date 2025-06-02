@@ -2,13 +2,16 @@ import React from 'react'
 
 export default function Footer() {
   return (
-    <div>
-      <div>
-        <h1>Host Your Next Event!</h1>
-        <button>Create Event Now</button>
+    <div className='bg-gray-300 block'>
+      <div className='flex gap-4 justify-center items-center '>
 
         <div>
-          <img src="" alt="" />
+          <h1 className=''>Host Your Next Event!</h1>
+          <button>Create Event Now</button>
+        </div>
+
+        <div>
+          <img src="./easy-image.jpg" alt="temporary" />
         </div>
 
       </div>

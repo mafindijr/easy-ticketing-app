@@ -7,7 +7,7 @@ export default function Footer() {
 
         <div>
           <h1 className='text-4xl mb-4'>Host Your Next Event!</h1>
-          <button>Create Event Now</button>
+          <button className='px-4 py-1 h-10 rounded-sm text-base font-semibold cursor-pointer  bg-addeventbtn text-gray-50'>Create Event Now</button>
         </div>
 
         <div>
@@ -16,7 +16,7 @@ export default function Footer() {
 
       </div>
 
-      <div>
+      <div className='bg-homeexplohover flex justify-between items-center p-8 mt-4'>
         <div>
           About easy Ticketing
           contact us

@@ -27,7 +27,7 @@ export default function LandingPage() {
           </div>
 
           <div>
-          <button className="px-4 py-1 mr-3 rounded-sm text-base font-semibold cursor-pointer  bg-addeventbtn text-gray-100">Create Events</button>
+          <button className="px-4 py-1 h-10 rounded-sm text-base font-semibold cursor-pointer  bg-addeventbtn text-gray-50">Create Events</button>
           </div>
 
         </div>

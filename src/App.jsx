@@ -2,6 +2,7 @@ import './App.css'
 import LandingPage from "./components/landing-page";
 import CardsList from "./components/cardlist";
 import Categories from './components/categories';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -18,6 +19,8 @@ function App() {
         <CardsList />
         <CardsList />
       </div>
+
+      <Footer />
     </>
   )
 }

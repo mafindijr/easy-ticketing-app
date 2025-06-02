@@ -6,12 +6,12 @@ export default function Footer() {
       <div className='flex gap-4 justify-center items-center '>
 
         <div>
-          <h1 className=''>Host Your Next Event!</h1>
+          <h1 className='text-4xl mb-4'>Host Your Next Event!</h1>
           <button>Create Event Now</button>
         </div>
 
         <div>
-          <img src="./easy-image.jpg" alt="temporary" />
+          <img src="./easy-image.jpg" alt="temporary" className='w-80 mt-20' />
         </div>
 
       </div>

@@ -108,10 +108,10 @@ export default function LandingPage() {
               </p>
 
               <div className="flex flex-row items-center justify-center mt-4 px-4 w-full">
-                <button className="px-4 mr-4 py-1 rounded-sm text-base font-semibold cursor-pointer bg-homeexplore hover:bg-homeexplohover text-gray-100">
+                <button className="px-4 mr-4 py-1 h-10 rounded-sm text-base font-semibold cursor-pointer bg-homeexplore hover:bg-homeexplohover text-gray-100">
                   Explore Events
                 </button>
-                <button className="px-4 py-1 rounded-sm text-base font-semibold cursor-pointer border-2 border-gray-100 hover:bg-gray-100 hover:text-homeexplohover hover:border-homeexplohover text-gray-100">
+                <button className="px-4 py-1 h-10 rounded-sm text-base font-semibold cursor-pointer border-2 border-gray-100 hover:bg-gray-100 hover:text-homeexplohover hover:border-homeexplohover text-gray-100">
                   Host an Event
                 </button>
               </div>

@@ -18,18 +18,18 @@ export default function Footer() {
 
       <div className='bg-[#0D47A1] flex justify-between pr-30 pl-30 mt-4'>
 
-        <div className='flex flex-col items-start'>
+        <div className='flex flex-col items-start text-gray-50'>
           <a href="#">About EasyTicketing</a>
           <a href="#">Contact Us</a>
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Use</a>
         </div>
 
-        <div>
+        <div className='text-gray-50'>
           @ 2025 EasyTicket. All right reserved
         </div>
 
-        <div className='flex flex-col items-start'>
+        <div className='flex flex-col items-start text-gray-50'>
           <a href="#">follow us</a> 
           <a href="#">linkin</a>
           <a href="#">facebook</a>

@@ -7,12 +7,12 @@ function Card(props) {
     const [isModalOpen, setModalOpen] = useState(false);
 
     return (
-        <div>
+        <div className='mb-4 mt-4'>
         
           
         <div onClick={()=> {setModalOpen(true)}} className="max-w-xs  border border-gray-100 rounded-xl overflow-hidden bg-gray-50">
           <img
-            src=""
+            src="./easy-image.jpg"
             alt=""
             className="w-full h-52 object-cover"
           />

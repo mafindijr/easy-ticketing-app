@@ -16,9 +16,9 @@ export default function Footer() {
 
       </div>
 
-      <div className='bg-homeexplohover flex justify-between items-center p-8 mt-4'>
+      <div className='bg-homeexplohover flex justify-between pr-30 pl-30 mt-4'>
 
-        <div id='nav' className='flex flex-col items-start'>
+        <div className='flex flex-col items-start'>
           <a href="#">About EasyTicketing</a>
           <a href="#">Contact Us</a>
           <a href="#">Privacy Policy</a>
@@ -28,11 +28,12 @@ export default function Footer() {
         <div>
           @ 2025 EasyTicket. All right reserved
         </div>
-        <div>
-          follow us 
-          linkin
-          facebook
-          x
+
+        <div className='flex flex-col items-start'>
+          <a href="#">follow us</a> 
+          <a href="#">linkin</a>
+          <a href="#">facebook</a>
+          <a href="">x</a>
         </div>
       </div>
 

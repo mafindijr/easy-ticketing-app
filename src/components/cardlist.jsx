@@ -10,7 +10,7 @@ const Modal = ({ isOpen, onClose, children}) => {
 
     return (
         <div
-          className="fixed inset-0 w-screen h-screen flex justify-center items-center z-[1000]"
+          className="fixed inset-0 w-screen h-screen bg-[rgba(0,0,0,0.6)] flex justify-center items-center z-[1000]"
           onClick={handleOverLayClick}
         >
           <div className="bg-white p-5 rounded-lg relative w-[300px] text-center">

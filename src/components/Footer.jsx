@@ -25,8 +25,8 @@ export default function Footer() {
           <a href="#">Terms of Use</a>
         </div>
 
-        <div>
-          @ 2025 EasyTicket. All right reserved
+        <div id='nav' className="flex flex-col items-center">
+          <span>@ 2025 EasyTicket. All right reserved</span>
         </div>
         <div>
           follow us 

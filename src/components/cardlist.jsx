@@ -1,4 +1,4 @@
-import DetailCard from './Cards';
+
 
 const cardData = [
   { title: 'Card 1', summary: 'Short summary 1', details: 'Detailed information 1' },

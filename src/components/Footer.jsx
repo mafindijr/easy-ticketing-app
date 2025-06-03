@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function Footer() {
   return (
-    <div className='bg-[#eeeeee] block'>
-      <div className='flex gap-4 justify-center items-center '>
+    <div className='bg-[#eeeeee] pt-8'>
+      <div className='flex gap-4 justify-center items-center w-160 mt-4'>
 
         <div>
           <h1 className='text-4xl mb-5'>Host Your Next Event!</h1>
@@ -11,12 +11,12 @@ export default function Footer() {
         </div>
 
         <div className="rounded-md overflow-hidden">
-          <img src="./easy-footer.jpg" alt="temporary" className='w-80 mt-20' />
+          <img src="./easyT-footer.jpg" alt="temporary" className='w-80' />
         </div>
 
       </div>
 
-      <div className='bg-homeexplohover flex justify-between pr-30 pl-30 mt-4'>
+      <div className='bg-[#0D47A1] flex justify-between pr-30 pl-30 mt-4'>
 
         <div className='flex flex-col items-start'>
           <a href="#">About EasyTicketing</a>

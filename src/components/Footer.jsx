@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Footer() {
   return (
-    <div className='bg-gray-300 block'>
+    <div className='bg-[#eeeeee] block'>
       <div className='flex gap-4 justify-center items-center '>
 
         <div>
@@ -10,8 +10,8 @@ export default function Footer() {
           <button className='px-4 py-1 mt-2 h-10 rounded-sm text-base font-semibold cursor-pointer  bg-addeventbtn text-gray-50'>Create Event Now</button>
         </div>
 
-        <div>
-          <img src="./easy-image.jpg" alt="temporary" className='w-80 mt-20' />
+        <div className="rounded-md overflow-hidden">
+          <img src="./easy-footer.jpg" alt="temporary" className='w-80 mt-20' />
         </div>
 
       </div>

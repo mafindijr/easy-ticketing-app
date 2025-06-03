@@ -1,6 +1,6 @@
 import './App.css'
 import LandingPage from "./components/landing-page";
-import CardsList from "./components/cardlist";
+import Card from "./components/Cards";
 import Categories from './components/categories';
 import Footer from './components/Footer';
 
@@ -14,10 +14,10 @@ function App() {
 
         <h1 className='ml-30'>Top Events</h1>
       <div className='grid grid-cols-4 gap-4 w-full px-30'>
-        <CardsList />
-        <CardsList />
-        <CardsList />
-        <CardsList />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
       </div>
 
       <Footer />

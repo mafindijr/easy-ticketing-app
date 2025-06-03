@@ -18,15 +18,15 @@ export default function Footer() {
 
       <div className='bg-homeexplohover flex justify-between items-center p-8 mt-4'>
 
-        <div className='inline-block'>
-          <span><a href="#">About EasyTicketing</a></span>
-          <span><a href="#">Contact Us</a></span>
+        <div id='nav' className='flex flex-col items-center'>
+          <a href="#">About EasyTicketing</a>
+          <a href="#">Contact Us</a>
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Use</a>
         </div>
 
-        <div id='nav' className="flex flex-col items-center">
-          <span>@ 2025 EasyTicket. All right reserved</span>
+        <div>
+          @ 2025 EasyTicket. All right reserved
         </div>
         <div>
           follow us 

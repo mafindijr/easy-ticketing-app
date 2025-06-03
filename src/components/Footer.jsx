@@ -18,7 +18,7 @@ export default function Footer() {
 
       <div className='bg-homeexplohover flex justify-between items-center p-8 mt-4'>
 
-        <div id='nav' className='flex flex-col items-center'>
+        <div id='nav' className='flex flex-col items-start'>
           <a href="#">About EasyTicketing</a>
           <a href="#">Contact Us</a>
           <a href="#">Privacy Policy</a>

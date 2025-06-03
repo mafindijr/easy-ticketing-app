@@ -26,7 +26,7 @@ export default function Footer() {
         </div>
 
         <div className='text-gray-50'>
-          @ 2025 EasyTicket. All right reserved 
+          @ 2025 EasyTicket. All right reserved
         </div>
 
         <div className='flex flex-col items-start text-gray-50'>

@@ -1,10 +1,16 @@
-import {useState} from 'react'
+import { useState } from 'react';
 
+import Modal from './modaldial';
 
-export default function Card (props) {
+function Card(props) {
+
+    const [isModalOpen, setModalOpen] = useState(false);
 
     return (
-        <div className="max-w-xs  border border-gray-100 rounded-xl overflow-hidden bg-gray-50">
+        <div>
+        
+          
+        <div onClick={()=> {setModalOpen(true)}} className="max-w-xs  border border-gray-100 rounded-xl overflow-hidden bg-gray-50">
           <img
             src=""
             alt=""
@@ -27,5 +33,18 @@ export default function Card (props) {
             <button className="bg-homeexplore text-gray-50 ml-4 mb-4 px-4 py-1 rounded-sm">Book Now</button>
           </div>
         </div>
+
+        <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)}>
+            <h2>Hello! from Modal!</h2>
+            <p>
+                This is a modal dialog in React.
+            </p>
+        </Modal>
+
+        </div>
     );
 }
+
+export default Card;
+
+

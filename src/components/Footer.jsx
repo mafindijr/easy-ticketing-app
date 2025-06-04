@@ -4,10 +4,10 @@ export default function Footer() {
   return (
     <>
     <div className='bg-[#eeeeee] flex justify-center items-center py-8'>
-      <div className='flex gap-2 justify-center items-center w-160 mt-4'>
+      <div className='flex gap-2 justify-center items-center w-160'>
 
         <div>
-          <h1 className='text-4xl mb-5'>Host Your Next Event!</h1>
+          <h1 className='text-4xl bold mb-5'>Host Your Next Big Event!</h1>
           <button className='px-4 py-1 mt-2 h-10 rounded-sm text-base font-semibold cursor-pointer  bg-addeventbtn text-gray-50'>Create Event Now</button>
         </div>
 

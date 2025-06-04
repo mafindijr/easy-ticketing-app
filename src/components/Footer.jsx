@@ -44,7 +44,6 @@ export default function Footer() {
           <span className='absolute top-0 left-0'>Follow Us</span>
           <div className='border-2 border-solid-gray-50 p-1 rounded-full'><a href="#"><Linkedin size={24} /></a></div>
           <div className='border-2 border-solid-gray-50 p-1 rounded-full'><a href="#"><Facebook size={24} /></a></div>
-          <div className='border-2 border-solid-gray-50 p-1 rounded-full'><a href=""><Twitter size={24}  /></a></div>
           <div className='border-2 border-solid-gray-50 p-2 text-xl rounded-full'><a href=""><BsTwitterX /></a></div>
         </div>
       </div>

@@ -3,10 +3,10 @@ import React from 'react'
 export default function Footer() {
   return (
     <>
-    <div className='bg-[#eeeeee] flex justify-center items-center py-8'>
-      <div className='flex gap-2 justify-center items-center w-[869px] h-[248px]'>
+    <div className='bg-[#eeeeee] flex justify-center items-center h-[400px] py-8'>
+      <div className='flex justify-center items-center w-[869px] h-[248px]'>
 
-        <div className='h-[248px] w-[380px] flex gap-4'>
+        <div className='h-[248px] w-[380px] flex flex-col gap-4'>
           <div>   
               <h1 className='text-4xl font-bold'>Host Your Next </h1>
               <h1 className="text-4xl font-bold ">Big Event!</h1>
@@ -17,7 +17,7 @@ export default function Footer() {
         </div>
 
         <div className="rounded-md overflow-hidden w-[380px] h-[248px]">
-          <img src="./easyT-footer.jpg" alt="temporary" className=''/>
+          <img src="./easyT-footer.jpg" alt="temporary"/>
         </div>
 
       </div>

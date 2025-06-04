@@ -5,6 +5,7 @@ import Categories from './components/categories';
 import Footer from './components/Footer';
 import Layout from './layout/layout'
 
+
 function App() {
 
   return (

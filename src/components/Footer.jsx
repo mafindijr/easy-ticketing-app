@@ -39,9 +39,9 @@ export default function Footer() {
         </div>
 
         <div className='flex items-center justify-center gap-4 text-gray-50 relative'>
-          <a href="#" className='absolute top-0 left-0'>Follow us</a> 
-          <a href="#"><Linkedin size={24} className='text-gray-50' /></a>
-          <a href="#"><Facebook size={24} className='text-gray-50' /></a>
+          <a href="#" classN
+          <a href="#"><Linkedin size={24} /></a>
+          <a href="#"><Facebook size={24} /></a>
           <a href=""><Twitter size={24}  /></a>
         </div>
       </div>

@@ -10,7 +10,7 @@ function Card(props) {
         <div className='mb-4 mt-4'>
         
           
-        <div onClick={()=> {setModalOpen(true)}} className="max-w-xs  border border-gray-100 rounded-xl overflow-hidden bg-gray-50">
+        <div onClick={()=> {setModalOpen(true)}} className="max-w-xs  border border-gray-100 rounded-sm overflow-hidden bg-gray-50">
           <img
             src="./easy-image.jpg"
             alt=""

@@ -20,7 +20,7 @@ export default function Footer() {
 
     </div>
 
-      <div className='bg-[#0D47A1] flex justify-between pr-30 pl-30 mt-4'>
+      <div className='bg-[#0D47A1] flex justify-between pr-30 pl-30 py-4'>
 
         <div className='flex flex-col items-start text-gray-50'>
           <a href="#">About EasyTicketing</a>

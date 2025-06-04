@@ -40,9 +40,9 @@ export default function Footer() {
 
         <div className='flex items-center gap-4 text-gray-50 relative'>
           <span className='absolute top-0 left-0'>Follow Us</span>
-          <div><a href="#"><Linkedin size={24} /></a></div>
-          <a href="#"><Facebook size={24} /></a>
-          <a href=""><Twitter size={24}  /></a>
+          <div className='border-2 border-solid-gray-50 p-1 rounded-full'><a href="#"><Linkedin size={24} /></a></div>
+          <div><a href="#"><Facebook size={24} /></a></div>
+          <div><a href=""><Twitter size={24}  /></a></div>
         </div>
       </div>
 

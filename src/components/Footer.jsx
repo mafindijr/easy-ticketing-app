@@ -1,4 +1,4 @@
-import React from 'react'
+import {facebook, linkedin, twitter} from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -40,7 +40,7 @@ export default function Footer() {
 
         <div className='flex flex-col items-start text-gray-50'>
           <a href="#">follow us</a> 
-          <a href="#">linkin</a>
+          <a href="#"><Linkedin size={24} color="white" /></a>
           <a href="#">facebook</a>
           <a href="">x</a>
         </div>

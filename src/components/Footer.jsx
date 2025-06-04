@@ -3,8 +3,8 @@ import React from 'react'
 export default function Footer() {
   return (
     <>
-    <div className='bg-[#eeeeee] flex items-center'>
-      <div className='flex gap-4 justify-center items-center w-160 mt-4'>
+    <div className='bg-[#eeeeee] flex justify-center items-center py-8'>
+      <div className='flex gap-2 justify-center items-center w-160 mt-4'>
 
         <div>
           <h1 className='text-4xl mb-5'>Host Your Next Event!</h1>

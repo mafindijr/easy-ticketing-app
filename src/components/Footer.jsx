@@ -2,7 +2,8 @@ import React from 'react'
 
 export default function Footer() {
   return (
-    <div className='bg-[#eeeeee] pt-8'>
+    <>
+    <div className='bg-[#eeeeee] flex items-center'>
       <div className='flex gap-4 justify-center items-center w-160 mt-4'>
 
         <div>
@@ -15,6 +16,9 @@ export default function Footer() {
         </div>
 
       </div>
+
+
+    </div>
 
       <div className='bg-[#0D47A1] flex justify-between pr-30 pl-30 mt-4'>
 
@@ -37,6 +41,6 @@ export default function Footer() {
         </div>
       </div>
 
-    </div>
+    </>
   )
 }

@@ -4,15 +4,20 @@ export default function Footer() {
   return (
     <>
     <div className='bg-[#eeeeee] flex justify-center items-center py-8'>
-      <div className='flex gap-2 justify-center items-center w-160'>
+      <div className='flex gap-2 justify-center items-center w-[869px] h-[248px]'>
 
-        <div>
-          <h1 className='text-4xl bold mb-5'>Host Your Next Big Event!</h1>
-          <button className='px-4 py-1 mt-2 h-10 rounded-sm text-base font-semibold cursor-pointer  bg-addeventbtn text-gray-50'>Create Event Now</button>
+        <div className='h-[248px] w-[380px] flex gap-4'>
+          <div>   
+              <h1 className='text-4xl font-bold'>Host Your Next </h1>
+              <h1 className="text-4xl font-bold ">Big Event!</h1>
+          </div>
+          <div>
+             <button className='px-4 py-1 h-10 rounded-sm text-base font-semibold cursor-pointer  bg-addeventbtn text-gray-50'>Create Event Now</button>
+          </div>
         </div>
 
-        <div className="rounded-md overflow-hidden">
-          <img src="./easyT-footer.jpg" alt="temporary" className='w-80' />
+        <div className="rounded-md overflow-hidden w-[380px] h-[248px]">
+          <img src="./easyT-footer.jpg" alt="temporary" className=''/>
         </div>
 
       </div>

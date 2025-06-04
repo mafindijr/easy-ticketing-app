@@ -1,5 +1,5 @@
 import {Facebook, Linkedin, Twitter} from 'lucide-react'
-import { RiTwitterXFill } from "react-icons/ri";
+import { RiTwitterXFill, BsTwitterX  } from "react-icons/ri";
 
 
 export default function Footer() {
@@ -10,8 +10,8 @@ export default function Footer() {
 
         <div className='h-[248px] w-[380px] flex flex-col gap-4'>
           <div>   
-              <h1 className='text-4xl font-bold'>Host Your Next </h1>
-              <h1 className="text-4xl font-bold ">Big Event!</h1>
+              <h1 className='text-5xl font-bold'>Host Your Next </h1>
+              <h1 className="text-5xl font-bold ">Big Event!</h1>
           </div>
           <div>
              <button className='px-4 py-1 h-10 rounded-sm text-base font-semibold cursor-pointer  bg-addeventbtn text-gray-50'>Create Event Now</button>
@@ -45,7 +45,8 @@ export default function Footer() {
           <div className='border-2 border-solid-gray-50 p-1 rounded-full'><a href="#"><Linkedin size={24} /></a></div>
           <div className='border-2 border-solid-gray-50 p-1 rounded-full'><a href="#"><Facebook size={24} /></a></div>
           <div className='border-2 border-solid-gray-50 p-1 rounded-full'><a href=""><Twitter size={24}  /></a></div>
-          <div className='border-2 border-solid-gray-50 p-1 rounded-full'><a href=""><RiTwitterXFill /></a></div>
+          <div className='border-2 border-solid-gray-50 p-1 rounded-full'><a href=""><RiTwitterXFill /><BsTwitterX />
+</a></div>
         </div>
       </div>
 

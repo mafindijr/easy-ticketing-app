@@ -38,9 +38,9 @@ export default function Footer() {
           @ 2025 EasyTicket. All right reserved
         </div>
 
-        <div className='flex items-center justify-center gap-4 text-gray-50 relative'>
-          <a href="#" classN
-          <a href="#"><Linkedin size={24} /></a>
+        <div className='flex items-center gap-4 text-gray-50 relative'>
+          <span className='absolute top-0 left-0'>Follow Us</span>
+          <div><a href="#"><Linkedin size={24} /></a></div>
           <a href="#"><Facebook size={24} /></a>
           <a href=""><Twitter size={24}  /></a>
         </div>

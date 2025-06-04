@@ -1,5 +1,5 @@
 import {Facebook, Linkedin, Twitter} from 'lucide-react'
-import { RiTwitterXFill, BsTwitterX  } from "react-icons/ri";
+import { BsTwitterX  } from "react-icons/bs";
 
 
 export default function Footer() {
@@ -45,8 +45,7 @@ export default function Footer() {
           <div className='border-2 border-solid-gray-50 p-1 rounded-full'><a href="#"><Linkedin size={24} /></a></div>
           <div className='border-2 border-solid-gray-50 p-1 rounded-full'><a href="#"><Facebook size={24} /></a></div>
           <div className='border-2 border-solid-gray-50 p-1 rounded-full'><a href=""><Twitter size={24}  /></a></div>
-          <div className='border-2 border-solid-gray-50 p-1 rounded-full'><a href=""><RiTwitterXFill /><BsTwitterX />
-</a></div>
+          <div className='border-2 border-solid-gray-50 p-2 text-xl rounded-full'><a href=""><BsTwitterX /></a></div>
         </div>
       </div>
 

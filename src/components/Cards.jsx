@@ -35,10 +35,12 @@ function Card(props) {
         </div>
 
         <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)}>
-            <h2>Hello! from Modal!</h2>
-            <p>
-                This is a modal dialog in React.
-            </p>
+           <div>
+            <div><img src="" alt="" /></div>
+            <div>
+              <h2>name</h2>
+            </div>
+           </div>
         </Modal>
 
         </div>

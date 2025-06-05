@@ -5,34 +5,42 @@ export default function Categories() {
 
         const eventsCategory = [
             {
+                id: 1,
                 svgIcon: ``,
                 title: 'Music & Concerts'
             },
             {
+                id: 2,
                 svgIcon: ``,
                 title: 'Cultural & Traditional Festival'
             },
             {
+                id: 3,
                 svgIcon: ``,
                 title: 'Corporate & Professional Events'
             },
             {
+                id: 4,
                 svgIcon: ``,
                 title: 'Trade Shows & Expos'
             },
             {
+                id: 5,
                 svgIcon: ``,
                 title: 'Religios & and Community Gatherings'
             },
             {
+                id: 6,
                 svgIcon: ``,
                 title: 'Wellness & Lifestyle Events'
             },
             {
+                id: 7,
                 svgIcon: ``,
                 title: 'Sports & Outdoor Events'
             },
             {
+                id:  8,
                 svgIcon: ``,
                 title: 'Art, Fashion & Creative Events'
             },
@@ -42,7 +50,7 @@ export default function Categories() {
     <div className='flex flex-row gap-4 items-center justify-around pl-30 pr-30 my-4'>
         
         {eventsCategory.map(category => (
-            <div className='w-40 h-25 border pt-4 pb-4 overflow-hidden text-center text-sm rounded-xl'>
+            <div key={category.id} className='w-[137px] h-[118px] border p-[8px] overflow-hidden text-[16px] leading-[22px] rounded-md'>
                <span className='mb-4'>svgIcon</span>
                <p>{category.title}</p>
             </div>

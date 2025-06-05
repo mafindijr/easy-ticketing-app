@@ -1,12 +1,13 @@
 
 import React from 'react'
+import { MicVocal } from 'lucide-react'
 
 export default function Categories() {
 
         const eventsCategory = [
             {
                 id: 1,
-                svgIcon: ``,
+                svgIcon: <MicVocal />,
                 title: 'Music & Concerts'
             },
             {
@@ -51,7 +52,7 @@ export default function Categories() {
         
         {eventsCategory.map(category => (
             <div key={category.id} className='w-[137px] h-[118px] border p-[8px] overflow-hidden text-[16px] leading-[22px] rounded-md'>
-               <span className='mb-4'>svgIcon</span>
+               <span className='mb-4'>{category.svgIcon}</span>
                <p>{category.title}</p>
             </div>
             

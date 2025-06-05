@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { UseModal as Modal} from './UseModal';
+import UseModal from './UseModal';
 
 function Card(props) {
 
@@ -36,7 +36,7 @@ function Card(props) {
           </div>
         </div>
 
-        <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)}>
+        <UseModal isOpen={isModalOpen} onClose={() => setModalOpen(false)}>
            <div>
             <div><img src="" alt="" /></div>
             <div>
@@ -46,7 +46,7 @@ function Card(props) {
               <p>price</p>
             </div>
            </div>
-        </Modal>
+        </UseModal>
 
         </div>
     );

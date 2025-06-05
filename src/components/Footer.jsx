@@ -1,4 +1,4 @@
-import {Facebook, Linkedin, Twitter} from 'lucide-react'
+import {Facebook, Linkedin} from 'lucide-react'
 import { BsTwitterX  } from "react-icons/bs";
 
 

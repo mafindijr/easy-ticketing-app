@@ -1,6 +1,8 @@
 import React from 'react'
 import { MicVocal, Lectern } from 'lucide-react'
 import { FaRegHandshake } from "react-icons/fa6";
+import { TbBallFootball } from "react-icons/tb";
+import { BiSolidPalette } from "react-icons/bi";
 import { PiHandsPrayingThin, PiFlowerLotusThin, PiMaskSad } from "react-icons/pi";
 
 
@@ -40,12 +42,12 @@ export default function Categories() {
             },
             {
                 id: 7,
-                svgIcon: ``,
+                svgIcon: <TbBallFootball size={32} />,
                 title: 'Sports & Outdoor Events'
             },
             {
                 id:  8,
-                svgIcon: ``,
+                svgIcon: <BiSolidPalette size={32} />,
                 title: 'Art, Fashion & Creative Events'
             },
         ];

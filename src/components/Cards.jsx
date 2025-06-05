@@ -39,9 +39,9 @@ function Card(props) {
             <div><img src="" alt="" /></div>
             <div>
               <h2>name</h2>
-              <span>date</span>
-              <span>location</span>
-              <span>price</span>
+              <p>date</p>
+              <p>location</p>
+              <p>price</p>
             </div>
            </div>
         </Modal>

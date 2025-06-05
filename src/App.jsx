@@ -26,7 +26,7 @@ function App() {
         </div>
 
         <div className='flex justify-center align-middle p-4'>
-          <button className='border border-gray-400 px-10 py-2 cursor-pointer'>See More</button>
+          <button className='border border-gray-400 w-[380px] h-[60px] rounded-sm cursor-pointer'>See More</button>
         </div>
 
       </Layout>

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import Modal from './cardlist';
+import { UseModal as Modal} from './UseModal';
 
 function Card(props) {
 

@@ -45,11 +45,6 @@ export default function Footer() {
          {navLinks.map((link) => (
             <a key={link.name} href={link.href}>{link.name}</a>
           ))}
-
-          {/* <a href="#">About EasyTicketing</a>
-          <a href="#">Contact Us</a>
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Use</a> */}
         </div>
 
         <div className='text-gray-50'>

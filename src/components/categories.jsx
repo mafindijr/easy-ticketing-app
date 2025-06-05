@@ -1,8 +1,7 @@
 import React from 'react'
 import { MicVocal, Lectern } from 'lucide-react'
 import { FaRegHandshake } from "react-icons/fa6";
-import { PiMaskSad } from "react-icons/pi";
-import { PiHandsPrayingThin } from "react-icons/pi";
+import { PiHandsPrayingThin, PiFlowerLotusThin, PiMaskSad } from "react-icons/pi";
 
 
 
@@ -36,7 +35,7 @@ export default function Categories() {
             },
             {
                 id: 6,
-                svgIcon: ``,
+                svgIcon: <PiFlowerLotusThin size={32} />,
                 title: 'Wellness & Lifestyle Events'
             },
             {

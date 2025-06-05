@@ -4,6 +4,8 @@ import Modal from './cardlist';
 
 function Card(props) {
 
+    const cardItems = [];
+
     const [isModalOpen, setModalOpen] = useState(false);
 
     return (

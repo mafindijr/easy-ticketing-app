@@ -1,7 +1,9 @@
 import React from 'react'
 import { MicVocal, Lectern } from 'lucide-react'
-import { FaHandshake } from "react-icons/fa6";
+import { FaRegHandshake } from "react-icons/fa6";
 import { PiMaskSad } from "react-icons/pi";
+import { PiHandsPrayingThin } from "react-icons/pi";
+
 
 
 export default function Categories() {
@@ -24,12 +26,12 @@ export default function Categories() {
             },
             {
                 id: 4,
-                svgIcon: <FaHandshake size={32} />,
+                svgIcon: <FaRegHandshake size={32} />,
                 title: 'Trade Shows & Expos'
             },
             {
                 id: 5,
-                svgIcon: ``,
+                svgIcon: <PiHandsPrayingThin size={32} />,
                 title: 'Religios & and Community Gatherings'
             },
             {
@@ -46,7 +48,7 @@ export default function Categories() {
                 id:  8,
                 svgIcon: ``,
                 title: 'Art, Fashion & Creative Events'
-            },us
+            },
         ];
 
   return (

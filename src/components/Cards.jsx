@@ -4,8 +4,6 @@ import UseModal from './UseModal';
 
 function Card(props) {
 
-    const cardItems = [];
-
     const [isModalOpen, setModalOpen] = useState(false);
 
     return (

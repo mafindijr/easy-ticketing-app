@@ -5,9 +5,24 @@ export default function EventSection({ title, events, layout = 'grid' }) {
 
   if(!events || events.lenght === 0) return null;
 
-  return ();
-
   return (
-    <div>TopEvents</div>
-  )
+    <section>
+      <h1>{ title }</h1>
+
+      {
+        layout === 'carousel' ? (
+          <swiper>
+            {events.map(event => (<Card />))}
+          </swiper>
+        ) : (
+          <div>
+            
+          </div>
+        )
+      }
+
+
+    </section>
+  );
+
 }

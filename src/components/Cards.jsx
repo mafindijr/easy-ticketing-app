@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import UseModal from './UseModal';
 
-function Card(props) {
+function Card() {
 
     const [isModalOpen, setModalOpen] = useState(false);
 

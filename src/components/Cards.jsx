@@ -1,53 +1,54 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-import UseModal from './UseModal';
+import UseModal from "./UseModal";
 
-function Card() {
+function Card({ name, date, location, price, image, showBookButton }) {
+  const [isModalOpen, setModalOpen] = useState(false);
 
-    const [isModalOpen, setModalOpen] = useState(false);
-
-    return (
-        <div className='mb-4 mt-4'>
-        
-          
-        <div onClick={()=> {setModalOpen(true)}} className="max-w-xs  border border-gray-100 rounded-sm overflow-hidden bg-gray-50">
-          <img
-            src="./easy-image.jpg"
-            alt=""
-            className="w-full h-52 object-cover"
-          />
-          <div className="mb-4 p-4">
-            <h2 className="text-xl font-semibold mb-2 ">name</h2>
-            <p>
-                date
-            </p>
-            <p className="">
-              location
-            </p>
-            <p>
-                price
-            </p>
-          </div>
-
+  return (
+    <div className="mb-4 mt-4">
+      <div
+        onClick={() => setModalOpen(true)}
+        className="max-w-xs border border-gray-100 rounded-sm overflow-hidden bg-gray-50 cursor-pointer"
+      >
+        <img src={image} alt={name} className="w-full h-52 object-cover" />
+        <div className="mb-4 p-4">
+          <h2 className="text-xl font-semibold mb-2">{name}</h2>
+          <p>{date}</p>
+          <p>{location}</p>
+          <p>{price}</p>
+        </div>
+        {/* Only show Book Now button if showBookButton is true */}
+        {showBookButton && (
           <div>
-            <button className="bg-homeexplore text-gray-50 ml-4 mb-4 px-4 py-1 rounded-sm">Book Now</button>
+            <button className="bg-homeexplore text-gray-50 ml-4 mb-4 px-4 py-1 rounded-sm">
+              Book Now
+            </button>
+          </div>
+        )}
+      </div>
+
+      <UseModal isOpen={isModalOpen} onClose={() => setModalOpen(false)}>
+        <div>
+          <div>
+            <img src={image} alt={name} />
+          </div>
+          <div>
+            <h2>{name}</h2>
+            <p>{date}</p>
+            <p>{location}</p>
+            <p>{price}</p>
+            {/* Show Book Now button in modal for top events */}
+            {showBookButton && (
+              <button className="bg-homeexplore text-gray-50 mt-4 px-4 py-1 rounded-sm">
+                Book Now
+              </button>
+            )}
           </div>
         </div>
-
-        <UseModal isOpen={isModalOpen} onClose={() => setModalOpen(false)}>
-           <div>
-            <div><img src="" alt="" /></div>
-            <div>
-              <h2>name</h2>
-              <p>date</p>
-              <p>location</p>
-              <p>price</p>
-            </div>
-           </div>
-        </UseModal>
-
-        </div>
-    );
+      </UseModal>
+    </div>
+  );
 }
 
 export default Card;

@@ -1,37 +1,13 @@
 import './App.css'
-import LandingPage from "./components/landing-page";
-import Card from "./components/Cards";
-import Categories from './components/categories';
-import Footer from './components/Footer';
-import Layout from './layout/layout'
-
+import Home from './views/Home'
 
 function App() {
 
   return (
     <>
-      {/* Header Component */}
-      <LandingPage />
 
-      <Layout>
-        <h1 className='text-2xl font-bold my-4 ml-30'>Explore top categories</h1>
-        <Categories />
+    <Home />
 
-          <h1 className='ml-30'>Top Events</h1>
-        <div className='grid grid-cols-4 gap-4 w-full px-30'>
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-        </div>
-
-        <div className='flex justify-center align-middle p-4'>
-          <button className='border border-gray-400 w-[380px] h-[60px] text-[16px] leading-[24px] rounded-sm cursor-pointer'>See More</button>
-        </div>
-
-      </Layout>
-
-      <Footer />
     </>
   )
 }

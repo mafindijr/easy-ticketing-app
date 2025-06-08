@@ -1,7 +1,31 @@
-import React from 'react'
+import Card from "../components/Cards";
+import Categories from '../components/categories';
+import Layout from '../layout/layout'
+
 
 export default function Home() {
+
+
+
   return (
-    <div>Home</div>
+    
+      <Layout>
+
+        <h1 className='text-2xl font-bold my-4 ml-30'>Explore top categories</h1>
+        <Categories />
+
+          <h1 className='ml-30'>Top Events</h1>
+        <div className='grid grid-cols-4 gap-4 w-full px-30'>
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </div>
+
+        <div className='flex justify-center align-middle p-4'>
+          <button className='border border-gray-400 w-[380px] h-[60px] text-[16px] leading-[24px] rounded-sm cursor-pointer'>See More</button>
+        </div>
+
+      </Layout>
   )
 }

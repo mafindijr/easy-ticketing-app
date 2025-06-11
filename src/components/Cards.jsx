@@ -9,7 +9,7 @@ function Card({ name, date, location, price, image, showBookButton }) {
     <>
       <div
         onClick={() => setModalOpen(true)}
-        className="border border-gray-100 rounded-sm overflow-hidden bg-gray-50 cursor-pointer h-[380px]"
+        className="border border-gray-100 rounded-sm overflow-hidden bg-gray-50 cursor-pointer"
       >
         <img src={image} alt={name} className="w-full h-52 object-cover" />
         <div className="mb-4 p-4">
@@ -39,11 +39,11 @@ function Card({ name, date, location, price, image, showBookButton }) {
             <p>{location}</p>
             <p>{price}</p>
             {/* Show Book Now button in modal for top events */}
-            {showBookButton && (
+             
               <button className="bg-homeexplore text-gray-50 mt-4 px-4 py-1 rounded-sm">
                 Book Now
               </button>
-            )}
+            
           </div>
         </div>
       </UseModal>

@@ -1,22 +1,17 @@
-"use client";
+import { ChevronRight, ChevronLeft } from 'lucide-react'
 
-import { Pagination } from "flowbite-react";
-import { useState } from "react";
-
-export function NavigationIcon() {
-  const [currentPage, setCurrentPage] = useState(1);
-
-  const onPageChange = (page) => setCurrentPage(page);
+export default function NavigationIcon() {
 
   return (
-    <div className="flex overflow-x-auto sm:justify-center">
-      <Pagination
-        layout="navigation"
-        currentPage={currentPage}
-        totalPages={100}
-        onPageChange={onPageChange}
-        showIcons
-      />
+    <div>
+
+        <button className='bg-gray-100 rounded-full p-2'>
+            <ChevronLeft size={30}/>
+        </button>
+
+        <button>
+          <ChevronRight />
+        </button>
     </div>
   );
 }

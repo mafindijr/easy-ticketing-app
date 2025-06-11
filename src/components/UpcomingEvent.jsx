@@ -9,7 +9,7 @@ function UpcomingEvents() {
       <h2 className="text-2xl font-bold mb-4">Upcoming Events</h2>
       <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {upcomingEvents.map((event, idx) => (
-          <Card key={idx} {...event} showBookButton={false} />
+          <Card key={idx} {...event} showBookButton={true} />
         ))}
       </div>
     </div>

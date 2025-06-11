@@ -1,6 +1,6 @@
 import Card from "./Cards";
 import events from "../components/javascript/events";
-import { NavigationIcon } from "./Navigation-icon";
+import NavigationIcon from "./Navigation-icon";
 
 
 function TopEvents() {

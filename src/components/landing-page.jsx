@@ -4,12 +4,7 @@ import SearchForm from "./Search-form";
 
 
 export default function LandingPage() {
-  // Move hooks and handlers here, before return
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const handleTicketType = (type) => {
-    // handle ticket type selection here
-    setDropdownOpen(false);
-  };
+ 
 
   return (
     <header className="relative flex justify-center items-center">

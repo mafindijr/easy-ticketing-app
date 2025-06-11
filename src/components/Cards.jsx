@@ -6,10 +6,10 @@ function Card({ name, date, location, price, image, showBookButton }) {
   const [isModalOpen, setModalOpen] = useState(false);
 
   return (
-    <div className="mb-4 mt-4">
+    <>
       <div
         onClick={() => setModalOpen(true)}
-        className="max-w-xs border border-gray-100 rounded-sm overflow-hidden bg-gray-50 cursor-pointer"
+        className="border border-gray-100 rounded-sm overflow-hidden bg-gray-50 cursor-pointer h-[380px]"
       >
         <img src={image} alt={name} className="w-full h-52 object-cover" />
         <div className="mb-4 p-4">
@@ -47,7 +47,7 @@ function Card({ name, date, location, price, image, showBookButton }) {
           </div>
         </div>
       </UseModal>
-    </div>
+    </>
   );
 }
 

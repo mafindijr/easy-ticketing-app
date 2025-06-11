@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-
-
+import SearchForm from "./Search-form";
 
 
 
@@ -33,7 +32,10 @@ export default function LandingPage() {
         </div>
       </nav>
 
-      {/* search bar componetn to be here */}
+      {/* search bar component*/}
+
+      <SearchForm />
+
       <div className="w-full pr-30 pl-30 items-center justify-center">
             
         <div

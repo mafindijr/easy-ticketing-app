@@ -15,7 +15,7 @@ const UseModal = ({ isOpen, onClose, children}) => {
         >
           <div className="bg-white p-5 rounded-lg relative w-[300px] text-center">
             <button
-              className="absolute top-2.5 right-4 text-lg cursor-pointer bg-none border-none"
+              className="absolute top-1.5 right-4 text-lg cursor-pointer bg-none border-none"
               onClick={onClose}
             >
               X

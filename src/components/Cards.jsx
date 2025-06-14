@@ -29,7 +29,7 @@ function Card({ name, date, location, price, image, showBookButton }) {
       </div>
 
       <UseModal isOpen={isModalOpen} onClose={() => setModalOpen(false)}>
-        <div className="pt-4 pr-2">
+        <div className="pt-3">
           <div>
             <img src={image} alt={name} />
           </div>

@@ -52,13 +52,18 @@ export default function Categories() {
             },
         ];
 
+        function handleClick (e) {
+            e.preventDefault();
+            alert('this query clicked events');
+        }
+
   return (
     <div className='flex flex-row gap-4 items-center justify-around pl-30 pr-30 my-4'>
         
         {eventsCategory.map(category => (
             <div
                 key={category.id}
-                className='w-[170px] h-[130px] border border-gray-200 p-3 overflow-hidden text-[16px] leading-[22px] rounded-md flex flex-col items-center'
+                className='w-[170px] h-[130px] border border-gray-200 p-3 overflow-hidden text-[16px] leading-[22px] rounded-md flex flex-col items-center cursor-pointer' onClick={handleClick}
             >
                <span className='flex justify-center items-center mb-4 text-homeexplohover'>
                  {category.svgIcon}

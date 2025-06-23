@@ -13,14 +13,16 @@ const UseModal = ({ isOpen, onClose, children}) => {
           className="fixed inset-0 w-screen h-screen bg-[rgba(0,0,0,0.6)] flex justify-center items-center z-[1000]"
           onClick={handleOverLayClick}
         >
-          <div className="bg-white p-5 rounded-lg relative w-[300px] text-center">
+          <div className="bg-white p-5 rounded-lg relative w-[800px]">
             <button
-              className="absolute top-1.5 right-4 text-lg cursor-pointer bg-none border-none"
+              className="absolute top-1 right-4 text-lg cursor-pointer bg-none border-none"
               onClick={onClose}
             >
               X
             </button>
+            <div>
             {children}
+            </div>
           </div>
         </div>
     );

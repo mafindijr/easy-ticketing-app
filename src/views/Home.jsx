@@ -13,7 +13,7 @@ export default function Home() {
     
       <Layout>
 
-        <h1 className='text-2xl font-bold my-4 ml-30'>Explore top categories</h1>
+        <h1 className='font-poppins text-2xl font-bold my-4 ml-30'>Explore top categories</h1>
 
         <Categories />
 
@@ -30,7 +30,7 @@ export default function Home() {
         </div> */}
 
         <div className='flex justify-center align-middle p-4'>
-          <button className='border border-gray-400 w-[380px] h-[60px] text-[16px] leading-[24px] rounded-sm cursor-pointer'>See More</button>
+          <button className='border border-gray-800 font-montserrat w-[380px] h-[60px] text-[14px] leading-[24px] rounded-sm cursor-pointer'>See More</button>
         </div>
 
       </Layout>

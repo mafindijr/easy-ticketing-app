@@ -46,18 +46,18 @@ export default function LandingPage() {
               id="content"
               className="relative z-10 w-full max-w-xl px-8 pt-10 pb-6 rounded-md flex flex-col items-start justify-center"
             >
-              <h1 className="font-bold text-gray-50 px-4 text-center text-3xl w-full">
+              <h1 className="font-poppins font-bold text-gray-50 px-4 text-center text-3xl w-full">
                 Discover. Book. Attend
               </h1>
-              <h1 className="text-addeventbtn font-bold px-4 text-center text-3xl w-full">Seamlessy</h1>
+              <h1 className="font-poppins text-addeventbtn font-bold px-4 text-center text-3xl w-full">Seamlessy</h1>
 
               <p
-                className="text-gray-50 text-[0.7rem] text-center w-full whitespace-nowrap px-4 mb-2"
+                className="font-montserrat text-gray-50 text-[0.7rem] text-center w-full whitespace-nowrap px-4 mb-2"
               >
                 Find and book tickets for amazing local & vitual events with ease. No hassle. Just fun.
               </p>
 
-              <div className="flex flex-row items-center justify-center mt-4 px-4 w-full">
+              <div className="font-poppins flex flex-row items-center justify-center mt-4 px-4 w-full">
                 <button className="px-4 mr-4 py-1 h-10 rounded-sm text-base font-semibold cursor-pointer bg-homeexplore hover:bg-homeexplohover text-gray-100">
                   Explore Events
                 </button>

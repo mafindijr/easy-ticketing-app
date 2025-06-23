@@ -21,7 +21,7 @@ export default function Footer() {
 
         <div className='h-[248px] w-[380px] flex flex-col gap-4'>
           <div>   
-              <h1 className='text-5xl font-bold'>Host Your Next </h1>
+              <h1 className='font-poppins text-5xl font-bold'>Host Your Next </h1>
               <h1 className="text-5xl font-bold ">Big Event!</h1>
           </div>
           <div>

@@ -13,10 +13,10 @@ function Card({ name, date, location, price, image, showBookButton }) {
       >
         <img src={image} alt={name} className="w-full h-52 object-cover" />
         <div className="mb-4 p-4">
-          <h2 className="text-xl font-semibold mb-2">{name}</h2>
-          <p>{date}</p>
-          <p>{location}</p>
-          <p>{price}</p>
+          <h2 className="font-poppins text-xl font-semibold mb-2">{name}</h2>
+          <p className="font-montserrat">{date}</p>
+          <p className="font-montserrat">{location}</p>
+          <p className="font-montserrat">{price}</p>
         </div>
         {/* Only show Book Now button if showBookButton is true */}
         {showBookButton && (

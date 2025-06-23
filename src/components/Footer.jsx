@@ -22,10 +22,10 @@ export default function Footer() {
         <div className='h-[248px] w-[380px] flex flex-col gap-4'>
           <div>   
               <h1 className='font-poppins text-5xl font-bold'>Host Your Next </h1>
-              <h1 className="text-5xl font-bold ">Big Event!</h1>
+              <h1 className="font-poppins text-5xl font-bold ">Big Event!</h1>
           </div>
-          <div>
-             <button className='px-4 py-1 h-10 rounded-sm text-base font-semibold cursor-pointer  bg-addeventbtn text-gray-50'>Create Event Now</button>
+          <div className='pt-4'>
+             <button className='font-montserrat px-4 py-1 h-10 rounded-sm text-base font-semibold cursor-pointer  bg-addeventbtn text-gray-50'>Create Event Now</button>
           </div>
         </div>
 
@@ -38,7 +38,7 @@ export default function Footer() {
 
     </div>
 
-      <div className='bg-[#0D47A1] flex justify-between pr-30 pl-30 py-4'>
+      <div className='font-montserrat bg-[#0D47A1] flex justify-between pr-30 pl-30 py-4'>
 
         <div className='flex flex-col items-start text-gray-50'>
 

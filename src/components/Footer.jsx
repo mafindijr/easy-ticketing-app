@@ -48,7 +48,7 @@ export default function Footer() {
         </div>
 
         <div className='text-gray-50'>
-          @ 2025 EasyTicket. All right reserved
+          &copy; 2025 EasyTicket. All right reserved
         </div>
 
         <div className='flex items-center gap-4 text-gray-50 relative'>

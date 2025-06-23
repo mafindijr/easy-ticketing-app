@@ -52,9 +52,9 @@ export default function LandingPage() {
               <h1 className="font-poppins text-addeventbtn font-bold px-4 text-center text-3xl w-full">Seamlessy</h1>
 
               <p
-                className="font-montserrat text-gray-50 text-[0.7rem] text-center w-full whitespace-nowrap px-4 mb-2"
+                className="font-montserrat text-gray-50 text-[18px] text-center whitespace-nowrap mb-2"
               >
-                Find and book tickets for amazing local & vitual events with ease. No hassle. Just fun.
+                Find and book tickets for amazing local & vitual events with ease. No <br />hassle. Just fun.
               </p>
 
               <div className="font-poppins flex flex-row items-center justify-center mt-4 px-4 w-full">

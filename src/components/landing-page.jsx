@@ -10,9 +10,9 @@ export default function LandingPage() {
     <header className="relative flex justify-center items-center">
 
       <nav className="bg-gray-50 fixed left-0 right-0 top-0 flex pr-30 pl-30 px-2 py-2 items-center px-10 top-0 justify-between z-12">
-        <div id="title" className="flex-1 text-homeexplohover font-md font-bold">EasyTicketing</div>
+        <div id="title" className="font-poppins flex-1 text-homeexplohover font-md font-bold">EasyTicketing</div>
         <div id='logi-sign-box' className="flex gap-2 items-center">
-          <div className="font-sm font-bold">
+          <div className="font-poppins font-sm font-bold">
           <p>
            <a href="#" className="p-1 font-sm">Log in</a>
             |
@@ -21,7 +21,7 @@ export default function LandingPage() {
           </div>
 
           <div>
-          <button className="px-4 py-1 h-10 rounded-sm text-base font-semibold cursor-pointer  bg-addeventbtn text-gray-50">Create Events</button>
+          <button className="font-poppins px-4 py-1 h-10 rounded-sm text-base font-semibold cursor-pointer  bg-addeventbtn text-gray-50">Create Events</button>
           </div>
 
         </div>

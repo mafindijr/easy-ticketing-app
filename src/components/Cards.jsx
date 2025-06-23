@@ -30,13 +30,13 @@ function Card({ name, date, location, price, image, showBookButton }) {
 
       <UseModal isOpen={isModalOpen} onClose={() => setModalOpen(false)}>
         <div className="">
-          <div className="w-[700px] h-[300px] rounded-md overflow-hidden mb-4">
+          <div className="w-[700px] h-[300px] rounded-md overflow-hidden mb-1">
             <img src={image} alt={name} />
           </div>
           <div>
-            <h2 className="font-poppins">{name}</h2>
-            <p className="font-montserrat">{date}</p>
-            <p className="font-montserrat">{location}</p>
+            <h2 className="font-montserrat font-bold text-[32px] ">{name}</h2>
+            <p className="font-montserrat text-[18px]"><span className="font-bold">Date:</span> {date}</p>
+            <p className="font-montserrat"><span >Location:</span> {location}</p>
             <p className="font-montserrat">{price}</p>
             {/* Show Book Now button in modal for top events */}
              

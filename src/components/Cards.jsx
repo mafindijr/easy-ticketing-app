@@ -29,8 +29,8 @@ function Card({ name, date, location, price, image, showBookButton }) {
       </div>
 
       <UseModal isOpen={isModalOpen} onClose={() => setModalOpen(false)}>
-        <div className="pt-3">
-          <div>
+        <div className="">
+          <div className="w-[700px] h-[300px] rounded-md overflow-hidden mb-4">
             <img src={image} alt={name} />
           </div>
           <div>

@@ -23,7 +23,7 @@ function TopEvents() {
     <div className="w-full pr-30 pl-30 my-8">
       <div className="flex justify-between items-center">
         <div>
-          <h2 className="text-2xl font-bold mb-4">Top Events</h2>
+          <h2 className="font-poppins text-2xl font-bold mb-4">Top Events</h2>
         </div>
         <div>
           <NavigationIcon onLeft={scrollLeft} onRight={scrollRight} />

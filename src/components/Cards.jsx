@@ -21,7 +21,7 @@ function Card({ name, date, location, price, image, showBookButton }) {
         {/* Only show Book Now button if showBookButton is true */}
         {showBookButton && (
           <div>
-            <button className="bg-homeexplore text-gray-50 ml-4 mb-4 px-4 py-1 rounded-sm">
+            <button className="font-poppins bg-homeexplore text-gray-50 ml-4 mb-4 px-4 py-1 rounded-sm">
               Book Now
             </button>
           </div>
@@ -34,13 +34,13 @@ function Card({ name, date, location, price, image, showBookButton }) {
             <img src={image} alt={name} />
           </div>
           <div>
-            <h2>{name}</h2>
-            <p>{date}</p>
-            <p>{location}</p>
-            <p>{price}</p>
+            <h2 className="font-poppins">{name}</h2>
+            <p className="font-montserrat">{date}</p>
+            <p className="font-montserrat">{location}</p>
+            <p className="font-montserrat">{price}</p>
             {/* Show Book Now button in modal for top events */}
              
-              <button className="bg-homeexplore text-gray-50 mt-4 px-4 py-1 rounded-sm">
+              <button className="font-poppins bg-homeexplore text-gray-50 mt-4 px-4 py-1 rounded-sm">
                 Book Now
               </button>
             

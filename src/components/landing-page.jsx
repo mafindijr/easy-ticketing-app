@@ -1,42 +1,53 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import SearchForm from "./Search-form";
-
+import { Button } from "./button";
+import UseModal from "./UseModal";
+import { SignUpCover } from "./auth/sign-up/sign-up-cover";
 
 
 export default function LandingPage() {
- 
+
+  const [openSignUpCover, setOpenSignUpCover] = useState(false);
 
   return (
-    <header className="relative flex justify-center items-center">
+    <>
+      <header className="relative flex justify-center items-center">
 
-      <nav className="bg-gray-50 fixed left-0 right-0 top-0 flex pr-30 pl-30 px-2 py-2 items-center px-10 top-0 justify-between z-12">
-        <div id="title" className="font-poppins flex-1 text-homeexplohover font-md font-bold">EasyTicketing</div>
-        <div id='logi-sign-box' className="flex gap-2 items-center">
-          <div className="font-poppins font-sm font-bold">
-          <p>
-           <a href="#" className="p-1 font-sm">Log in</a>
-            |
-           <a href="#" className="p-1 font-sm">Sign up</a>
-           </p>
+        <nav className="bg-gray-50 fixed left-0 right-0 top-0 flex pr-30 pl-30 px-2 py-2 items-center px-10 top-0 justify-between z-12">
+          <div id="title" className="font-poppins flex-1 text-homeexplohover font-md font-bold">EasyTicketing</div>
+          <div id='logi-sign-box' className="flex gap-2 items-center">
+            <div className="font-poppins font-sm font-bold">
+
+              <Button className="font-bold px-4 font-poppins"
+
+              >
+                Log In
+              </Button>
+              |
+              <Button className="font-bold px-4 font-poppins"
+                onClick={() => setOpenSignUpCover(true)}
+              >
+                Sign Up
+              </Button>
+            </div>
+
+            <div>
+              <button className="font-poppins px-4 py-1 h-10 rounded-sm text-base font-semibold cursor-pointer  bg-addeventbtn text-gray-50">Create Events</button>
+            </div>
+
           </div>
+        </nav>
 
-          <div>
-          <button className="font-poppins px-4 py-1 h-10 rounded-sm text-base font-semibold cursor-pointer  bg-addeventbtn text-gray-50">Create Events</button>
-          </div>
+        {/* search bar component*/}
 
-        </div>
-      </nav>
+        <SearchForm />
 
-      {/* search bar component*/}
+        <div className="w-full pr-30 pl-30 items-center justify-center">
 
-      <SearchForm />
-
-      <div className="w-full pr-30 pl-30 items-center justify-center">
-            
-        <div
+          <div
             id="hero-sect"
             className="relative w-full  h-80 rounded-2xl mt-32 flex flex-col items-center justify-center bg-[url(/easy-image.jpg)] bg-no-repeat bg-center bg-cover shadow-lg"
-            
+
           >
 
             {/* Dark blue transparent overlay */}
@@ -69,6 +80,10 @@ export default function LandingPage() {
           </div>
         </div>
 
-    </header>
-    )
-  }
+      </header>
+      <UseModal isOpen={openSignUpCover} onClose={() => setOpenSignUpCover(false)}>
+        <SignUpCover />
+      </UseModal>
+    </>
+  )
+}

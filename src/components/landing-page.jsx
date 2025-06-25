@@ -3,11 +3,13 @@ import SearchForm from "./Search-form";
 import { Button } from "./button";
 import UseModal from "./UseModal";
 import { SignUpCover } from "./auth/sign-up/sign-up-cover";
+import { Login } from "./auth/login";
 
 
 export default function LandingPage() {
 
   const [openSignUpCover, setOpenSignUpCover] = useState(false);
+  const [openLogin, setOpenLogin] = useState(false);
 
   return (
     <>
@@ -19,7 +21,7 @@ export default function LandingPage() {
             <div className="font-poppins font-sm font-bold">
 
               <Button className="font-bold px-4 font-poppins"
-
+                onClick={() => setOpenLogin(true)}
               >
                 Log In
               </Button>
@@ -83,6 +85,9 @@ export default function LandingPage() {
       </header>
       <UseModal isOpen={openSignUpCover} onClose={() => setOpenSignUpCover(false)}>
         <SignUpCover />
+      </UseModal>
+      <UseModal isOpen={openLogin} onClose={() => setOpenLogin(false)}>
+        <Login />
       </UseModal>
     </>
   )

@@ -1,33 +1,48 @@
-const UseModal = ({ isOpen, onClose, children}) => {
-    
-    if(!isOpen) return null;
+import { motion, AnimatePresence } from 'framer-motion';
+import { X } from 'lucide-react';
 
-    const handleOverLayClick =(e) => {
-      if (e.target === e.currentTarget) {
-        onClose();
-      }
-    };
-
-    return (
-        <div
-          className="fixed inset-0 w-screen h-screen bg-[rgba(0,0,0,0.6)] flex justify-center items-center z-[1000]"
-          onClick={handleOverLayClick}
-        >
-          <div className="bg-white p-5 rounded-lg relative w-[800px]">
-            <button
-              className="absolute top-1 right-4 text-lg cursor-pointer bg-none border-none"
-              onClick={onClose}
-            >
-              X
-            </button>
-            <div>
-            {children}
-            </div>
-          </div>
-        </div>
-    );
-
+const backdrop = {
+  visible: { opacity: 1 },
+  hidden: { opacity: 0 },
 };
 
+const modal = {
+  hidden: { opacity: 0, scale: 0.95 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.2 } },
+  exit: { opacity: 0, scale: 0.95, transition: { duration: 0.2 } },
+};
+
+const UseModal = ({ isOpen, onClose, children }) => {
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+          variants={backdrop}
+          initial="hidden"
+          animate="visible"
+          exit="hidden"
+        >
+          <motion.div
+            variants={modal}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            onClick={(e) => e.stopPropagation()}
+            className="bg-white p-6 rounded-[8px] w-[50%] shadow-lg"
+          >
+            <button
+              onClick={onClose}
+              className='flex justify-end cursor-pointer w-full'
+            >
+              <X color='black' size={25}/>
+            </button>
+            {children}
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+};
 
 export default UseModal;

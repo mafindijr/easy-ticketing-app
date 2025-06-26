@@ -1,6 +1,6 @@
 import {Facebook, Linkedin} from 'lucide-react'
 import { BsTwitterX  } from "react-icons/bs";
-import Login from "./auth/login";
+import { Login } from "./auth/login";
 
 export default function Footer() {
 
@@ -62,9 +62,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
-      <Login />
-
     </>
   )
 }

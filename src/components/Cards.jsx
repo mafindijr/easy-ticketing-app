@@ -38,6 +38,15 @@ function Card({ name, date, location, price, image, showBookButton }) {
             <p className="font-montserrat text-[18px]"><span className="font-bold">Date:</span> {date}</p>
             <p className="font-montserrat"><span className="font-bold">Location:</span> {location}</p>
             <p className="font-montserrat"><span className="font-bold">Price:</span> {price}</p>
+            <p>
+            <select name="ticket" className="w-70 border-1 p-1 text-[16px] outline-none">
+              <option value="ticket">type</option>
+              <option value="vip">vip</option>
+              <option value="regular">regular</option>
+              <option value="children">children</option>
+            </select>
+            </p>
+            <p className="font-montserrat"><span className="font-bold">Oganizers:</span> NECTAR Nation</p>
             {/* Show Book Now button in modal for top events */}
              
               <button className="font-poppins bg-homeexplore text-gray-50 mt-4 px-4 py-1 rounded-sm">

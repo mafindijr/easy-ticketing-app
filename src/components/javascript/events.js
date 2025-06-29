@@ -5,6 +5,11 @@ const events = [
     location: "Lagos",
     price: "₦5000",
     image: "/easy-image.jpg",
+    tickets: {
+      type1: "VIP",
+      type2: "Regular",
+      type3: "Children"
+    },
     type: "top",
   },
   {
@@ -13,6 +18,11 @@ const events = [
     location: "Abuja",
     price: "₦3000",
     image: "/easy-image.jpg",
+    tickets: {
+      type1: "VIP",
+      type2: "Regular",
+      type3: "Children"
+    },
     type: "top",
   },
   {
@@ -21,6 +31,11 @@ const events = [
     location: "Port Harcourt",
     price: "₦7000",
     image: "/card-images/easy-image.jpg",
+    tickets: {
+      type1: "VIP",
+      type2: "Regular",
+      type3: "Children"
+    },
     type: "top",
   },
   {
@@ -29,6 +44,11 @@ const events = [
     location: "Ibadan",
     price: "₦2500",
     image: "/easy-image.jpg",
+    tickets: {
+      type1: "VIP",
+      type2: "Regular",
+      type3: "Children"
+    },
     type: "upcoming",
   },
   {
@@ -37,6 +57,11 @@ const events = [
     location: "Enugu",
     price: "₦4000",
     image: "/easy-image.jpg",
+    tickets: {
+      type1: "VIP",
+      type2: "Regular",
+      type3: "Children"
+    },
     type: "upcoming",
   },
   {
@@ -45,6 +70,11 @@ const events = [
     location: "Kano",
     price: "₦2000",
     image: "/card-images/book-fair.jpg",
+    tickets: {
+      type1: "VIP",
+      type2: "Regular",
+      type3: "Children"
+    },
     type: "upcoming",
   },
   {
@@ -53,6 +83,11 @@ const events = [
     location: "Lagos",
     price: "₦10000",
     image: "/card-images/startup-pitch.jpg",
+    tickets: {
+      type1: "VIP",
+      type2: "Regular",
+      type3: "Children"
+    },
     type: "top",
   },
   {
@@ -61,6 +96,11 @@ const events = [
     location: "Abuja",
     price: "₦8000",
     image: "/card-images/fashion-week.jpg",
+    tickets: {
+      type1: "VIP",
+      type2: "Regular",
+      type3: "Children"
+    },
     type: "upcoming",
   },
   {
@@ -69,6 +109,11 @@ const events = [
     location: "Port Harcourt",
     price: "₦6000",
     image: "/card-images/film-festival.jpg",
+    tickets: {
+      type1: "VIP",
+      type2: "Regular",
+      type3: "Children"
+    },
     type: "top",
   },
   {
@@ -77,6 +122,11 @@ const events = [
     location: "Ibadan",
     price: "₦3500",
     image: "/card-images/dance-marathon.jpg",
+    tickets: {
+      type1: "VIP",
+      type2: "Regular",
+      type3: "Children"
+    },
     type: "upcoming",
   },
   {
@@ -85,6 +135,11 @@ const events = [
     location: "Enugu",
     price: "₦4500",
     image: "/card-images/science-expo.jpg",
+    tickets: {
+      type1: "VIP",
+      type2: "Regular",
+      type3: "Children"
+    },
     type: "top",
   },
 ];

@@ -2,7 +2,7 @@ import { useState } from "react";
 import UseModal from "./UseModal";
 import { ChevronLeft } from "lucide-react"
 
-function Card({ name, date, location, price, image, showBookButton }) {
+function Card({ name, date, location, price, image, oganizers, tickets, showBookButton }) {
   const [isModalOpen, setModalOpen] = useState(false);
 
   const [isOpen, setIsOpen] = useState(false);
@@ -60,15 +60,15 @@ function Card({ name, date, location, price, image, showBookButton }) {
               {isOpen && (
               <div>
                 <ul className="flex flex-col divide-y border-t border-slate-300">
-                  <li className="px-2 py-1 hover:bg-slate-100 border-slate-300" onClick={() => updateValue("VIP")}>VIP</li>
-                  <li className="px-2 py-1 hover:bg-slate-100 border-slate-300" onClick={() => updateValue("Regular")}>Regular</li>
-                  <li className="px-2 py-1 hover:bg-slate-100 border-slate-300" onClick={() => updateValue("Children")}>Children</li>
+                  <li className="px-2 py-1 hover:bg-slate-100 border-slate-300" onClick={() => updateValue("VIP")}>{tickets.type1}</li>
+                  <li className="px-2 py-1 hover:bg-slate-100 border-slate-300" onClick={() => updateValue("Regular")}>{tickets.type2}</li>
+                  <li className="px-2 py-1 hover:bg-slate-100 border-slate-300" onClick={() => updateValue("Children")}>{tickets.type3}</li>
                 </ul>
               </div>
               )}
             </div>
             </p>
-            <p className="font-montserrat"><span className="font-bold">Oganizers:</span> NECTAR Nation</p>
+            <p className="font-montserrat"><span className="font-bold">Oganizers:</span> {oganizers}</p>
             {/* Show Book Now button in modal for top events */}
              
               <button className="font-poppins bg-homeexplore text-gray-50 mt-4 px-4 py-1 rounded-sm">

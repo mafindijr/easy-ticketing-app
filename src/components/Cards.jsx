@@ -1,9 +1,15 @@
 import { useState } from "react";
-
 import UseModal from "./UseModal";
+import React from "react";
 
 function Card({ name, date, location, price, image, showBookButton }) {
   const [isModalOpen, setModalOpen] = useState(false);
+
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+        const handleTicketType = (type) => {
+            // handle ticket type selection here
+            setDropdownOpen(false);
+        };
 
   return (
     <>
@@ -39,8 +45,14 @@ function Card({ name, date, location, price, image, showBookButton }) {
             <p className="font-montserrat"><span className="font-bold">Location:</span> {location}</p>
             <p className="font-montserrat"><span className="font-bold">Price:</span> {price}</p>
             <p>
-            <div className="inline-block pr-8 p-1 mb-1 border border-slate-300 outline-none cursor-pointer transition hover:bg-slate-100">
+            <div className="inline-block pr-8 p-1 mb-1 border border-slate-300 outline-none cursor-pointer transition hover:bg-slate-100"
+            onClick={e => {
+                e.preventDefault();
+                setDropdownOpen((open) => !open);
+                }}
+            >
               <div className="leading-8">Ticket Type</div>
+              {open &&
               <div>
                 <ul className="flex flex-col divide-y">
                   <li>Option 1</li>
@@ -48,6 +60,7 @@ function Card({ name, date, location, price, image, showBookButton }) {
                   <li>Option 3</li>
                 </ul>
               </div>
+              }
             </div>
             </p>
             <p className="font-montserrat"><span className="font-bold">Oganizers:</span> NECTAR Nation</p>

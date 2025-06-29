@@ -10,6 +10,7 @@ const events = [
       type2: "Regular",
       type3: "Children"
     },
+    oganizers: "Necta Nation",
     type: "top",
   },
   {
@@ -23,6 +24,7 @@ const events = [
       type2: "Regular",
       type3: "Children"
     },
+    oganizers: "Necta Nation",
     type: "top",
   },
   {
@@ -36,6 +38,7 @@ const events = [
       type2: "Regular",
       type3: "Children"
     },
+    oganizers: "Necta Nation",
     type: "top",
   },
   {
@@ -49,6 +52,7 @@ const events = [
       type2: "Regular",
       type3: "Children"
     },
+    oganizers: "Necta Nation",
     type: "upcoming",
   },
   {
@@ -62,6 +66,7 @@ const events = [
       type2: "Regular",
       type3: "Children"
     },
+    oganizers: "Necta Nation",
     type: "upcoming",
   },
   {
@@ -75,6 +80,7 @@ const events = [
       type2: "Regular",
       type3: "Children"
     },
+    oganizers: "Necta Nation",
     type: "upcoming",
   },
   {
@@ -88,6 +94,7 @@ const events = [
       type2: "Regular",
       type3: "Children"
     },
+    oganizers: "Necta Nation",
     type: "top",
   },
   {
@@ -101,6 +108,7 @@ const events = [
       type2: "Regular",
       type3: "Children"
     },
+    oganizers: "Necta Nation",
     type: "upcoming",
   },
   {
@@ -114,6 +122,7 @@ const events = [
       type2: "Regular",
       type3: "Children"
     },
+    oganizers: "Necta Nation",
     type: "top",
   },
   {
@@ -127,6 +136,7 @@ const events = [
       type2: "Regular",
       type3: "Children"
     },
+    oganizers: "Necta Nation",
     type: "upcoming",
   },
   {
@@ -140,6 +150,7 @@ const events = [
       type2: "Regular",
       type3: "Children"
     },
+    oganizers: "Necta Nation",
     type: "top",
   },
 ];

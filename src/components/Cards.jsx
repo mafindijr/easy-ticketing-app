@@ -6,6 +6,11 @@ function Card({ name, date, location, price, image, showBookButton }) {
   const [isModalOpen, setModalOpen] = useState(false);
 
   const [isOpen, setIsOpen] = useState(false);
+
+  // const handleSelcetOption = (e) => {
+  //       e.preventDefault();
+  //       setIsOpen(false)
+  // }
         
 
   return (
@@ -42,10 +47,9 @@ function Card({ name, date, location, price, image, showBookButton }) {
             <p className="font-montserrat"><span className="font-bold">Location:</span> {location}</p>
             <p className="font-montserrat"><span className="font-bold">Price:</span> {price}</p>
             <p>
-            <div className="inline-block pr-8 p-1 mb-1 border border-slate-300 outline-none cursor-pointer transition hover:bg-slate-100"
-            >
-              <div className="leading-8">Ticket Type</div>
-              {
+            <div className="inline-block border border-slate-300 outline-none cursor-pointer transition hover:bg-slate-100">
+              <div onClick={() => setIsOpen(!isOpen)} className="leading-8">Ticket Type</div>
+              {isOpen && (
               <div>
                 <ul className="flex flex-col divide-y">
                   <li>Option 1</li>
@@ -53,7 +57,7 @@ function Card({ name, date, location, price, image, showBookButton }) {
                   <li>Option 3</li>
                 </ul>
               </div>
-              }
+              )}
             </div>
             </p>
             <p className="font-montserrat"><span className="font-bold">Oganizers:</span> NECTAR Nation</p>

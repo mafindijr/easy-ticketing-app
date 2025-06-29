@@ -6,6 +6,7 @@ function Card({ name, date, location, price, image, showBookButton }) {
   const [isModalOpen, setModalOpen] = useState(false);
 
   const [isOpen, setIsOpen] = useState(false);
+  const [selectValue, setSelectValue] = useState("Ticket Type");
 
   // const handleSelcetOption = (e) => {
   //       e.preventDefault();
@@ -47,8 +48,8 @@ function Card({ name, date, location, price, image, showBookButton }) {
             <p className="font-montserrat"><span className="font-bold">Location:</span> {location}</p>
             <p className="font-montserrat"><span className="font-bold">Price:</span> {price}</p>
             <p>
-            <div className="inline-block border border-slate-300 outline-none cursor-pointer transition hover:bg-slate-100">
-              <div onClick={() => setIsOpen(!isOpen)} className="leading-8">Ticket Type</div>
+            <div className="inline-block border border-slate-300 outline-none cursor-pointer transition">
+              <div onClick={() => setIsOpen(!isOpen)} className="leading-8">{ selectValue }</div>
               {isOpen && (
               <div>
                 <ul className="flex flex-col divide-y">

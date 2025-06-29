@@ -1,6 +1,6 @@
 import { useState } from "react";
 import UseModal from "./UseModal";
-import React from "react";
+import { ChevronLeft } from "lucide-react"
 
 function Card({ name, date, location, price, image, showBookButton }) {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -8,10 +8,10 @@ function Card({ name, date, location, price, image, showBookButton }) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectValue, setSelectValue] = useState("Ticket Type");
 
-  // const handleSelcetOption = (e) => {
-  //       e.preventDefault();
-  //       setIsOpen(false)
-  // }
+  const updateValue = (value) => {
+        setSelectValue(value);
+        setIsOpen(false);
+  }
         
 
   return (
@@ -48,14 +48,21 @@ function Card({ name, date, location, price, image, showBookButton }) {
             <p className="font-montserrat"><span className="font-bold">Location:</span> {location}</p>
             <p className="font-montserrat"><span className="font-bold">Price:</span> {price}</p>
             <p>
-            <div className="inline-block border border-slate-300 outline-none cursor-pointer transition">
-              <div onClick={() => setIsOpen(!isOpen)} className="leading-8">{ selectValue }</div>
+            <div className="inline-block border border-slate-300 outline-none cursor-pointer transition w-70">
+              <div onClick={() => setIsOpen(!isOpen)} className="px-2 py-1 flex justify-between items-center">
+                <span>{ selectValue }</span>
+                <div className={isOpen? 'rotate-180 transition' : 'rotate-0'}>
+                  {/* rotate icon here arrowdown */}
+                  <ChevronLeft size={30}/>
+                
+                </div>
+                </div>
               {isOpen && (
               <div>
-                <ul className="flex flex-col divide-y">
-                  <li>Option 1</li>
-                  <li>Option 2</li>
-                  <li>Option 3</li>
+                <ul className="flex flex-col divide-y border-t border-slate-300">
+                  <li className="px-2 py-1 hover:bg-slate-100 border-slate-300" onClick={() => updateValue("VIP")}>VIP</li>
+                  <li className="px-2 py-1 hover:bg-slate-100 border-slate-300" onClick={() => updateValue("Regular")}>Regular</li>
+                  <li className="px-2 py-1 hover:bg-slate-100 border-slate-300" onClick={() => updateValue("Children")}>Children</li>
                 </ul>
               </div>
               )}

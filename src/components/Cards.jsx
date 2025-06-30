@@ -2,7 +2,7 @@ import { useState } from "react";
 import UseModal from "./UseModal";
 import { ChevronLeft } from "lucide-react"
 
-function Card({ name, date, location, price, image, oganizers, tickets, showBookButton }) {
+function Card({ name, date, location, price, image, oganizers, tickets, contact, showBookButton }) {
   const [isModalOpen, setModalOpen] = useState(false);
 
   const [isOpen, setIsOpen] = useState(false);
@@ -69,6 +69,7 @@ function Card({ name, date, location, price, image, oganizers, tickets, showBook
             </div>
             </p>
             <p className="font-montserrat"><span className="font-bold">Oganizers:</span> {oganizers}</p>
+            <p className="font-montserrat"><span className="font-bold">Contact:</span> {contact}</p>
             {/* Show Book Now button in modal for top events */}
              
               <button className="font-poppins bg-homeexplore text-gray-50 mt-4 px-4 py-1 rounded-sm">

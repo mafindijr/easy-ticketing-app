@@ -11,6 +11,7 @@ const events = [
       type3: "Children"
     },
     oganizers: "Necta Nation",
+    contact: "info@nectarnation.ng",
     type: "top",
   },
   {

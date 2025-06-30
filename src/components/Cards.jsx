@@ -1,6 +1,6 @@
 import { useState } from "react";
 import UseModal from "./UseModal";
-import { ChevronLeft } from "lucide-react"
+import { ChevronDown } from "lucide-react"
 
 function Card({ name, date, location, price, image, oganizers, tickets, contact, showBookButton }) {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -53,7 +53,7 @@ function Card({ name, date, location, price, image, oganizers, tickets, contact,
                 <span>{ selectValue }</span>
                 <div className={isOpen? 'rotate-180 transition' : 'rotate-0'}>
                   {/* rotate icon here arrowdown */}
-                  <ChevronLeft size={30}/>
+                  <ChevronDown size={30}/>
                 
                 </div>
                 </div>

@@ -26,6 +26,7 @@ const events = [
       type3: "Children"
     },
     oganizers: "Necta Nation",
+    contact: "info@nectarnation.ng",
     type: "top",
   },
   {
@@ -40,6 +41,7 @@ const events = [
       type3: "Children"
     },
     oganizers: "Necta Nation",
+    contact: "info@nectarnation.ng",
     type: "top",
   },
   {
@@ -54,6 +56,7 @@ const events = [
       type3: "Children"
     },
     oganizers: "Necta Nation",
+    contact: "info@nectarnation.ng",
     type: "upcoming",
   },
   {
@@ -68,6 +71,7 @@ const events = [
       type3: "Children"
     },
     oganizers: "Necta Nation",
+    contact: "info@nectarnation.ng",
     type: "upcoming",
   },
   {
@@ -82,6 +86,7 @@ const events = [
       type3: "Children"
     },
     oganizers: "Necta Nation",
+    contact: "info@nectarnation.ng",
     type: "upcoming",
   },
   {
@@ -96,6 +101,7 @@ const events = [
       type3: "Children"
     },
     oganizers: "Necta Nation",
+    contact: "info@nectarnation.ng",
     type: "top",
   },
   {
@@ -110,6 +116,7 @@ const events = [
       type3: "Children"
     },
     oganizers: "Necta Nation",
+    contact: "info@nectarnation.ng",
     type: "upcoming",
   },
   {
@@ -124,6 +131,7 @@ const events = [
       type3: "Children"
     },
     oganizers: "Necta Nation",
+    contact: "info@nectarnation.ng",
     type: "top",
   },
   {
@@ -138,6 +146,7 @@ const events = [
       type3: "Children"
     },
     oganizers: "Necta Nation",
+    contact: "info@nectarnation.ng",
     type: "upcoming",
   },
   {
@@ -152,6 +161,7 @@ const events = [
       type3: "Children"
     },
     oganizers: "Necta Nation",
+    contact: "info@nectarnation.ng",
     type: "top",
   },
 ];

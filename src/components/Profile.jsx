@@ -9,7 +9,7 @@ export default function Profile() {
         </div>
         <div>
           <a href="#">Profile</a>
-          <a href="#">Update Dashbord</a>
+          <a href="#">Organizer Dashbord</a>
           <a href="#">Log Out</a>
         </div>
       </header>

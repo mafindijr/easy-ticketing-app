@@ -72,7 +72,7 @@ function Card({ name, date, location, price, image, oganizers, tickets, contact,
             <p className="font-montserrat"><span className="font-bold">Contact:</span> {contact}</p>
             {/* Show Book Now button in modal for top events */}
              
-              <button className="font-poppins bg-homeexplore text-gray-50 mt-4 px-4 py-1 rounded-sm">
+              <button className="font-poppins bg-homeexplore hover:bg-homeexplohover text-gray-50 mt-4 px-4 py-1 rounded-sm w-70">
                 Book Now
               </button>
             

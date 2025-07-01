@@ -14,14 +14,13 @@ export default function SearchForm ({ search, setSearch, handleSearch }) {
 
 
         return (
-            <div className='font-montserrat text-[14px]'>
-                <form action="">
+                <form className='font-montserrat text-[14px]'>
 
                 <div id="search-bar" className="right-0 left-0 inline-flex pr-30 pl-30  absolute top-12 bg-gray-50 px-10 z-10">
                 
             <input
             type="search"
-            className="flex-1 h-9 border-1 bg-gray-100 border-gray-200 rounded-l-full w-3xl mb-2 mt-2 px-4 font-sm shadow-inset-sm inline-flex"
+            className="flex-1 h-9 border-1 bg-gray-100 border-gray-200 rounded-l-full w-3xl mb-2 mt-2 px-4 outline-none font-sm shadow-inset-sm inline-flex"
             name="search"
             placeholder="Search for concerts, tech meetup or more"
             />
@@ -65,6 +64,5 @@ export default function SearchForm ({ search, setSearch, handleSearch }) {
                     
             </div>
             </form>
-            </div>
         );
 }

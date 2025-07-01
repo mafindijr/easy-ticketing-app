@@ -1,4 +1,6 @@
 import { useForm } from "react-hook-form";
+import { Input } from "..input.jsx";
+import { Button } from "..button.jsx";
 
 export default function Profile() {
   return (

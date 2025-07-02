@@ -3,7 +3,7 @@ import Categories from '../components/categories';
 import Layout from '../layout/layout';
 import TopEvents from "../components/TopEvent";
 import UpcomingEvents from "../components/UpcomingEvent";
-import Profile from "../components/Profile";
+import Profile from "../components/Profile"
 
 
 export default function Home() {

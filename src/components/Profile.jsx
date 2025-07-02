@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
-import { Input } from "..input.jsx";
-import { Button } from "..button.jsx";
+import { Input } from "../components/input";
+import { Button } from "../components/button";
 
 export default function Profile() {
   return (
@@ -29,7 +29,27 @@ export default function Profile() {
 
             <form>
 
-              
+               <div className="grid grid-cols-2 gap-6">
+                  <Input
+                      label="First name"
+                      name="firstName"
+                      type="text"
+                      placeholder="First name"
+                      register={register}
+                      error={errors.firstName}
+                      required
+                  />
+
+                  <Input
+                      label="Last name"
+                      name="lastName"
+                      type="text"
+                      placeholder="Last name"
+                      register={register}
+                      error={errors.lastName}
+                      required
+                  />
+              </div>
 
             </form>
         </main>

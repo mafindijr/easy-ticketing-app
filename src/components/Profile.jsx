@@ -3,6 +3,10 @@ import { Input } from "../components/input";
 import { Button } from "../components/button";
 
 export default function Profile() {
+
+  const { register, handleSubmit, formState: { errors } } = useForm();
+
+
   return (
     <div>
       <header>
@@ -48,6 +52,38 @@ export default function Profile() {
                       register={register}
                       error={errors.lastName}
                       required
+                  />
+              </div>
+              <div>
+                <Input
+                    label="Email"
+                    name="email"
+                    type="email"
+                    placeholder="Enter your email"
+                    register={register}
+                    error={errors.email}
+                    required
+                />
+
+                <Input
+                    label="Phone Number"
+                    name="phone number"
+                    type="text"
+                    placeholder="Enter your phone number"
+                    register={register}
+                    error={errors.email}
+                    required
+                />
+
+                <Input
+                      label="Location"
+                      name="location"
+                      type="text"
+                      placeholder="Enter your location"
+                      register={register}
+                      error={errors.location}
+                      required
+                      // prefixIcon={MapPin}
                   />
               </div>
 

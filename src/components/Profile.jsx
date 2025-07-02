@@ -18,7 +18,10 @@ export default function Profile() {
 
       <div>
         <nav>
-      
+          <a href="#">Personal info</a>
+          <a href="#">Tickets</a>
+          <a href="#">Notifications</a>
+          <a href="#">Settings</a>
         </nav>
         <main>
             <h1>Personal Information</h1>

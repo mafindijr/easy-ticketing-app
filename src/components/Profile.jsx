@@ -25,9 +25,11 @@ export default function Profile() {
         </nav>
         <main>
             <h1>Personal Information</h1>
-            <p>Update your</p>
+            <p>Update your details to stay connected and book events seamlessly</p>
 
             <form>
+
+              
 
             </form>
         </main>

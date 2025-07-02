@@ -21,7 +21,7 @@ export default function Profile() {
       </header>
 
       <div>
-        <nav>
+        <nav className="font-poppins">
           <a href="#">Personal info</a>
           <a href="#">Tickets</a>
           <a href="#">Notifications</a>

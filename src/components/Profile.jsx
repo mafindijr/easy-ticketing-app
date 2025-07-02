@@ -86,7 +86,14 @@ export default function Profile() {
                       // prefixIcon={MapPin}
                   />
               </div>
-
+              <div>
+              <button className="w-[300px] h-[60px] border-2 mt-4 font-montserrat leading-[28px] font-[400]">
+                Add payment method
+              </button>
+              </div>
+              <Button type="submit" className="w-[183px] h-[50px] mt-6 font-poppins font-bold bg-blue-600 hover:bg-homeexplohover text-white py-2 rounded-[8px]">
+                    Save
+                </Button>
             </form>
         </main>
       </div>

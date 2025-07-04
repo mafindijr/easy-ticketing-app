@@ -8,7 +8,7 @@ export default function Profile() {
 
 
   return (
-    <div>
+    <div className="grid grid-cols-2 ">
       <header>
         <div>
         <a href="#">Home</a>

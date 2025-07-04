@@ -28,8 +28,8 @@ export default function Profile() {
           <a href="#">Settings</a>
         </nav>
         <main>
-            <h1>Personal Information</h1>
-            <p>Update your details to stay connected and book events seamlessly</p>
+            <h1 className="font-montserrat font-[700] text[56px] leading-[]">Personal Information</h1>
+            <p className="font-montserrat">Update your details to stay connected and book events seamlessly</p>
 
             <form>
 

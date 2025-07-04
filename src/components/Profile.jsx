@@ -9,8 +9,8 @@ export default function Profile() {
 
 
   return (
-    <div>
-      <header className="flex justify-between items-center h-18 px-30 font-montserrat font-bold">
+    <div className="relative">
+      <header className="flex justify-between items-center h-18 px-30 font-montserrat font-bold fixed top-0 left-0 right-0 z-12">
         <div className="flex-1">
         <a href="#">Home</a>
         </div>
@@ -98,7 +98,7 @@ export default function Profile() {
                 <span><Plus size={30}/></span> Add payment method
               </button>
               </div>
-              <Button type="submit" className="w-[183px] h-[50px] mt-6 font-poppins font-bold bg-blue-600 hover:bg-homeexplohover text-white py-2 rounded-[8px]">
+              <Button type="submit" onClick={handleSubmit} className="w-[183px] h-[50px] mt-6 font-poppins font-bold bg-blue-600 hover:bg-homeexplohover text-white py-2 rounded-[8px]">
                     Save Changes
                 </Button>
             </form>

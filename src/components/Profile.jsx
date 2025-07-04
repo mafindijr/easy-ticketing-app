@@ -14,7 +14,7 @@ export default function Profile() {
         <div className="flex-1">
         <a href="#">Home</a>
         </div>
-        <div className="mr-30">
+        <div>
           <ul className="flex gap-12 ">
             <li><a href="#">Profile</a></li>
             <li><a href="#">Organizer Dashbord</a></li>
@@ -23,7 +23,7 @@ export default function Profile() {
         </div>
       </header>
 
-      <div className="grid grid-cols-5 mt-8">
+      <div className="grid grid-cols-5 h-[100dvh] mt-8">
         <nav className="font-poppins p-10 bg-slate-100">
              <ul className="inline-block ">
               <li className="mb-2"><a href="#" className="font-bold">Personal info</a></li>
@@ -32,7 +32,7 @@ export default function Profile() {
               <li className="mb-2"><a href="#" className="font-bold">Settings</a></li>
              </ul>
         </nav>
-        <main className="col-span-4 p-30">
+        <main className="col-span-4 p-10">
           <div>
 
             <h1 className="font-montserrat font-[700] text-3xl leading-[36px]">Personal Information</h1>

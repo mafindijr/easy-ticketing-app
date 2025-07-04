@@ -8,7 +8,7 @@ export default function Profile() {
 
 
   return (
-    <div className="grid grid-cols-2 ">
+    <div className="grid grid-cols-2  ">
       <header>
         <div>
         <a href="#">Home</a>
@@ -28,7 +28,7 @@ export default function Profile() {
           <a href="#">Settings</a>
         </nav>
         <main>
-            <h1 className="font-montserrat font-[700] text[56px] leading-[]">Personal Information</h1>
+            <h1 className="font-montserrat font-[700] text[56px] leading-[26px]">Personal Information</h1>
             <p className="font-montserrat">Update your details to stay connected and book events seamlessly</p>
 
             <form>

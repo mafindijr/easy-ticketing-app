@@ -1,6 +1,5 @@
 import './App.css'
 import Home from './views/Home'
-import Profile from "./components/Profile"
 
 function App() {
 
@@ -8,7 +7,6 @@ function App() {
     <>
 
     <Home />
-    <Profile />
 
     </>
   )

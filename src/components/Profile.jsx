@@ -10,15 +10,17 @@ export default function Profile() {
   return (
     <div>
       <header className="flex justify-between items-center h-18 bg-gray-50 px-30">
-        <div>
+        <div className="flex-1">
         <a href="#">Home</a>
         </div>
-        <div>
-          <ul className="flex gap-2">
+        <div className="mr-30">
+          <ul className="flex gap-2 ">
             <li><a href="#">Profile</a></li>
             <li><a href="#">Organizer Dashbord</a></li>
-            <li><a href="#">Log Out</a></li>
           </ul>
+        </div>
+        <div>
+          <a href="#">Log Out</a>
         </div>
       </header>
 

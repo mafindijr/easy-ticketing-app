@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { Input } from "../components/input";
 import { Button } from "../components/button";
+import { Plus } from "lucide-react"
 
 export default function Profile() {
 
@@ -9,40 +10,32 @@ export default function Profile() {
 
   return (
     <div>
-      <header className="flex justify-between items-center h-18 bg-gray-50 px-30">
+      <header className="flex justify-between items-center h-18 px-30 font-montserrat font-bold">
         <div className="flex-1">
         <a href="#">Home</a>
         </div>
         <div className="mr-30">
-          <ul className="flex gap-2 ">
+          <ul className="flex gap-12 ">
             <li><a href="#">Profile</a></li>
             <li><a href="#">Organizer Dashbord</a></li>
+            <li><a href="#">Log Out</a></li>
           </ul>
-        </div>
-        <div>
-          <a href="#">Log Out</a>
         </div>
       </header>
 
       <div className="grid grid-cols-5 mt-8">
-        <nav className="font-poppins inline-block gap-4 p-10 bg-slate-100">
-          <div>
-              <a href="#">Personal info</a>
-          </div>
-          <div>
-              <a href="#">Tickets</a>
-          </div>
-          <div>
-          <a href="#">Notifications</a>
-          </div>
-          <div>
-          <a href="#">Settings</a>
-          </div>
+        <nav className="font-poppins p-10 bg-slate-100">
+             <ul className="inline-block ">
+              <li className="mb-2"><a href="#" className="font-bold">Personal info</a></li>
+              <li className="mb-2"><a href="#" className="font-bold">Tickets</a></li>
+              <li className="mb-2"><a href="#" className="font-bold">Notifications</a></li>
+              <li className="mb-2"><a href="#" className="font-bold">Settings</a></li>
+             </ul>
         </nav>
         <main className="col-span-4 p-30">
           <div>
 
-            <h1 className="font-montserrat font-[700] text[56px] leading-[26px]">Personal Information</h1>
+            <h1 className="font-montserrat font-[700] text-3xl leading-[36px]">Personal Information</h1>
             <p className="font-montserrat">Update your details to stay connected and book events seamlessly</p>
 
             <form>
@@ -101,12 +94,12 @@ export default function Profile() {
                   />
               </div>
               <div>
-              <button className="w-[300px] h-[60px] border-2 mt-4 font-montserrat leading-[28px] font-[400]">
-                Add payment method
+              <button className="w-[300px] h-[60px] mt-4 font-montserrat leading-[28px] font-[400] inline-flex justify-center items-center gap-1 text-[20px] cursor-pointer">
+                <span><Plus size={30}/></span> Add payment method
               </button>
               </div>
               <Button type="submit" className="w-[183px] h-[50px] mt-6 font-poppins font-bold bg-blue-600 hover:bg-homeexplohover text-white py-2 rounded-[8px]">
-                    Save
+                    Save Changes
                 </Button>
             </form>
             </div>

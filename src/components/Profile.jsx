@@ -24,19 +24,20 @@ export default function Profile() {
       </header>
 
       <div className="grid grid-cols-5 h-[100dvh] mt-8">
-        <nav className="font-poppins p-10 bg-slate-100">
-             <ul className="inline-block ">
-              <li className="mb-2"><a href="#" className="font-bold">Personal info</a></li>
-              <li className="mb-2"><a href="#" className="font-bold">Tickets</a></li>
-              <li className="mb-2"><a href="#" className="font-bold">Notifications</a></li>
-              <li className="mb-2"><a href="#" className="font-bold">Settings</a></li>
+        <nav className="font-poppins p-10 font-[700] text-[16px] leading-[100%] bg-[#FAFAFA]">
+             <ul className="inline-block">
+              <li className="mb-6"><a href="#" className="font-bold">Personal info</a></li>
+              <li className="mb-6"><a href="#" className="font-bold">Tickets</a></li>
+              <li className="mb-6"><a href="#" className="font-bold">Notifications</a></li>
+              <li className="mb-6"><a href="#" className="font-bold">Settings</a></li>
              </ul>
         </nav>
         <main className="col-span-4 px-20 py-4">
           <div>
-            
-            <h1 className="font-montserrat font-[700] text-3xl leading-[68px] mb-2">Personal Information</h1>
-            <p className="font-montserrat mb-2">Update your details to stay connected and book events seamlessly</p>
+            <div className="w-[600px]"> 
+                <h1 className="font-montserrat font-[700] text-[56px] leading-[68px] mb-2">Personal Information</h1>
+                <p className="font-montserrat text-[18px] font-[400] mb-2 leading-[28px]">Update your details to stay connected and book events seamlessly</p>
+            </div>
 
             <form>
 
@@ -92,6 +93,7 @@ export default function Profile() {
                       required
                       // prefixIcon={MapPin}
                   />
+                  <span className="text-[#4B5563] font-montserrat font-[400] text-[12px] leading-[16px]">Help us recommend neary events</span>
               </div>
               <div>
               <button className="w-[300px] h-[60px] mt-4 font-montserrat leading-[28px] font-[400] inline-flex justify-center items-center gap-1 text-[20px] cursor-pointer">

@@ -32,11 +32,11 @@ export default function Profile() {
               <li className="mb-2"><a href="#" className="font-bold">Settings</a></li>
              </ul>
         </nav>
-        <main className="col-span-4 p-10">
+        <main className="col-span-4 px-20 py-4">
           <div>
-
-            <h1 className="font-montserrat font-[700] text-3xl leading-[36px]">Personal Information</h1>
-            <p className="font-montserrat">Update your details to stay connected and book events seamlessly</p>
+            
+            <h1 className="font-montserrat font-[700] text-3xl leading-[68px] mb-2">Personal Information</h1>
+            <p className="font-montserrat mb-2">Update your details to stay connected and book events seamlessly</p>
 
             <form>
 

@@ -1,7 +1,8 @@
 import { useForm } from "react-hook-form";
 import { Input } from "../components/input";
 import { Button } from "../components/button";
-import { Plus } from "lucide-react"
+import { Plus } from "lucide-react";
+import { MapPin } from "lucide-react";
 
 export default function Profile() {
 
@@ -91,7 +92,7 @@ export default function Profile() {
                       register={register}
                       error={errors.location}
                       required
-                      // prefixIcon={MapPin}
+                      prefixIcon={MapPin}
                   />
                   <span className="text-[#4B5563] font-montserrat font-[400] text-[12px] leading-[16px]">Help us recommend neary events</span>
               </div>

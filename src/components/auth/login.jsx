@@ -94,7 +94,7 @@ export const Login = () => {
                 <ResetPassword />
         </UseModal>
         <UseModal isOpen={openSignUp} onClose={() => setOpenSignUp(false)}>
-            <SignUp />
+              <SignUp />
         </UseModal>
         </>
     );

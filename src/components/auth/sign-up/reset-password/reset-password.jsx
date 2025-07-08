@@ -14,8 +14,10 @@ export default function ResetPassword() {
         <>
           {!openResetPassword && (
             <div>
-                <h2 className='font-montserrat font-[700] font-bold text-[32px] leading-[44px]'>Reset Your Password</h2>
-                <p className='font-montserrat font-[400] text-[18px] leading-[28px]'>Enter your email to receive a reset link</p>
+              <div className='inline-block items-center justify-center'>
+                   <h2 className='font-montserrat font-[700] font-bold text-[32px] leading-[44px]'>Reset Your Password</h2>
+                   <p className='font-montserrat font-[400] text-[18px] leading-[28px'>Enter  your email to receive a reset link</p>
+              </div>
                 <Input 
                       label="Email"
                       name="email"

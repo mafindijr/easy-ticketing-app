@@ -29,7 +29,7 @@ export default function ResetPassword() {
                 <Button type='submit' className='w-full mt-6 font-poppins h-[50px] font-bold bg-blue-600 text-white py-2 rounded-[8px]' onClick={() => setOpenResetPassword(true)}>
                   send Reset Link
                 </Button>
-                <span className='font-montserrat cursor-pointer font-[400] text-[18px] leading-[28px]' onClick={() => setOpenResetPassword(false)}>Back to log in</span>
+                <span className='font-montserrat cursor-pointer font-[400] text-[18px] leading-[28px]'>Back to log in</span>
 
             </div>
           )}

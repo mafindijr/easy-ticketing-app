@@ -13,7 +13,7 @@ export default function ResetPassword() {
     return (
         <>
           {!openResetPassword && (
-            <div className='w-200'>
+            <div>
                 <h2 className='font-montserrat font-[700] font-bold text-[32px] leading-[36px]'>Reset Your Password</h2>
                 <p>set new password to continue</p>
                 <Input 

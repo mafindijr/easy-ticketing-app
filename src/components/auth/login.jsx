@@ -1,12 +1,17 @@
+import { useState } from 'react';
 import { useForm } from "react-hook-form";
 import { Input } from "../input";
 import { Button } from "../button";
+import UseModal from "../UseModal";
 import GoogleIcon from "../../assets/svgs/google.svg";
 import FacebookIcon from "../../assets/svgs/facebook.svg";
 import TwitterIcon from "../../assets/svgs/twitter.svg";
+import ResetPassword from './sign-up/reset-password/reset-password';
 
 
 export const Login = () => {
+
+    const [openResetPassword, setOpenResetPassword] = useState(false);
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const onSubmit = data => console.log(data);
@@ -18,7 +23,8 @@ export const Login = () => {
     ];
 
     return (
-        <div className="mt-6 h-[70vh] overflow-y-auto px-2 hide-scrollbar">
+        <>
+       {!openResetPassword && (<div className="mt-6 h-[70vh] overflow-y-auto px-2 hide-scrollbar">
             <h1 className="text-[#004E98] font-bold text-3xl text-center font-poppins">
                 EasyTicket
             </h1>
@@ -51,7 +57,7 @@ export const Login = () => {
                     required="Password is required"
                 />
 
-                <Button className="text-[#4B5563] text-xs font-montserrat">
+                <Button className="text-[#4B5563] text-xs font-montserrat" onClick={() => setOpenResetPassword(true)}>
                     Forgot Password?
                 </Button>
                 <Button type="submit" className="w-full mt-6 font-poppins h-[50px] font-bold bg-blue-600 text-white py-2 rounded-[8px]">
@@ -80,6 +86,11 @@ export const Login = () => {
                     ))}
                 </div>
             </form>
-        </div>
+        </div>)}
+
+        <UseModal isOpen={openResetPassword} onClose={() => setOpenResetPassword(false)}>
+                <ResetPassword />
+        </UseModal>
+        </>
     );
 };

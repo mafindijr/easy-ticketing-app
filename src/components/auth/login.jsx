@@ -7,11 +7,13 @@ import GoogleIcon from "../../assets/svgs/google.svg";
 import FacebookIcon from "../../assets/svgs/facebook.svg";
 import TwitterIcon from "../../assets/svgs/twitter.svg";
 import ResetPassword from './sign-up/reset-password/reset-password';
+import { SignUp } from './sign-up/sign-up';
 
 
 export const Login = () => {
 
     const [openResetPassword, setOpenResetPassword] = useState(false);
+    const [openSignUp, setOpenSignUp] = useState(false);
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const onSubmit = data => console.log(data);
@@ -33,7 +35,7 @@ export const Login = () => {
             </h1>
             <p className="text-black text-base font-montserrat text-center mt-2">
                 Don’t have an account yet?{" "}
-                <Button className="font-bold">Sign up</Button>
+                <Button className="font-bold" onClick={() => setOpenSignUp(true)}>Sign up</Button>
             </p>
 
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -90,6 +92,9 @@ export const Login = () => {
 
         <UseModal isOpen={openResetPassword} onClose={() => setOpenResetPassword(false)}>
                 <ResetPassword />
+        </UseModal>
+        <UseModal isOpen={openSignUp} onClose={() => setOpenSignUp(false)}>
+              <SignUp />
         </UseModal>
         </>
     );

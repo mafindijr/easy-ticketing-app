@@ -14,21 +14,22 @@ export default function ResetPassword() {
         <>
           {!openResetPassword && (
             <div>
-                <h2 className='font-montserrat font-[700] font-bold text-[32px] leading-[36px]'>Reset Your Password</h2>
-                <p>set new password to continue</p>
+                <h2 className='font-montserrat font-[700] font-bold text-[32px] leading-[44px]'>Reset Your Password</h2>
+                <p className='font-montserrat font-[400] text-[18px] leading-[28px]'>Enter your email to receive a reset link</p>
                 <Input 
                       label="Email"
                       name="email"
                       type="email"
-                      placeholder="Enter Address"
+                      placeholder="Enter your email"
                       register={register}
                       error={errors.email}
                       required
                 />
 
                 <Button type='submit' className='w-full mt-6 font-poppins h-[50px] font-bold bg-blue-600 text-white py-2 rounded-[8px]' onClick={() => setOpenResetPassword(true)}>
-                  Reset Password
+                  send Reset Link
                 </Button>
+                <span className='font-montserrat font-[400] text-[18px] leading-[28px]'>Back to log in</span>
 
             </div>
           )}

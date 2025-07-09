@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 
 export default function SetPassword() {
 
-        const { register, handeSubmit, stateForm: { errors }} = useForm();
+        const { register, handeSubmit, formState: { errors }} = useForm();
 
   return (
     <div>

@@ -21,7 +21,7 @@ export default function SetPassword() {
                             error={errors.password}
                             required="Password is required"
                         />
-                        <span className='font-montserrat cursor-pointer font-[400] text-[18px] leading-[28px]'>Password must be atleast 8 characters</span>
+                        <span className='font-montserrat cursor-pointer text-[#6B7280] font-[400] text-xs'>Password must be atleast 8 characters</span>
         
                         <Input
                             label="Confirm new Password"
@@ -37,7 +37,7 @@ export default function SetPassword() {
                         <Button type='submit' className='w-full mt-6 font-poppins h-[50px] font-bold bg-blue-600 text-white py-2 rounded-[8px]'>
                           Update Password
                         </Button>
-                        <span className='font-montserrat cursor-pointer font-[400] text-[18px] leading-[28px]'>Back to log in</span>
+                        <span className='font-montserrat cursor-pointer font-[400] text-xs'>Back to log in</span>
     </div>
   )
 }

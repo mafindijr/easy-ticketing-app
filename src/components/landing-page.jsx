@@ -48,7 +48,7 @@ export default function LandingPage() {
 
           <div
             id="hero-sect"
-            className="relative w-full  h-80 rounded-2xl mt-32 flex flex-col items-center justify-center bg-[url(/easy-image.jpg)] bg-no-repeat bg-center bg-cover shadow-lg"
+            className="relative w-full  h-80 rounded-2xl mt-32 flex flex-col items-center justify-center bg-[url(/easy-image.png)] bg-no-repeat bg-center bg-cover shadow-lg"
 
           >
 

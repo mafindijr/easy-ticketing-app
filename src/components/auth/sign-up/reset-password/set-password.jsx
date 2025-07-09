@@ -18,7 +18,7 @@ export default function SetPassword() {
                         />
         
                         <Input
-                            label="Confirm Password"
+                            label="Confirm new Password"
                             name="confirmPassword"
                             type="password"
                             placeholder="Confirm your password"
@@ -26,6 +26,12 @@ export default function SetPassword() {
                             error={errors.confirmPassword}
                             required="Please confirm your password"
                         />
+
+                        
+                        <Button type='submit' className='w-full mt-6 font-poppins h-[50px] font-bold bg-blue-600 text-white py-2 rounded-[8px]' onClick={() => setOpenResetPassword(true)}>
+                          send Reset Link
+                        </Button>
+                        <span className='font-montserrat cursor-pointer font-[400] text-[18px] leading-[28px]'>Back to log in</span>
     </div>
   )
 }

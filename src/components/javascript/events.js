@@ -4,7 +4,7 @@ const events = [
     date: "2025-06-15",
     location: "Lagos",
     price: "₦5000",
-    image: "/easy-image.jpg",
+    image: "/easy-image.png",
     tickets: {
       type1: "VIP",
       type2: "Regular",
@@ -19,7 +19,7 @@ const events = [
     date: "2025-06-20",
     location: "Abuja",
     price: "₦3000",
-    image: "/easy-image.jpg",
+    image: "/easy-image.png",
     tickets: {
       type1: "VIP",
       type2: "Regular",
@@ -34,7 +34,7 @@ const events = [
     date: "2025-07-01",
     location: "Port Harcourt",
     price: "₦7000",
-    image: "/card-images/easy-image.jpg",
+    image: "/card-images/easy-image.png",
     tickets: {
       type1: "VIP",
       type2: "Regular",
@@ -49,7 +49,7 @@ const events = [
     date: "2025-07-10",
     location: "Ibadan",
     price: "₦2500",
-    image: "/easy-image.jpg",
+    image: "/easy-image.png",
     tickets: {
       type1: "VIP",
       type2: "Regular",
@@ -64,7 +64,7 @@ const events = [
     date: "2025-07-15",
     location: "Enugu",
     price: "₦4000",
-    image: "/easy-image.jpg",
+    image: "/easy-image.png",
     tickets: {
       type1: "VIP",
       type2: "Regular",

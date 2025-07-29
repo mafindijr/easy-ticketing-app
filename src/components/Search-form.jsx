@@ -25,8 +25,8 @@ export default function SearchForm ({ search, setSearch, handleSearch }) {
                 placeholder="Search for concerts, tech meetup or more"
                 />
 
-                <button className="bg-gray-100 hover:bg-gray-200 border-1 border-gray-200 cursor-pointer w-20 h-9 px-4 mb-2 mt-2">Lagos</button>
-                <button className="bg-gray-100 hover:bg-gray-200 border-1 border-gray-200 cursor-pointer w-20 h-9 px-4 mb-2 mt-2">Paid</button>
+                <button className="bg-gray-100 hover:bg-gray-200 border-1 border-gray-200 cursor-pointer w-20 h-9 px-4 mb-2 mt-2">State</button>
+                <button className="bg-gray-100 hover:bg-gray-200 border-1 border-gray-200 cursor-pointer w-20 h-9 px-4  text-center mb-2 mt-2">Category</button>
                 <div className="relative">
                 <button
                 id="search-btn"

@@ -16,7 +16,7 @@ export default function SearchForm ({ search, setSearch, handleSearch }) {
         return (
        <form className='font-montserrat text-[14px]'>
 
-         <div id="search-bar" className="right-0 left-0 inline-flex pr-30 pl-30  absolute top-12 bg-gray-50 px-10 z-10">
+         <div id="search-bar" className="right-0 left-0 inline-flex pr-30 pl-30  absolute top-17  px-10 z-10">
                     
                 <input
                 type="search"

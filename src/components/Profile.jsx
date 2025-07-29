@@ -3,6 +3,7 @@ import { Input } from "../components/input";
 import { Button } from "../components/button";
 import { Plus } from "lucide-react";
 import { MapPin } from "lucide-react";
+import ProfileNav from "./profile-nav";
 
 export default function Profile() {
 
@@ -11,18 +12,8 @@ export default function Profile() {
 
   return (
     <div className="relative">
-      <header className="flex justify-between items-center h-18 px-30 font-montserrat font-bold fixed top-0 left-0 right-0 z-12">
-        <div className="flex-1">
-        <a href="#">Home</a>
-        </div>
-        <div>
-          <ul className="flex gap-12 ">
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Organizer Dashbord</a></li>
-            <li><a href="#">Log Out</a></li>
-          </ul>
-        </div>
-      </header>
+      
+      <ProfileNav />
 
       <div className="grid grid-cols-5 h-[100dvh] mt-8">
         <nav className="font-poppins p-10 font-[700] text-[16px] leading-[100%] bg-[#FAFAFA]">

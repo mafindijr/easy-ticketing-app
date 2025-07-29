@@ -29,7 +29,7 @@ const UseModal = ({ isOpen, onClose, children }) => {
             animate="visible"
             exit="exit"
             onClick={(e) => e.stopPropagation()}
-            className="bg-white p-6 rounded-[8px] w-[50%] shadow-lg"
+            className="bg-white p-6 rounded-[8px] w-[50%] shadow-lg p-[32px]"
           >
             <button
               onClick={onClose}

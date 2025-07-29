@@ -27,9 +27,10 @@ export default function SearchForm ({ search, setSearch, handleSearch }) {
             <div id="search-bar" className="right-0 left-0 inline-flex pr-30 pl-30  absolute top-17  px-10 z-10">
                 <input
                 type="search"
-                className="flex-1 h-9 border-1 bg-gray-100 border-gray-200 rounded-l-full w-3xl mb-2 mt-2 px-4 outline-none font-sm shadow-inset-sm inline-flex"
+                className="flex-1 h-9 border-1 bg-gray-100 border-gray-200 rounded-l-full w-3xl mb-2 mt-2 px-4 outline-none font-sm inline-flex"
                 name="search"
                 placeholder="Search for concerts, tech meetup or more"
+                style={{ boxShadow: 'inset 0px 4px 8px -2px rgba(0,0,0,0.12)' }}
                 />
 
                 {/* State Dropdown */}
@@ -132,4 +133,4 @@ export default function SearchForm ({ search, setSearch, handleSearch }) {
          </form>
         );
 }
-         
+

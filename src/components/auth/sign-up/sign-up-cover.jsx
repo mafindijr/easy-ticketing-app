@@ -36,7 +36,7 @@ export const SignUpCover = () => {
                     <Button
                         onClick={() => setOpenSignUp(true)}
                         className="py-4 px-8 w-full border border-[#CCCCCC] rounded-[8px] font-poppins font-bold mt-2"
-                        style={{ boxShadow: ' 2px 2px 2px 3px rgba(0, 0, 0, 0.12)' }}
+                        style={{boxShadow: "0px 0px 2px 3px rgba(2, 2, 2, 0.15)"}}
                     >
                         Sign up with email button
                     </Button>
@@ -52,7 +52,7 @@ export const SignUpCover = () => {
                             <Button
                                 key={index}
                                 className="py-4 px-8 w-full border border-[#CCCCCC] rounded-[8px] font-poppins font-bold flex items-center gap-30"
-                                style={{ boxShadow: ' 2px 2px 2px 3px rgba(0, 0, 0, 0.12)' }}
+                                style={{boxShadow: "0px 0px 2px 3px rgba(2, 2, 2, 0.15)"}}
                             >
                                 <img
                                     src={option.icon}

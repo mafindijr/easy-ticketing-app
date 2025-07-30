@@ -78,7 +78,9 @@ export const SignUp = () => {
                     prefixIcon={MapPin}
                 />
                 <span className="text-[#4B5563] text-xs font-montserrat">We’ll use your location to show Meetup events near you.</span>
-                <Button type="submit" className="w-full mt-6 font-poppins font-bold bg-blue-600 text-white py-2 rounded-[8px]">
+                <Button type="submit" className="w-full mt-6 font-poppins font-bold bg-blue-600 text-white py-2 rounded-[8px]"
+                style={{boxShadow: "0px 6px 6px rgba(2, 2, 2, 0.15)"}}  
+                >
                     Sign Up
                 </Button>
             </form>

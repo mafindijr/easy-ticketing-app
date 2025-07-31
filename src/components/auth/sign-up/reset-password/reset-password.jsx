@@ -34,7 +34,7 @@ export default function ResetPassword() {
                   send Reset Link
                 </Button>
                  <Button
-                      className="py-2 px-8 mt-6 w-full border border-[#CCCCCC] rounded-[8px] font-poppins font-bold text-[16px] text-center gap-30"
+                      className="py-2 px-8 mt-6 w-full border border-[#CCCCCC] rounded-[8px] font-montserrat font-bold text-[700] text-[16px] text-center gap-30"
                       style={{boxShadow: "0px 0px 2px 3px rgba(2, 2, 2, 0.15)"}}
                   >
                       Back to Log In

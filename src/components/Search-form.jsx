@@ -10,6 +10,8 @@ export default function SearchForm ({ search, setSearch, handleSearch }) {
     const [stateDropdownOpen, setStateDropdownOpen] = useState(false);
     const [categoryDropdownOpen, setCategoryDropdownOpen] = useState(false);
 
+    const onSubmit = data => console.log(data);
+
     const handleTicketType = (type) => {
         // handle ticket type selection here
         setTicketDropdownOpen(false);
@@ -32,7 +34,7 @@ export default function SearchForm ({ search, setSearch, handleSearch }) {
                 type="search"
                 className="flex-1 h-9 border-1 bg-gray-100 border-gray-200 rounded-l-full w-3xl mb-2 mt-2 py-[24px] px-[18px] outline-none font-sm inline-flex"
                 name="search"
-                register={register}
+                register={"search bar"}
                 placeholder="Search for concerts, tech meetup or more"
                 style={{ boxShadow: ' 1px 4px 8px rgba(0,0,0,0.12)' }}
                 />

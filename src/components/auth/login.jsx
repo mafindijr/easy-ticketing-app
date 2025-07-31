@@ -56,6 +56,7 @@ export const Login = ({ onSuccess }) => {
                     placeholder="Enter Address"
                     register={register}
                     error={errors.email}
+                    className={`form-input ${errors.email ? "border-red-500" : ""}`}
                     required
                 />
 

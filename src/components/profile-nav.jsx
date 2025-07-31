@@ -3,7 +3,7 @@ import React from 'react'
 export default function ProfileNav() {
   return (
     <div>
-          <header className="flex justify-between items-center h-18 px-30 font-montserrat font-bold fixed top-0 left-0 right-0 z-12">
+        <header className="bg-white flex justify-between items-center h-18 px-30 font-montserrat font-bold fixed top-0 left-0 right-0 z-12">
         <div className="flex-1">
         <a href="#">Home</a>
         </div>

@@ -10,13 +10,16 @@ import ResetPassword from './sign-up/reset-password/reset-password';
 import { SignUp } from './sign-up/sign-up';
 
 
-export const Login = () => {
+export const Login = ({ onSuccess }) => {
 
     const [openResetPassword, setOpenResetPassword] = useState(false);
     const [openSignUp, setOpenSignUp] = useState(false);
     const { register, handleSubmit, formState: { errors } } = useForm();
 
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        console.log(data);
+        if (onSuccess) onSuccess();
+    };
 
     const loginOptions = [
         { icon: GoogleIcon, label: "Continue with Google" },

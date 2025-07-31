@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../auth/AuthContext";
 import SearchForm from "./Search-form";
 import { Button } from "./button";
 import UseModal from "./UseModal";
@@ -10,6 +12,8 @@ export default function LandingPage() {
 
   const [openSignUpCover, setOpenSignUpCover] = useState(false);
   const [openLogin, setOpenLogin] = useState(false);
+  const { isAuthenticated, login, logout } = useAuth();
+  const navigate = useNavigate();
 
   return (
     <>
@@ -26,18 +30,35 @@ export default function LandingPage() {
             </div>
           <div id='logi-sign-box' className="flex gap-2 items-center">
             <div className="font-poppins font-sm font-bold">
-
-              <Button className="font-bold px-4 font-poppins"
-                onClick={() => setOpenLogin(true)}
-              >
-                Log In
-              </Button>
-              |
-              <Button className="font-bold px-4 font-poppins"
-                onClick={() => setOpenSignUpCover(true)}
-              >
-                Sign Up
-              </Button>
+              {!isAuthenticated ? (
+                <>
+                  <Button className="font-bold px-4 font-poppins"
+                    onClick={() => setOpenLogin(true)}
+                  >
+                    Log In
+                  </Button>
+                  |
+                  <Button className="font-bold px-4 font-poppins"
+                    onClick={() => setOpenSignUpCover(true)}
+                  >
+                    Sign Up
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Button className="font-bold px-4 font-poppins"
+                    onClick={() => navigate('/profile')}
+                  >
+                    Profile
+                  </Button>
+                  |
+                  <Button className="font-bold px-4 font-poppins"
+                    onClick={logout}
+                  >
+                    Logout
+                  </Button>
+                </>
+              )}
             </div>
 
             <div>
@@ -91,10 +112,10 @@ export default function LandingPage() {
 
       </header>
       <UseModal isOpen={openSignUpCover} onClose={() => setOpenSignUpCover(false)}>
-        <SignUpCover />
+        <SignUpCover onSuccess={login} />
       </UseModal>
       <UseModal isOpen={openLogin} onClose={() => setOpenLogin(false)}>
-        <Login />
+        <Login onSuccess={login} />
       </UseModal>
     </>
   )

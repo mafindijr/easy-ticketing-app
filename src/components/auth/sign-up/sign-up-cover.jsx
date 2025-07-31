@@ -6,7 +6,7 @@ import TwitterIcon from "../../../assets/svgs/twitter.svg";
 import UseModal from "../../UseModal";
 import { SignUp } from "./sign-up";
 
-export const SignUpCover = () => {
+export const SignUpCover = ({ onSuccess }) => {
     const signupOptions = [
         { icon: GoogleIcon, label: "Continue with Google" },
         { icon: FacebookIcon, label: "Continue with Facebook" },
@@ -73,7 +73,7 @@ export const SignUpCover = () => {
             )}
 
             <UseModal isOpen={openSignUp} onClose={() => setOpenSignUp(false)}>
-                <SignUp />
+                <SignUp onSuccess={onSuccess} />
             </UseModal>
         </>
     );

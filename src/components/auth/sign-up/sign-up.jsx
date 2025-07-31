@@ -3,10 +3,13 @@ import { Input } from "../../input";
 import { Button } from "../../button";
 import { MapPin } from "lucide-react";
 
-export const SignUp = () => {
+export const SignUp = ({ onSuccess }) => {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        console.log(data);
+        if (onSuccess) onSuccess();
+    };
 
     return (
         <div className="mt-6 h-[70vh] overflow-y-auto px-2 hide-scrollbar">

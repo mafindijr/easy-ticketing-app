@@ -15,7 +15,7 @@ export default function Profile() {
       
       <ProfileNav />
 
-      <div className="grid grid-cols-5 h-[100dvh] mt-8">
+      <div className="grid grid-cols-5 h-[100dvh] mt-12">
         <nav className="font-poppins p-10 font-[700] text-[16px] leading-[100%] bg-[#FAFAFA]">
              <ul className="inline-block">
               <li className="mb-6"><a href="#" className="font-bold">Personal info</a></li>

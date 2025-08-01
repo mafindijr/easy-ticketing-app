@@ -26,6 +26,7 @@ export const SignUp = ({ onSuccess }) => {
                         placeholder="First name"
                         register={register}
                         error={errors.firstName}
+                        className={`form-input ${errors.firstName ? "border-red-500 focus:ring-red-500" : ""}`}
                         required
                     />
 
@@ -36,6 +37,7 @@ export const SignUp = ({ onSuccess }) => {
                         placeholder="Last name"
                         register={register}
                         error={errors.lastName}
+                        className={`form-input ${errors.lastName ? "border-red-500 focus:ring-red-500" : ""}`}
                         required
                     />
                 </div>
@@ -47,6 +49,7 @@ export const SignUp = ({ onSuccess }) => {
                     placeholder="Enter your email"
                     register={register}
                     error={errors.email}
+                    className={`form-input ${errors.email ? "border-red-500 focus:ring-red-500" : ""}`}
                     required
                 />
 
@@ -57,6 +60,7 @@ export const SignUp = ({ onSuccess }) => {
                     placeholder="Create a password"
                     register={register}
                     error={errors.password}
+                    className={`form-input ${errors.password ? "border-red-500 focus:ring-red-500" : ""}`}
                     required="Password is required"
                 />
 
@@ -67,6 +71,7 @@ export const SignUp = ({ onSuccess }) => {
                     placeholder="Confirm your password"
                     register={register}
                     error={errors.confirmPassword}
+                    className={`form-input ${errors.confirmPassword ? "border-red-500 focus:ring-red-500" : ""}`}
                     required="Please confirm your password"
                 />
 
@@ -77,6 +82,7 @@ export const SignUp = ({ onSuccess }) => {
                     placeholder="Enter your location"
                     register={register}
                     error={errors.location}
+                    className={`form-input ${errors.location ? "border-red-500 focus:ring-red-500" : ""}`}
                     required
                     prefixIcon={MapPin}
                 />

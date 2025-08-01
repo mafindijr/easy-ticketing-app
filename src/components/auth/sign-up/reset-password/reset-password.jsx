@@ -23,6 +23,7 @@ export default function ResetPassword() {
                       placeholder="Enter your email"
                       register={register}
                       error={errors.email}
+                      className={`form-input ${errors.email ? "border-red-500 focus:ring-red-500" : ""}`}
                       required
                 />
 

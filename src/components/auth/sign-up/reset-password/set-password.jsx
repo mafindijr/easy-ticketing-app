@@ -30,6 +30,7 @@ export default function SetPassword() {
                             placeholder="Confirm new password"
                             register={register}
                             error={errors.confirmPassword}
+                            className={`form-input ${errors.confirmPassword ? "border-red-500 focus:ring-red-500" : ""}`}
                             required="Please confirm your password"
                         />
 

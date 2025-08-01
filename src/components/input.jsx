@@ -59,11 +59,9 @@ export const Input = ({
         )}
       </div>
 
-      {error && (
-        <p className="text-red-500 text-xs mt-1">
-          {error.message || "This field is required"}
-        </p>
-      )}
+      {/* {error && (
+        className={`form-input ${errors.email ? "border-red-500 focus:ring-red-500" : ""}`}
+      )} */}
     </div>
   );
 };

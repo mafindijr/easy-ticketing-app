@@ -2,7 +2,7 @@ import { useState } from "react";
 import UseModal from "./UseModal";
 import { ChevronDown } from "lucide-react"
 
-function Card({ name, date, location, price, image, oganizers, tickets, contact, showBookButton }) {
+function Card({ name, date, time, location, price, image, oganizers, tickets, contact, showBookButton }) {
   const [isModalOpen, setModalOpen] = useState(false);
 
   const [isOpen, setIsOpen] = useState(false);
@@ -42,9 +42,10 @@ function Card({ name, date, location, price, image, oganizers, tickets, contact,
           <div className="h-[300px] rounded-md overflow-hidden mb-1">
             <img src={image} alt={name} />
           </div>
-          <div>
+          <div className="flex flex-col gap-4">
             <h2 className="font-montserrat font-bold text-[32px] ">{name}</h2>
-            <p className="font-montserrat text-[18px]"><span className="font-bold">Date:</span> {date}</p>
+            <p className="font-montserrat text-[18px]"><span className="font-bold">Date & Time:</span> {date}</p>
+            <p className="font-montserrat text-[18px]"><span className="font-bold">Time:</span> {time}</p>
             <p className="font-montserrat"><span className="font-bold">Location:</span> {location}</p>
             <p className="font-montserrat"><span className="font-bold">Price:</span> {price}</p>
             <p>

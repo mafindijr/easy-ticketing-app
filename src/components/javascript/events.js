@@ -164,7 +164,7 @@ const events = [
     date: "2025-10-05",
     time: "6:30 Pm",
     location: "Enugu",
-    description: "",
+    description: "Showcase of Negeria's top designers with vibrant ankara and adire. Join the fashion elite!",
     price: "₦4500",
     image: "/card-images/science-expo.jpg",
     tickets: {

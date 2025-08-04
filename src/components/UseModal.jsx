@@ -17,7 +17,7 @@ const UseModal = ({ isOpen, onClose, children }) => {
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+          className="fixed inset-0 bg-black/80 flex items-center justify-center overflow-scroll z-50"
           variants={backdrop}
           initial="hidden"
           animate="visible"

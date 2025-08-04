@@ -115,11 +115,16 @@ export default function LandingPage() {
         <SignUpCover onSuccess={login} />
         {/* By Passionate Programmer */}
         {/* <Login onSuccess={false} /> */}
+        {/** <Login onSuccess={false} /> **/}
       </UseModal>
       <UseModal isOpen={openLogin} onClose={() => setOpenLogin(false)}>
         <Login onSuccess={login} />
         {/* By Passionate Programmer */}
+
         {/* <SignUpCover onSuccess={false} /> */}
+
+        {/** <SignUpCover onSuccess={false} /> **/}
+
       </UseModal>
     </>
   )

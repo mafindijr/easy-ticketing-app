@@ -2,7 +2,7 @@ import { useState } from "react";
 import UseModal from "./UseModal";
 import { ChevronDown } from "lucide-react"
 
-function Card({ name, date, time, location, price, image, oganizers, tickets, contact, showBookButton }) {
+function Card({ name, date, time, location, description, price, image, oganizers, tickets, contact, showBookButton }) {
   const [isModalOpen, setModalOpen] = useState(false);
 
   const [isOpen, setIsOpen] = useState(false);
@@ -47,10 +47,16 @@ function Card({ name, date, time, location, price, image, oganizers, tickets, co
             <p className="font-montserrat text-[18px]"><span className="font-bold">Date & Time:</span> {date}</p>
             <p className="font-montserrat text-[18px]"><span className="font-bold">Time:</span> {time}</p>
             <p className="font-montserrat"><span className="font-bold">Location:</span> {location}</p>
+            <div className="font-montserrat">
+              <span className="font-bold">Description:</span>
+              <div className="max-h-[300px] border-1 border-[#cccccc] w-full overflow-y-auto">
+                {description}
+              </div>
+            </div>
             <p className="font-montserrat"><span className="font-bold">Price:</span> {price}</p>
             <p>
-            <div className="inline-block border border-slate-300 outline-none cursor-pointer transition w-70">
-              <div onClick={() => setIsOpen(!isOpen)} className="px-2 py-1 flex justify-between items-center">
+            <div className="inline-block border border-[#d1d5db] rounded-md overflow-hidden outline-none cursor-pointer transition w-70">
+              <div onClick={() => setIsOpen(!isOpen)} className="px-2 py-1 bg-[#ebebeb]  flex justify-between items-center">
                 <span>{ selectValue }</span>
                 <div className={isOpen? 'rotate-180 transition' : 'rotate-0'}>
                   {/* rotate icon here arrowdown */}

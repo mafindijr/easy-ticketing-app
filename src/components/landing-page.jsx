@@ -12,6 +12,18 @@ export default function LandingPage() {
 
   const [openSignUpCover, setOpenSignUpCover] = useState(false);
   const [openLogin, setOpenLogin] = useState(false);
+  
+  // Function to handle opening signup and closing login
+  const handleOpenSignUp = () => {
+    setOpenSignUpCover(true);
+    setOpenLogin(false);
+  };
+  
+  // Function to handle opening login and closing signup
+  const handleOpenLogin = () => {
+    setOpenLogin(true);
+    setOpenSignUpCover(false);
+  };
   const { isAuthenticated, login, logout } = useAuth();
   const navigate = useNavigate();
 
@@ -33,13 +45,13 @@ export default function LandingPage() {
               {!isAuthenticated ? (
                 <>
                   <Button className="font-bold px-4 font-poppins"
-                    onClick={() => setOpenLogin(true)}
+                    onClick={handleOpenLogin}
                   >
                     Log In
                   </Button>
                   |
                   <Button className="font-bold px-4 font-poppins"
-                    onClick={() => setOpenSignUpCover(true)}
+                    onClick={handleOpenSignUp}
                   >
                     Sign Up
                   </Button>
@@ -112,14 +124,10 @@ export default function LandingPage() {
 
       </header>
       <UseModal isOpen={openSignUpCover} onClose={() => setOpenSignUpCover(false)}>
-        <SignUpCover onSuccess={login} />
-        {/* By Passionate Programmer */}
-        {/** <Login onSuccess={false} /> **/}
+        <SignUpCover onSuccess={login} onOpenSignUp={() => setOpenLogin(false)} />
       </UseModal>
       <UseModal isOpen={openLogin} onClose={() => setOpenLogin(false)}>
-        <Login onSuccess={login} />
-        {/* By Passionate Programmer */}
-        {/** <SignUpCover onSuccess={false} /> **/}
+        <Login onSuccess={login} onOpenSignUp={handleOpenSignUp} />
       </UseModal>
     </>
   )

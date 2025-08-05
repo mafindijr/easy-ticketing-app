@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import UseModal from "./UseModal";
 import { ChevronDown, Calendar, MapPin, DollarSign, Users, Phone } from "lucide-react";
 
@@ -6,6 +6,13 @@ function Card({ name, date, location, price, image, organizers, tickets, contact
   const [isModalOpen, setModalOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [selectValue, setSelectValue] = useState("Ticket Type");
+  
+  // Set initial select value based on tickets prop
+  useEffect(() => {
+    if (!tickets || tickets.length === 0) {
+      setSelectValue("");
+    }
+  }, [tickets]);
   const [imageError, setImageError] = useState(false);
 
   // Handle image loading errors
@@ -91,125 +98,96 @@ function Card({ name, date, location, price, image, organizers, tickets, contact
               />
             )}
           </div>
-          <div className="space-y-4">
-            <h2 className="font-montserrat font-bold text-2xl md:text-3xl">{name}</h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <p className="font-montserrat flex items-center gap-2">
-                  <Calendar className="text-homeexplore" />
-                  <span><span className="font-bold">Date:</span> {date}</span>
-                </p>
-                <p className="font-montserrat flex items-center gap-2">
-                  <MapPin className="text-homeexplore" />
-                  <span><span className="font-bold">Location:</span> {location}</span>
-                </p>
-                <p className="font-montserrat flex items-center gap-2">
-                  <DollarSign className="text-homeexplore" />
-                  <span><span className="font-bold">Price:</span> {price}</span>
-                </p>
-              </div>
-              
-              <div className="space-y-2">
-                <p className="font-montserrat flex items-center gap-2">
-                  <Users className="text-homeexplore" />
-                  <span><span className="font-bold">Organizers:</span> {organizers}</span>
-                </p>
-                <p className="font-montserrat flex items-center gap-2">
-                  <Phone className="text-homeexplore" />
-                  <span><span className="font-bold">Contact:</span> {contact}</span>
-                </p>
-              </div>
-            </div>
-
-            <div className="mt-4">
-              <label htmlFor="ticket-type" className="block font-montserrat font-bold mb-2">Select Ticket Type</label>
-              <div className="relative">
-                <div 
-                  id="ticket-type"
-                  className="border border-slate-300 rounded-md outline-none cursor-pointer transition w-full"
-                  role="combobox"
-                  aria-expanded={isOpen}
-                  aria-haspopup="listbox"
-                  aria-labelledby="ticket-type-label"
-                  tabIndex={0}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      e.preventDefault();
-                      setIsOpen(!isOpen);
-                    }
-                  }}
-                >
-                  <div
-                    onClick={() => setIsOpen(!isOpen)}
-                    className="px-4 py-2 flex justify-between items-center"
+          <div>
+            <h2 className="font-montserrat font-bold text-[32px] ">{name}</h2>
+            <p className="font-montserrat text-[18px]"><span className="font-bold">Date:</span> {date}</p>
+            <p className="font-montserrat"><span className="font-bold">Location:</span> {location}</p>
+            <p className="font-montserrat"><span className="font-bold">Price:</span> {price}</p>
+            {organizers && (
+              <p className="font-montserrat">
+                <span className="font-bold">Organizers:</span>
+                <span className="flex items-center gap-1 mt-1">
+                  <Users size={16} className="text-homeexplore" />
+                  {organizers}
+                </span>
+              </p>
+            )}
+            {contact && (
+              <p className="font-montserrat">
+                <span className="font-bold">Contact:</span>
+                <span className="flex items-center gap-1 mt-1">
+                  <Phone size={16} className="text-homeexplore" />
+                  {contact}
+                </span>
+              </p>
+            )}
+            {tickets && tickets.length > 0 && (
+              <div className="mt-4">
+                <p className="font-montserrat font-bold mb-2">Select Ticket Type:</p>
+                <div className="relative">
+                  <div 
+                    className="inline-block border border-slate-300 outline-none cursor-pointer transition w-full rounded-md"
+                    role="combobox"
+                    aria-expanded={isOpen}
+                    aria-haspopup="listbox"
+                    aria-labelledby="ticket-type-label"
                   >
-                    <span id="ticket-type-label">{selectValue}</span>
-                    <div className={`transition-transform duration-200 ${isOpen ? 'rotate-180' : 'rotate-0'}`}>
-                      <ChevronDown size={20} />
-                    </div>
-                  </div>
-
-                  {isOpen && (
-                    <ul 
-                      className="absolute z-10 w-full mt-1 bg-white border border-slate-300 rounded-md shadow-lg max-h-60 overflow-auto"
-                      role="listbox"
-                      aria-labelledby="ticket-type-label"
+                    <div 
+                      onClick={() => setIsOpen(!isOpen)} 
+                      className="px-4 py-2 flex justify-between items-center hover:bg-gray-50"
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          e.preventDefault();
+                          setIsOpen(!isOpen);
+                        }
+                      }}
+                      tabIndex={0}
                     >
-                      <li
-                        className="px-4 py-2 hover:bg-slate-100 cursor-pointer transition-colors"
-                        onClick={() => updateValue(tickets.type1)}
-                        role="option"
-                        aria-selected={selectValue === tickets.type1}
-                        tabIndex={0}
-                        onKeyDown={(e) => {
-                          if (e.key === 'Enter' || e.key === ' ') {
-                            e.preventDefault();
-                            updateValue(tickets.type1);
-                          }
-                        }}
+                      <span>{ selectValue }</span>
+                      <div className={`transition-transform duration-200 ${isOpen ? 'rotate-180' : 'rotate-0'}`}>
+                        <ChevronDown size={20}/>
+                      </div>
+                    </div>
+                    
+                    {isOpen && (
+                      <ul 
+                        className="absolute z-10 w-full bg-white border border-slate-300 mt-1 rounded-md shadow-lg max-h-60 overflow-auto"
+                        role="listbox"
+                        aria-labelledby="ticket-type-label"
                       >
-                        {tickets.type1}
-                      </li>
-                      <li
-                        className="px-4 py-2 hover:bg-slate-100 cursor-pointer transition-colors"
-                        onClick={() => updateValue(tickets.type2)}
-                        role="option"
-                        aria-selected={selectValue === tickets.type2}
-                        tabIndex={0}
-                        onKeyDown={(e) => {
-                          if (e.key === 'Enter' || e.key === ' ') {
-                            e.preventDefault();
-                            updateValue(tickets.type2);
-                          }
-                        }}
-                      >
-                        {tickets.type2}
-                      </li>
-                      <li
-                        className="px-4 py-2 hover:bg-slate-100 cursor-pointer transition-colors"
-                        onClick={() => updateValue(tickets.type3)}
-                        role="option"
-                        aria-selected={selectValue === tickets.type3}
-                        tabIndex={0}
-                        onKeyDown={(e) => {
-                          if (e.key === 'Enter' || e.key === ' ') {
-                            e.preventDefault();
-                            updateValue(tickets.type3);
-                          }
-                        }}
-                      >
-                        {tickets.type3}
-                      </li>
-                    </ul>
-                  )}
+                        {tickets.map((ticket, index) => (
+                          <li 
+                            key={index}
+                            className="px-4 py-2 hover:bg-gray-100 cursor-pointer font-montserrat"
+                            onClick={() => updateValue(ticket)}
+                            onKeyDown={(e) => {
+                              if (e.key === 'Enter' || e.key === ' ') {
+                                e.preventDefault();
+                                updateValue(ticket);
+                              }
+                            }}
+                            role="option"
+                            aria-selected={selectValue === ticket}
+                            tabIndex={0}
+                          >
+                            {ticket}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
 
             <button 
               className="font-poppins bg-homeexplore hover:bg-homeexplohover text-gray-50 mt-6 px-6 py-3 rounded-md w-full transition-colors duration-300 font-semibold"
               aria-label={`Book ${name} now`}
+              onClick={(e) => {
+                e.stopPropagation(); // Prevent modal from closing
+                // Add booking logic here
+                console.log(`Booking ${name} with ticket type: ${selectValue}`);
+              }}
             >
               Book Now
             </button>

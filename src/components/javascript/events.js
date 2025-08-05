@@ -2,6 +2,7 @@ const events = [
   {
     name: "Music Fest",
     date: "2025-06-15",
+    time: "6:30 Pm",
     location: "Lagos",
     price: "₦5000",
     image: "/easy-image.png",
@@ -17,6 +18,7 @@ const events = [
   {
     name: "Art Expo",
     date: "2025-06-20",
+    time: "6:30 Pm",
     location: "Abuja",
     price: "₦3000",
     image: "/easy-image.png",
@@ -32,6 +34,7 @@ const events = [
   {
     name: "Tech Summit",
     date: "2025-07-01",
+    time: "6:30 Pm",
     location: "Port Harcourt",
     price: "₦7000",
     image: "/card-images/easy-image.png",
@@ -47,6 +50,7 @@ const events = [
   {
     name: "Comedy Night",
     date: "2025-07-10",
+    time: "6:30 Pm",
     location: "Ibadan",
     price: "₦2500",
     image: "/easy-image.png",
@@ -63,6 +67,7 @@ const events = [
     name: "Food Carnival",
     date: "2025-07-15",
     location: "Enugu",
+    time: "6:30 Pm",
     price: "₦4000",
     image: "/easy-image.png",
     tickets: {
@@ -77,6 +82,7 @@ const events = [
   {
     name: "Book Fair",
     date: "2025-08-05",
+    time: "6:30 Pm",
     location: "Kano",
     price: "₦2000",
     image: "/card-images/book-fair.jpg",
@@ -92,6 +98,7 @@ const events = [
   {
     name: "Startup Pitch",
     date: "2025-08-12",
+    time: "6:30 Pm",
     location: "Lagos",
     price: "₦10000",
     image: "/card-images/startup-pitch.jpg",
@@ -107,6 +114,7 @@ const events = [
   {
     name: "Fashion Week",
     date: "2025-09-01",
+    time: "6:30 Pm",
     location: "Abuja",
     price: "₦8000",
     image: "/card-images/fashion-week.jpg",
@@ -122,6 +130,7 @@ const events = [
   {
     name: "Film Festival",
     date: "2025-09-10",
+    time: "6:30 Pm",
     location: "Port Harcourt",
     price: "₦6000",
     image: "/card-images/film-festival.jpg",
@@ -137,6 +146,7 @@ const events = [
   {
     name: "Dance Marathon",
     date: "2025-09-20",
+    time: "6:30 Pm",
     location: "Ibadan",
     price: "₦3500",
     image: "/card-images/dance-marathon.jpg",
@@ -152,7 +162,9 @@ const events = [
   {
     name: "Science Expo",
     date: "2025-10-05",
+    time: "6:30 Pm",
     location: "Enugu",
+    description: "Showcase of Negeria's top designers with vibrant ankara and adire. Join the fashion elite!",
     price: "₦4500",
     image: "/card-images/science-expo.jpg",
     tickets: {

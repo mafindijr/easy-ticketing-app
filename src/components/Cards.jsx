@@ -1,36 +1,80 @@
-import { useState } from "react";
+import { useState, useCallback, useEffect } from "react";
 import UseModal from "./UseModal";
-import { ChevronDown } from "lucide-react"
+import { ChevronDown, Calendar, MapPin, DollarSign, Users, Phone } from "lucide-react";
 
-function Card({ name, date, time, location, description, price, image, oganizers, tickets, contact, showBookButton }) {
+function Card({ name, date, location, price, image, organizers, tickets, contact, showBookButton }) {
   const [isModalOpen, setModalOpen] = useState(false);
-
   const [isOpen, setIsOpen] = useState(false);
   const [selectValue, setSelectValue] = useState("Ticket Type");
+  
+  // Set initial select value based on tickets prop
+  useEffect(() => {
+    if (!tickets || tickets.length === 0) {
+      setSelectValue("");
+    }
+  }, [tickets]);
+  const [imageError, setImageError] = useState(false);
 
-  const updateValue = (value) => {
-        setSelectValue(value);
-        setIsOpen(false);
-  }
-        
+  // Handle image loading errors
+  const handleImageError = useCallback(() => {
+    setImageError(true);
+  }, []);
+
+  // Memoized function to update dropdown value
+  const updateValue = useCallback((value) => {
+    setSelectValue(value);
+    setIsOpen(false);
+  }, []);
 
   return (
     <>
       <div
         onClick={() => setModalOpen(true)}
-        className="border border-gray-100 rounded-sm overflow-hidden bg-gray-50 cursor-pointer"
+        onKeyDown={(e) => e.key === 'Enter' && setModalOpen(true)}
+        className="border border-gray-100 rounded-sm overflow-hidden bg-gray-50 cursor-pointer hover:shadow-md transition-shadow duration-300 h-full flex flex-col"
+        tabIndex={0}
+        role="button"
+        aria-label={`View details for ${name}`}
       >
-        <img src={image} alt={name} className="w-full h-52 object-cover" />
-        <div className="mb-4 p-4">
-          <h2 className="font-poppins text-xl font-semibold mb-2">{name}</h2>
-          <p className="font-montserrat">{date}</p>
-          <p className="font-montserrat">{location}</p>
-          <p className="font-montserrat">{price}</p>
+        <div className="relative w-full h-52 overflow-hidden">
+          {imageError ? (
+            <div className="w-full h-full flex items-center justify-center bg-gray-200">
+              <span className="text-gray-500 font-montserrat text-sm">Image unavailable</span>
+            </div>
+          ) : (
+            <img
+              src={image}
+              alt={name}
+              className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+              loading="lazy"
+              onError={handleImageError}
+            />
+          )}
         </div>
-        {/* Only show Book Now button if showBookButton is true */}
+        <div className="flex-grow p-4">
+          <h2 className="font-poppins text-xl font-semibold mb-2 line-clamp-2">{name}</h2>
+          <div className="space-y-1">
+            <p className="font-montserrat text-sm flex items-center gap-1">
+              <Calendar size={16} className="text-homeexplore" />
+              <span>{date}</span>
+            </p>
+            <p className="font-montserrat text-sm flex items-center gap-1">
+              <MapPin size={16} className="text-homeexplore" />
+              <span>{location}</span>
+            </p>
+            <p className="font-montserrat text-sm flex items-center gap-1">
+              <DollarSign size={16} className="text-homeexplore" />
+              <span>{price}</span>
+            </p>
+          </div>
+        </div>
+
         {showBookButton && (
-          <div>
-            <button className="font-poppins bg-homeexplore text-gray-50 ml-4 mb-4 px-4 py-1 rounded-sm">
+          <div className="px-4 pb-4">
+            <button 
+              className="font-poppins bg-homeexplore text-gray-50 px-4 py-2 rounded-sm w-full hover:bg-homeexplohover transition-colors duration-300"
+              aria-label={`Book ${name} now`}
+            >
               Book Now
             </button>
           </div>
@@ -38,51 +82,115 @@ function Card({ name, date, time, location, description, price, image, oganizers
       </div>
 
       <UseModal isOpen={isModalOpen} onClose={() => setModalOpen(false)}>
-        <div className="">
-          <div className="h-[300px] rounded-md overflow-hidden mb-1">
-            <img src={image} alt={name} />
+        <div className="max-h-[80vh] overflow-y-auto">
+          <div className="relative h-[300px] rounded-md overflow-hidden mb-4">
+            {imageError ? (
+              <div className="w-full h-full flex items-center justify-center bg-gray-200">
+                <span className="text-gray-500 font-montserrat">Image unavailable</span>
+              </div>
+            ) : (
+              <img
+                src={image}
+                alt={name}
+                className="w-full h-full object-cover"
+                loading="lazy"
+                onError={handleImageError}
+              />
+            )}
           </div>
-          <div className="flex flex-col gap-4">
+          <div>
             <h2 className="font-montserrat font-bold text-[32px] ">{name}</h2>
-            <p className="font-montserrat text-[18px]"><span className="font-bold">Date & Time:</span> {date}</p>
-            <p className="font-montserrat text-[18px]"><span className="font-bold">Time:</span> {time}</p>
+            <p className="font-montserrat text-[18px]"><span className="font-bold">Date:</span> {date}</p>
             <p className="font-montserrat"><span className="font-bold">Location:</span> {location}</p>
-            <div className="font-montserrat">
-              <span className="font-bold">Description:</span>
-              <div className="max-h-[300px] border-1 border-[#cccccc] w-full overflow-y-auto">
-                {description}
-              </div>
-            </div>
             <p className="font-montserrat"><span className="font-bold">Price:</span> {price}</p>
-            <p>
-            <div className="inline-block border border-[#d1d5db] rounded-md overflow-hidden outline-none cursor-pointer transition w-70">
-              <div onClick={() => setIsOpen(!isOpen)} className="px-2 py-1 bg-[#ebebeb]  flex justify-between items-center">
-                <span>{ selectValue }</span>
-                <div className={isOpen? 'rotate-180 transition' : 'rotate-0'}>
-                  {/* rotate icon here arrowdown */}
-                  <ChevronDown size={30}/>
-                
+            {organizers && (
+              <p className="font-montserrat">
+                <span className="font-bold">Organizers:</span>
+                <span className="flex items-center gap-1 mt-1">
+                  <Users size={16} className="text-homeexplore" />
+                  {organizers}
+                </span>
+              </p>
+            )}
+            {contact && (
+              <p className="font-montserrat">
+                <span className="font-bold">Contact:</span>
+                <span className="flex items-center gap-1 mt-1">
+                  <Phone size={16} className="text-homeexplore" />
+                  {contact}
+                </span>
+              </p>
+            )}
+            {tickets && tickets.length > 0 && (
+              <div className="mt-4">
+                <p className="font-montserrat font-bold mb-2">Select Ticket Type:</p>
+                <div className="relative">
+                  <div 
+                    className="inline-block border border-slate-300 outline-none cursor-pointer transition w-full rounded-md"
+                    role="combobox"
+                    aria-expanded={isOpen}
+                    aria-haspopup="listbox"
+                    aria-labelledby="ticket-type-label"
+                  >
+                    <div 
+                      onClick={() => setIsOpen(!isOpen)} 
+                      className="px-4 py-2 flex justify-between items-center hover:bg-gray-50"
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          e.preventDefault();
+                          setIsOpen(!isOpen);
+                        }
+                      }}
+                      tabIndex={0}
+                    >
+                      <span>{ selectValue }</span>
+                      <div className={`transition-transform duration-200 ${isOpen ? 'rotate-180' : 'rotate-0'}`}>
+                        <ChevronDown size={20}/>
+                      </div>
+                    </div>
+                    
+                    {isOpen && (
+                      <ul 
+                        className="absolute z-10 w-full bg-white border border-slate-300 mt-1 rounded-md shadow-lg max-h-60 overflow-auto"
+                        role="listbox"
+                        aria-labelledby="ticket-type-label"
+                      >
+                        {tickets.map((ticket, index) => (
+                          <li 
+                            key={index}
+                            className="px-4 py-2 hover:bg-gray-100 cursor-pointer font-montserrat"
+                            onClick={() => updateValue(ticket)}
+                            onKeyDown={(e) => {
+                              if (e.key === 'Enter' || e.key === ' ') {
+                                e.preventDefault();
+                                updateValue(ticket);
+                              }
+                            }}
+                            role="option"
+                            aria-selected={selectValue === ticket}
+                            tabIndex={0}
+                          >
+                            {ticket}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
                 </div>
-                </div>
-              {isOpen && (
-              <div>
-                <ul className="flex flex-col divide-y border-t border-slate-300">
-                  <li className="px-2 py-1 hover:bg-slate-100 border-slate-300" onClick={() => updateValue("VIP")}>{tickets.type1}</li>
-                  <li className="px-2 py-1 hover:bg-slate-100 border-slate-300" onClick={() => updateValue("Regular")}>{tickets.type2}</li>
-                  <li className="px-2 py-1 hover:bg-slate-100 border-slate-300" onClick={() => updateValue("Children")}>{tickets.type3}</li>
-                </ul>
               </div>
-              )}
-            </div>
-            </p>
-            <p className="font-montserrat"><span className="font-bold">Oganizers:</span> {oganizers}</p>
-            <p className="font-montserrat"><span className="font-bold">Contact:</span> {contact}</p>
-            {/* Show Book Now button in modal for top events */}
-             
-              <button className="font-poppins bg-homeexplore hover:bg-homeexplohover text-gray-50 mt-4 px-4 py-1 rounded-sm w-70">
-                Book Now
-              </button>
-            
+            )}
+
+            <button 
+              className="font-poppins bg-homeexplore hover:bg-homeexplohover text-gray-50 mt-6 px-6 py-3 rounded-md w-full transition-colors duration-300 font-semibold"
+              aria-label={`Book ${name} now`}
+              onClick={(e) => {
+                e.stopPropagation(); // Prevent modal from closing
+                // Add booking logic here
+                console.log(`Booking ${name} with ticket type: ${selectValue}`);
+              }}
+            >
+              Book Now
+            </button>
           </div>
         </div>
       </UseModal>
@@ -91,5 +199,3 @@ function Card({ name, date, time, location, description, price, image, oganizers
 }
 
 export default Card;
-
-

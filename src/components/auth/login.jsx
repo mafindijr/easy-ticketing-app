@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useForm } from "react-hook-form";
 import { Input } from "../input";
 import { Button } from "../button";
@@ -8,17 +8,32 @@ import FacebookIcon from "../../assets/svgs/facebook.svg";
 import TwitterIcon from "../../assets/svgs/twitter.svg";
 import ResetPassword from './sign-up/reset-password/reset-password';
 import { SignUp } from './sign-up/sign-up';
+import { Lock, Mail } from 'lucide-react';
 
 
-export const Login = ({ onSuccess }) => {
-
+export const Login = ({ onSuccess, onOpenSignUp }) => {
     const [openResetPassword, setOpenResetPassword] = useState(false);
     const [openSignUp, setOpenSignUp] = useState(false);
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
+    
+    // Reset form when modal is opened
+    useEffect(() => {
+        reset();
+    }, [reset]);
 
-    const onSubmit = data => {
-        console.log(data);
-        if (onSuccess) onSuccess();
+    const onSubmit = async data => {
+        setIsSubmitting(true);
+        try {
+            console.log(data);
+            // Simulate API call with timeout
+            await new Promise(resolve => setTimeout(resolve, 800));
+            if (onSuccess) onSuccess();
+        } catch (error) {
+            console.error('Login error:', error);
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const loginOptions = [
@@ -29,9 +44,9 @@ export const Login = ({ onSuccess }) => {
 
     return (
         <>
-       {!openResetPassword && (<div className="mt-6 h-[70vh] overflow-y-auto px-2 hide-scrollbar">
+       {!openResetPassword && (<div className="mt-4 h-[70vh] overflow-y-auto px-2 hide-scrollbar">
             <div className="text-center flex items-center justify-center mb-4">
-                <h1 className="flex items-center font-pacifico leading-normal font-[400] text-[32px] text-addeventbtn font-bold">
+                <h1 className="flex items-center font-pacifico leading-normal font-[400] text-[32px] text-addeventbtn font-bold hover:scale-105 transition-transform duration-300">
                     EasyTickets
                     <span>
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-center pt-2">
@@ -40,12 +55,21 @@ export const Login = ({ onSuccess }) => {
                     </span>
                 </h1>
             </div>
-            <h4 className="text-black text-[20px] font-[700] text-center font-bold leading-[32px] font-montserrat">
+            <h4 className="text-black text-[20px] font-[700] text-center font-bold leading-[32px] font-montserrat mt-2">
                         Log In
             </h4>
             <p className="text-black text-base font-montserrat text-center mt-2">
                 Don’t have an account yet?{" "}
-                <Button className="font-bold" onClick={() => setOpenSignUp(true)}>Sign up</Button>
+                <Button 
+                    className="font-bold text-homeexplore hover:text-homeexplohover transition-colors" 
+                    onClick={() => {
+                        setOpenSignUp(true);
+                        if (onOpenSignUp) onOpenSignUp();
+                    }}
+                    aria-label="Sign up"
+                >
+                    Sign up
+                </Button>
             </p>
 
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -53,31 +77,44 @@ export const Login = ({ onSuccess }) => {
                     label="Email"
                     name="email"
                     type="email"
-                    placeholder="Enter Address"
+                    placeholder="Enter your email address"
                     register={register}
                     error={errors.email}
                     className={`form-input ${errors.email ? "border-red-500 focus:ring-red-500" : ""}`}
                     required
+                    prefixIcon={Mail}
                 />
 
                 <Input
                     label="Password"
                     name="password"
                     type="password"
-                    placeholder="Password"
+                    placeholder="Enter your password"
                     register={register}
                     error={errors.password}
                     className={`form-input ${errors.password ? "border-red-500 focus:ring-red-500" : ""}`}
                     required="Password is required"
+                    prefixIcon={Lock}
                 />
 
-                <Button className="text-[#4B5563] text-xs font-montserrat" onClick={() => setOpenResetPassword(true)}>
-                    Forgot Password?
-                </Button>
-                <Button type="submit" className="w-full mt-6 font-poppins h-[50px] font-bold bg-blue-600 text-white py-2 rounded-[8px]"
-                style={{boxShadow: "0px 6px 6px rgba(2, 2, 2, 0.15)"}}
+                <div className="flex justify-end mt-1">
+                    <Button 
+                        className="text-[#4B5563] text-xs font-montserrat hover:text-homeexplore transition-colors" 
+                        onClick={() => setOpenResetPassword(true)}
+                        aria-label="Forgot Password"
+                    >
+                        Forgot Password?
+                    </Button>
+                </div>
+                <Button 
+                    type="submit" 
+                    className="w-full mt-6 font-poppins h-[50px] font-bold bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-[8px] transition-colors duration-300"
+                    style={{boxShadow: "0px 6px 6px rgba(2, 2, 2, 0.15)"}}
+                    loading={isSubmitting}
+                    disabled={isSubmitting}
+                    aria-label="Log in"
                 >
-                    Log in
+                    {isSubmitting ? 'Logging in...' : 'Log in'}
                 </Button>
 
                 <div className="flex items-center my-4">
@@ -90,15 +127,16 @@ export const Login = ({ onSuccess }) => {
                     {loginOptions.map((option, index) => (
                         <Button
                             key={index}
-                            className="py-4 px-8 w-full border border-[#CCCCCC] rounded-[8px] font-poppins font-bold flex items-center gap-30"
+                            className="py-4 px-8 w-full border border-[#CCCCCC] rounded-[8px] font-poppins font-bold flex items-center justify-center gap-4 hover:bg-gray-50 transition-colors duration-300"
                             style={{boxShadow: "0px 0px 2px 3px rgba(2, 2, 2, 0.15)"}}
+                            aria-label={option.label}
                         >
                             <img
                                 src={option.icon}
                                 alt={option.label}
                                 className="w-6 h-6"
                             />
-                            {option.label}
+                            <span>{option.label}</span>
                         </Button>
                     ))}
                 </div>
@@ -109,7 +147,7 @@ export const Login = ({ onSuccess }) => {
                 <ResetPassword />
         </UseModal>
         <UseModal isOpen={openSignUp} onClose={() => setOpenSignUp(false)}>
-              <SignUp />
+              <SignUp onOpenSignUp={onOpenSignUp} />
         </UseModal>
         </>
     );

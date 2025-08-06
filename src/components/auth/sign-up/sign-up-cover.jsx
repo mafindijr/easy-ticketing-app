@@ -5,8 +5,9 @@ import FacebookIcon from "../../../assets/svgs/facebook.svg";
 import TwitterIcon from "../../../assets/svgs/twitter.svg";
 import UseModal from "../../UseModal";
 import { SignUp } from "./sign-up";
+import { Mail } from "lucide-react";
 
-export const SignUpCover = ({ onSuccess }) => {
+export const SignUpCover = ({ onSuccess, onOpenSignUp }) => {
     const signupOptions = [
         { icon: GoogleIcon, label: "Continue with Google" },
         { icon: FacebookIcon, label: "Continue with Facebook" },
@@ -14,13 +15,14 @@ export const SignUpCover = ({ onSuccess }) => {
     ];
 
     const [openSignUp, setOpenSignUp] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     return (
         <>
             {!openSignUp && (
                 <>
                     <div className="text-center flex items-center justify-center">
-                    <h1 className="flex items-center font-pacifico leading-normal font-[400] text-[32px] text-addeventbtn font-bold mb-4">
+                    <h1 className="flex items-center font-pacifico leading-normal font-[400] text-[32px] text-addeventbtn font-bold mb-4 hover:scale-105 transition-transform duration-300">
                         EasyTickets
                         <span>
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-center pt-2">
@@ -29,51 +31,60 @@ export const SignUpCover = ({ onSuccess }) => {
                         </span>
                     </h1>
                     </div>
-                    <h4 className="text-black text-[20px] font-[700] text-center font-bold leading-[32px] font-montserrat">
+                    <h4 className="text-black text-[20px] font-[700] text-center font-bold leading-[32px] font-montserrat mt-2">
                         Sign Up
                     </h4>
 
                     <Button
                         onClick={() => setOpenSignUp(true)}
-                        className="py-4 px-8 w-full border border-[#CCCCCC] rounded-[8px] font-poppins font-bold mt-2"
+                        className="py-4 px-8 w-full border border-[#CCCCCC] rounded-[8px] font-poppins font-bold mt-2 bg-blue-600 hover:bg-blue-700 text-white transition-colors duration-300 flex items-center justify-center gap-2"
                         style={{boxShadow: "0px 0px 2px 3px rgba(2, 2, 2, 0.15)"}}
+                        aria-label="Sign up with email"
                     >
-                        Sign up with email button
+                        <Mail size={18} />
+                        Sign up with email
                     </Button>
 
                     <div className="flex items-center my-4">
-                        <div className="border border-[#CCCCCC] w-full" />
-                        <p className="text-[#CCCCCC] text-[18px] px-4">OR</p>
-                        <div className="border border-[#CCCCCC] w-full" />
+                        <div className="h-[1px] bg-[#E5E7EB] flex-1" />
+                        <p className="text-[#6B7280] text-sm font-montserrat px-4">OR</p>
+                        <div className="h-[1px] bg-[#E5E7EB] flex-1" />
                     </div>
 
                     <div className="grid grid-cols-1 gap-2">
                         {signupOptions.map((option, index) => (
                             <Button
                                 key={index}
-                                className="py-4 px-8 w-full border border-[#CCCCCC] rounded-[8px] font-poppins font-bold flex items-center gap-30"
+                                className="py-4 px-8 w-full border border-[#CCCCCC] rounded-[8px] font-poppins font-bold flex items-center justify-center gap-4 hover:bg-gray-50 transition-colors duration-300"
                                 style={{boxShadow: "0px 0px 2px 3px rgba(2, 2, 2, 0.15)"}}
+                                aria-label={option.label}
+                                onClick={() => {
+                                    setIsLoading(true);
+                                    setTimeout(() => setIsLoading(false), 500);
+                                }}
+                                loading={isLoading && option.label === "Continue with Google"}
+                                disabled={isLoading}
                             >
                                 <img
                                     src={option.icon}
                                     alt={option.label}
                                     className="w-6 h-6"
                                 />
-                                {option.label}
+                                <span>{option.label}</span>
                             </Button>
                         ))}
                     </div>
 
-                    <p className="text-black text-base font-montserrat text-center mt-2">
+                    <p className="text-[#6B7280] text-xs font-montserrat text-center mt-4">
                         By signing up, you agree to our{" "}
-                        <span className="font-bold">Terms</span> &{" "}
-                        <span className="font-bold">Privacy Policy</span>
+                        <a href="#" className="text-blue-600 hover:underline font-bold">Terms</a> &{" "}
+                        <a href="#" className="text-blue-600 hover:underline font-bold">Privacy Policy</a>
                     </p>
                 </>
             )}
 
             <UseModal isOpen={openSignUp} onClose={() => setOpenSignUp(false)}>
-                <SignUp onSuccess={onSuccess} />
+                <SignUp onSuccess={onSuccess} onOpenSignUp={onOpenSignUp} />
             </UseModal>
         </>
     );

@@ -113,9 +113,6 @@ export default function LandingPage() {
       </header>
       <UseModal isOpen={openSignUpCover} onClose={() => setOpenSignUpCover(false)}>
         <SignUpCover onSuccess={login} />
-        {/* By Passionate Programmer */}
-        {/* <Login onSuccess={false} /> */}
-        {/** <Login onSuccess={false} /> **/}
       </UseModal>
       <UseModal isOpen={openLogin} onClose={() => setOpenLogin(false)}>
         <Login onSuccess={login} />

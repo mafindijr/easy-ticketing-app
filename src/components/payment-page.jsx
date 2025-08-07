@@ -1,6 +1,6 @@
 import React from 'react'
 import { useForm } from "react-hook-form";
-import Input from './input';
+import { Input } from './input';
 import { Button } from './button'
 
 export default function PaymentPage() {
@@ -51,7 +51,7 @@ export default function PaymentPage() {
             
         </div>
 
-        <div>
+        <div className='grid grid-cols-2 gap-10'>
             <div>
                 <Input 
                 label="Expiry Date*"
@@ -62,6 +62,7 @@ export default function PaymentPage() {
                 className={`form-input ${errors.expiryDate ? "border-red-500 focus:ring-red-500" : ""}`}
                 // prefixIcon={}
                 />
+                <span>MM/YY</span>
             </div>
             <div>
                 <Input

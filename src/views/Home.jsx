@@ -3,6 +3,7 @@ import Categories from '../components/categories';
 import Layout from '../layout/layout';
 import TopEvents from "../components/TopEvent";
 import UpcomingEvents from "../components/UpcomingEvent";
+import PaymentPage from '../components/payment-page';
 
 
 
@@ -21,6 +22,7 @@ export default function Home() {
         
           <TopEvents />
           <UpcomingEvents />
+          <PaymentPage />
 
           {/* <h1 className='ml-30'>Top Events</h1>
         <div className='grid grid-cols-4 gap-4 w-full px-30'>
@@ -33,7 +35,7 @@ export default function Home() {
         <div className='flex justify-center align-middle p-4'>
           <button className='border border-gray-800 font-montserrat w-[380px] h-[60px] text-[14px] leading-[24px] rounded-sm cursor-pointer'>See More</button>
         </div>
-
+                
       </Layout>
   )
 }

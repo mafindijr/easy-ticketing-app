@@ -113,8 +113,8 @@ function Card({ name, date, location, price, image, description, organizers, tic
               </p>
             )}
             {contact && (
-              <p className="font-montserrat">
-                <span className="font-bold">Contact:</span>
+              <p className="font-montserrat text-[18px] font-[600] leading-[28px]">
+                <span className="font-semibold">Contact:</span>
                 <span className="flex items-center gap-1 mt-1">
                   <Phone size={16} className="text-homeexplore" />
                   {contact}
@@ -181,7 +181,7 @@ function Card({ name, date, location, price, image, description, organizers, tic
             )}
 
             <button 
-              className="font-poppins bg-homeexplore hover:bg-homeexplohover text-gray-50 mt-6 px-6 py-3 rounded-md w-full transition-colors duration-300 font-semibold"
+              className="font-poppins bg-homeexplore hover:bg-homeexplohover cursor-pointer text-gray-50 mt-6 px-6 py-3 rounded-md w-full transition-colors duration-300 font-semibold"
               aria-label={`Book ${name} now`}
               onClick={(e) => {
                 e.stopPropagation(); // Prevent modal from closing

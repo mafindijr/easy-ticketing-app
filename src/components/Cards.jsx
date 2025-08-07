@@ -2,7 +2,7 @@ import { useState, useCallback, useEffect } from "react";
 import UseModal from "./UseModal";
 import { ChevronDown, Calendar, MapPin, DollarSign, Users, Phone } from "lucide-react";
 
-function Card({ name, date, location, price, image, organizers, tickets, contact, showBookButton }) {
+function Card({ name, date, location, price, image, description, organizers, tickets, contact, showBookButton }) {
   const [isModalOpen, setModalOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [selectValue, setSelectValue] = useState("Ticket Type");
@@ -72,7 +72,7 @@ function Card({ name, date, location, price, image, organizers, tickets, contact
         {showBookButton && (
           <div className="px-4 pb-4">
             <button 
-              className="font-poppins bg-homeexplore text-gray-50 px-4 py-2 rounded-sm w-full hover:bg-homeexplohover transition-colors duration-300"
+              className="font-poppins bg-homeexplore cursor-pointer text-gray-50 px-4 py-2 rounded-sm w-full hover:bg-homeexplohover transition-colors duration-300"
               aria-label={`Book ${name} now`}
             >
               Book Now

@@ -3,7 +3,6 @@ import Categories from '../components/categories';
 import Layout from '../layout/layout';
 import TopEvents from "../components/TopEvent";
 import UpcomingEvents from "../components/UpcomingEvent";
-import PaymentPage from '../components/payment-page';
 
 
 
@@ -22,7 +21,6 @@ export default function Home() {
         
           <TopEvents />
           <UpcomingEvents />
-          <PaymentPage />
 
           {/* <h1 className='ml-30'>Top Events</h1>
         <div className='grid grid-cols-4 gap-4 w-full px-30'>

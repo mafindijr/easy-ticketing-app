@@ -31,12 +31,17 @@ function Card({ name, date, location, price, image, description, organizers, tic
   return (
     <>
       <div
-        onClick={() => setModalOpen(true)}
         onKeyDown={(e) => e.key === 'Enter' && setModalOpen(true)}
         className="border border-gray-100 rounded-sm overflow-hidden bg-gray-50 cursor-pointer hover:shadow-md transition-shadow duration-300 h-full flex flex-col"
         tabIndex={0}
         role="button"
         aria-label={`View details for ${name}`}
+        onClick={(e) => {
+          // Only open modal if not clicking the Book Now button
+          if (e.target.closest('button') === null) {
+            setModalOpen(true);
+          }
+        }}
       >
         <div className="relative w-full h-52 overflow-hidden">
           {imageError ? (
@@ -76,9 +81,10 @@ function Card({ name, date, location, price, image, description, organizers, tic
             <button 
               className="font-poppins bg-homeexplore cursor-pointer text-gray-50 px-4 py-2 rounded-sm w-full hover:bg-homeexplohover transition-colors duration-300"
               aria-label={`Book ${name} now`}
-              onClick={() => {
-                setOpenPayment(true)
-                setModalOpen(false);
+              onClick={(e) => {
+                e.stopPropagation(); 
+                setOpenPayment(true);
+                setModalOpen(false); 
               }}
             >
               Book Now

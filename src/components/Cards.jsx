@@ -204,7 +204,7 @@ function Card({ name, date, location, price, image, description, organizers, tic
       </UseModal>
 
       <UseModal isOpen={openPayment} onClose={() => setOpenPayment(false)}>
-        <PaymentPage />
+        <PaymentPage name={name} />
       </UseModal>
     </>
   );

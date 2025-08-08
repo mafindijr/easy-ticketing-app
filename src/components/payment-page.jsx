@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { Input } from './input';
 import { Button } from './button'
 
-export default function PaymentPage() {
+export default function PaymentPage({ name }) {
 
         const { register, handleSubmit, formState: {errors}, reset } = useForm();
 
@@ -13,7 +13,7 @@ export default function PaymentPage() {
         <h4>Complete Your Booking</h4>
     </div>
     <div>
-        <p>Afrobeats Concert 2025</p>
+        <p>{name}</p>
     </div>
     <div>
         <p>

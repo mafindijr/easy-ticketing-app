@@ -1,10 +1,12 @@
 import { useState, useCallback, useEffect } from "react";
 import UseModal from "./UseModal";
+import PaymentPage from "./payment-page";
 import { ChevronDown, Calendar, MapPin, DollarSign, Users, Phone } from "lucide-react";
 
 function Card({ name, date, location, price, image, description, organizers, tickets, contact, showBookButton }) {
   const [isModalOpen, setModalOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [openPayment, setOpenPayment] = useState(false);
   const [selectValue, setSelectValue] = useState("Ticket Type");
   
   // Set initial select value based on tickets prop
@@ -74,6 +76,10 @@ function Card({ name, date, location, price, image, description, organizers, tic
             <button 
               className="font-poppins bg-homeexplore cursor-pointer text-gray-50 px-4 py-2 rounded-sm w-full hover:bg-homeexplohover transition-colors duration-300"
               aria-label={`Book ${name} now`}
+              onClick={() => {
+                setOpenPayment(true)
+                setModalOpen(false);
+              }}
             >
               Book Now
             </button>
@@ -187,12 +193,18 @@ function Card({ name, date, location, price, image, description, organizers, tic
                 e.stopPropagation(); // Prevent modal from closing
                 // Add booking logic here
                 console.log(`Booking ${name} with ticket type: ${selectValue}`);
+                setOpenPayment(true);
+                setModalOpen(false);
               }}
             >
               Book Now
             </button>
           </div>
         </div>
+      </UseModal>
+
+      <UseModal isOpen={openPayment} onClose={() => setOpenPayment(false)}>
+        <PaymentPage />
       </UseModal>
     </>
   );

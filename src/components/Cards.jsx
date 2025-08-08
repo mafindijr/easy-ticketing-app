@@ -210,6 +210,12 @@ function Card({ name, date, location, price, image, description, organizers, tic
       </UseModal>
 
       <UseModal isOpen={openPayment} onClose={() => setOpenPayment(false)} className="w-[480px] h-[634]">
+        <div>
+          <p>
+            <span>icon </span>
+            Back to Ticket Selection
+          </p>
+        </div>
         <PaymentPage name={name} />
       </UseModal>
     </>

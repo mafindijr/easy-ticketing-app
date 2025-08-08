@@ -203,7 +203,7 @@ function Card({ name, date, location, price, image, description, organizers, tic
         </div>
       </UseModal>
 
-      <UseModal isOpen={openPayment} onClose={() => setOpenPayment(false)}>
+      <UseModal isOpen={openPayment} onClose={() => setOpenPayment(false)} className="w-[480px] h-[634]">
         <PaymentPage name={name} />
       </UseModal>
     </>

@@ -8,21 +8,22 @@ export default function PaymentPage({ name }) {
         const { register, handleSubmit, formState: {errors}, reset } = useForm();
 
   return (
-   <div>
+   <div className='flex flex-col items-center justify-center gap-4'>
     <div>
-        <h4>Complete Your Booking</h4>
+        <h3 className='font-montserrat text-[24px] leading-[34px] font-[700] font=bold'>Complete Your Booking</h3>
     </div>
     <div>
-        <p>{name}</p>
+        <p className='font-montserrat text-[18px] leading-[28px] font-[400] '>{name}</p>
     </div>
     <div>
-        <p>
-            <span>Ticket:</span>
-            <span>General Adission #5,000</span>
+        <p className='font-montserrat text-[14px] leading-[22px] font-semibold'>
+            Ticket: 
+            General Adission #5,000
         </p>
     </div>
 
     <form>
+      <div className='flex flex-col border-1 border-[#cccccc] p-[24px] rounded-[8px]'>
         <div>
             <Input
             label="Name on Card*"
@@ -62,7 +63,7 @@ export default function PaymentPage({ name }) {
                 className={`form-input ${errors.expiryDate ? "border-red-500 focus:ring-red-500" : ""}`}
                 // prefixIcon={}
                 />
-                <span>MM/YY</span>
+                <span className='block text-[14px] leading-[16px] text-[#1F2A44]'>MM/YY</span>
             </div>
             <div>
                 <Input
@@ -77,14 +78,15 @@ export default function PaymentPage({ name }) {
             </div>
     
         </div>
+      </div>
 
-        <div>
-            <p>
-                <span>lock icon</span>
+        <div className='flex flex-col gap-[8px] items-center justify-center text-center'>
+            <p className='font-montserrat font-[400] text-[14px] leading-[22px] mt-1'>
+                <span>lock icon </span>
                 Your payment is encrypted and secure
             </p>
 
-            <Button type='submit'>
+            <Button type='submit' className='font-montserrat mt-2 text-[16px] font-bold bg-homeexplore rounded-[8px] w-[376px] py-[16px] px-[32px] text-white'>
                 Place Order
             </Button>
         </div>

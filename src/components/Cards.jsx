@@ -1,7 +1,16 @@
 import { useState, useCallback, useEffect } from "react";
 import UseModal from "./UseModal";
 import PaymentPage from "./payment-page";
-import { ChevronDown, Calendar, MapPin, DollarSign, Users, Phone } from "lucide-react";
+import { 
+  ChevronDown,
+  Calendar, 
+  MapPin, 
+  DollarSign, 
+  Users, 
+  Phone,
+  ArrowLeft  
+
+} from "lucide-react";
 
 function Card({ name, date, location, price, image, description, organizers, tickets, contact, showBookButton }) {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -212,7 +221,7 @@ function Card({ name, date, location, price, image, description, organizers, tic
       <UseModal isOpen={openPayment} onClose={() => setOpenPayment(false)} className="w-[480px] h-[634]">
         <div>
           <p>
-            <span>icon </span>
+            <span><ArrowLeft size={28} /> </span>
             Back to Ticket Selection
           </p>
         </div>

@@ -220,8 +220,8 @@ function Card({ name, date, location, price, image, description, organizers, tic
 
       <UseModal isOpen={openPayment} onClose={() => setOpenPayment(false)} className="w-[480px] h-[634]">
         <div>
-          <p>
-            <span><ArrowLeft size={28} /> </span>
+          <p className="inline-flex gap-1 cursor-pointer font-montserrat font-[400] text-[14px] leading-[22px]">
+            <span className="inline-flex items-center justify-center"><ArrowLeft size={28} /> </span>
             Back to Ticket Selection
           </p>
         </div>

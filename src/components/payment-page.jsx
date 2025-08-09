@@ -1,7 +1,8 @@
 import React from 'react'
 import { useForm } from "react-hook-form";
 import { Input } from './input';
-import { Button } from './button'
+import { Button } from './button';
+import { LockKeyhole } from 'lucide-react';
 
 export default function PaymentPage({ name }) {
 
@@ -81,8 +82,8 @@ export default function PaymentPage({ name }) {
       </div>
 
         <div className='flex flex-col gap-[8px] items-center justify-center text-center'>
-            <p className='font-montserrat font-[400] text-[14px] leading-[22px] mt-1'>
-                <span>lock icon </span>
+            <p className='inline-flex gap-1 font-montserrat font-[400] text-[14px] leading-[22px] mt-1'>
+                <span className='inline-flex items-center justify-center'><LockKeyhole size={20}/> </span>
                 Your payment is encrypted and secure
             </p>
 

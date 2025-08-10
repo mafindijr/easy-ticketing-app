@@ -1,10 +1,11 @@
 import React from 'react'
+import { CircleCheck } from 'lucide-react'
 
 export default function BookingConfirmed() {
   return (
     <div className='flex flex-col items-center justify-center gap-4'>
         <div>
-            <span>icon</span>
+            <CircleCheck className='bg-green-400' size={50}/>
         </div>
         <div>
             <h3 className='font-montserrat text-[24px] leading-[34px] font-[700] font=bold'>Booking Confirmed!</h3>

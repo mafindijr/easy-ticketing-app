@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Input } from './input';
 import { Button } from './button';
@@ -11,6 +11,10 @@ export default function PaymentPage({ name }) {
         const [openConfirmed, setOpenComfirm] = useState(false);
 
         const { register, handleSubmit, formState: {errors}, reset } = useForm();
+        const onSubmit = (e) => {
+            e.preventDefault();
+            
+        }
 
   return (
    <div className='flex flex-col items-center justify-center gap-4'>
@@ -27,7 +31,7 @@ export default function PaymentPage({ name }) {
         </p>
     </div>
 
-    <form>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <div className='flex flex-col border-1 border-[#cccccc] p-[24px] rounded-[8px]'>
         <div>
             <Input
@@ -52,7 +56,8 @@ export default function PaymentPage({ name }) {
                 register={register}
                 error={errors.cardNumber}
                 className={`form-input ${errors.cardNumber ? "border-red-500 focus:ring-red-500" : ""}`}
-                 prefixIcon={CreditCard}
+                required
+                prefixIcon={CreditCard}
                 />
             
         </div>
@@ -66,6 +71,7 @@ export default function PaymentPage({ name }) {
                 register={register}
                 error={errors.expiryDate}
                 className={`form-input ${errors.expiryDate ? "border-red-500 focus:ring-red-500" : ""}`}
+                required
                 // prefixIcon={}
                 />
                 <span className='block text-[14px] leading-[16px] text-[#1F2A44]'>MM/YY</span>
@@ -78,6 +84,7 @@ export default function PaymentPage({ name }) {
                 register={register}
                 error={errors.cvv}
                 className={`form-input ${errors.cvv ? "border-red-500 focus:ring-red-500" : ""}`}
+                required
                 // prefixIcon={}
                 />
             </div>
@@ -100,9 +107,9 @@ export default function PaymentPage({ name }) {
             </Button>
         </div>
     </form>
-    <Modal isOpen={openConfirmed} onClose={() => setOpenComfirm(false)} >
+    <UseModal isOpen={openConfirmed} onClose={() => setOpenComfirm(false)} >
         <BookingConfirmed />
-    </Modal>
+    </UseModal>
    </div>
   )
 }

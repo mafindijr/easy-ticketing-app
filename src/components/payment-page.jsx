@@ -2,7 +2,7 @@ import React from 'react'
 import { useForm } from "react-hook-form";
 import { Input } from './input';
 import { Button } from './button';
-import { LockKeyhole } from 'lucide-react';
+import { LockKeyhole, CreditCard } from 'lucide-react';
 
 export default function PaymentPage({ name }) {
 
@@ -48,7 +48,7 @@ export default function PaymentPage({ name }) {
                 register={register}
                 error={errors.cardNumber}
                 className={`form-input ${errors.cardNumber ? "border-red-500 focus:ring-red-500" : ""}`}
-                // prefixIcon={}
+                 prefixIcon={CreditCard}
                 />
             
         </div>

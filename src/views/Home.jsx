@@ -3,7 +3,6 @@ import Categories from '../components/categories';
 import Layout from '../layout/layout';
 import TopEvents from "../components/TopEvent";
 import UpcomingEvents from "../components/UpcomingEvent";
-import BookingConfirmed from '../components/booking-confirmed';
 
 
 
@@ -34,8 +33,6 @@ export default function Home() {
         <div className='flex justify-center align-middle p-4'>
           <button className='border border-gray-800 font-montserrat w-[380px] h-[60px] text-[14px] leading-[24px] rounded-sm cursor-pointer'>See More</button>
         </div>
-
-        <BookingConfirmed />
                 
       </Layout>
   )

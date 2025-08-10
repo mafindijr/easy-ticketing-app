@@ -2,9 +2,13 @@ import React from 'react'
 import { useForm } from "react-hook-form";
 import { Input } from './input';
 import { Button } from './button';
+import UseModal from "./UseModal";
 import { LockKeyhole, CreditCard } from 'lucide-react';
+import BookingConfirmed from './booking-confirmed';
 
 export default function PaymentPage({ name }) {
+
+        const [openConfirmed, setOpenComfirm] = useState(false);
 
         const { register, handleSubmit, formState: {errors}, reset } = useForm();
 
@@ -87,11 +91,18 @@ export default function PaymentPage({ name }) {
                 Your payment is encrypted and secure
             </p>
 
-            <Button type='submit' className='font-montserrat mt-2 text-[16px] font-bold bg-homeexplore rounded-[8px] w-[376px] py-[16px] px-[32px] text-white'>
+            <Button 
+            type='submit' 
+            className='font-montserrat mt-2 text-[16px] font-bold bg-homeexplore rounded-[8px] w-[376px] py-[16px] px-[32px] text-white'
+            onClick={() => setOpenComfirm(true)}
+            >
                 Place Order
             </Button>
         </div>
     </form>
+    <Modal isOpen={openConfirmed} onClose={() => setOpenComfirm(false)} >
+        <BookingConfirmed />
+    </Modal>
    </div>
   )
 }

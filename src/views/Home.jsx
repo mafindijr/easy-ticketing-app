@@ -1,4 +1,3 @@
-// import Card from "../components/Cards";
 import Categories from '../components/categories';
 import Layout from '../layout/layout';
 import TopEvents from "../components/TopEvent";
@@ -21,14 +20,6 @@ export default function Home() {
         
           <TopEvents />
           <UpcomingEvents />
-
-          {/* <h1 className='ml-30'>Top Events</h1>
-        <div className='grid grid-cols-4 gap-4 w-full px-30'>
-          <Card />c
-          <Card />
-          <Card />
-          <Card />
-        </div> */}
 
         <div className='flex justify-center align-middle p-4'>
           <button className='border border-gray-800 font-montserrat w-[380px] h-[60px] text-[14px] leading-[24px] rounded-sm cursor-pointer'>See More</button>

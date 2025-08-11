@@ -219,7 +219,7 @@ function Card({ name, date, location, price, image, description, organizers, tic
       </UseModal>
 
       <UseModal isOpen={openPayment} onClose={() => setOpenPayment(false)} className="w-[480px] h-[634] relative">
-        <div className="absolute top-20 left-90">
+        <div className="absolute top-2 left-90">
           <p className="inline-flex gap-1 cursor-pointer font-montserrat font-[400] text-[14px] leading-[22px]">
             <span className="inline-flex items-center justify-center"><ArrowLeft size={18} /> </span>
             Back to Ticket Selection

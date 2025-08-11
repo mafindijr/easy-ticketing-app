@@ -64,7 +64,7 @@ export default function BookingConfirmed() {
                 <Button type='submit' className='font-montserrat text-[16px] font-bold bg-homeexplore rounded-[8px] w-[376px] py-[16px] px-[32px] text-white'>
                     Done
                 </Button>
-                <p className='text-homeexplore mt-2 font-montserrat font-[400] text-[18px] leading-[22px]'>View My Tickects</p>
+                <p className='text-homeexplore cursor-pointer mt-2 font-montserrat font-[400] text-[18px] leading-[22px]'>View My Tickects</p>
             </div>
        </div>
   )

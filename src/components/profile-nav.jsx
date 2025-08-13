@@ -5,7 +5,7 @@ export default function ProfileNav() {
   return (
     <div>
         <header className="bg-white flex justify-between items-center h-18 px-30 font-montserrat font-bold fixed top-0 left-0 right-0 z-12">
-        <div className="flex-1">
+        <div className="">
          <div id="title" className="flex items-center text-center font-pacifico leading-normal font-[400] text-[32px] flex-1 text-addeventbtn font-bold">
             EasyTickets
             <span>
@@ -28,8 +28,8 @@ export default function ProfileNav() {
         </div>
         <div>
           <ul className="flex gap-12 ">
-            <li><a href="#">john doer</a></li>
-            <li><a href="#">Log Out</a></li>
+            <Link>john doer</Link>
+            <Link>Log Out</Link>
           </ul>
         </div>
       </header>

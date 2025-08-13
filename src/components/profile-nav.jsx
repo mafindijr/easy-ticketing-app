@@ -1,10 +1,20 @@
 import React from 'react'
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export default function ProfileNav() {
+
+    const navs = [
+      { to: "/dashboard", name: "Dashboard"},
+      { to: "/tickets", name: "Tickets"},
+      { to: "/profile", name: "Profile"}
+    ]
+
   return (
     <div>
-        <header className="bg-white flex justify-between items-center h-18 px-30 font-montserrat font-bold fixed top-0 left-0 right-0 z-12">
+        <header 
+        className="bg-white flex justify-between items-center h-18 px-30 font-montserrat font-bold fixed top-0 left-0 right-0 z-12"
+        style={{boxShadow: '0px 0px 4px rgba(2, 2, 2, 0.15)' }}
+        >
         <div className="">
          <div id="title" className="flex items-center text-center font-pacifico leading-normal font-[400] text-[32px] flex-1 text-addeventbtn font-bold">
             EasyTickets
@@ -16,21 +26,22 @@ export default function ProfileNav() {
             </div>
         </div>
         <div className='flex gap-4 m-2'>
-          <NavLink to="" className={({ isActive }) => `bg-gray-500 ${isActive? "bg-homeexplore" : "" }`}>
-            Dashboard
-          </NavLink>
-          <NavLink to="" className={({ isActive }) => `bg-gray-500 ${isActive? "bg-homeexplore" : "" }`}>
-            Tickets
-          </NavLink>
-          <NavLink to="/profile" className={({ isActive }) => `bg-gray-500 ${isActive? "bg-homeexplore" : "" }`}>
-            Profile
-          </NavLink>
+          {
+            navs.map((nav, index ) => {
+                return (
+                    <NavLink to={nav.to} className={({ isActive }) => `leading-normal text-[16px] text-center  font-montserrat font-semibold p-2 cursor-pointer transition hover:text-homeexplore ${isActive? "text-homeexplore" : "" }`} key={index}>
+                      { nav.name }
+                    </NavLink>
+                );
+            })
+          }
         </div>
-        <div>
-          <ul className="flex gap-12 ">
-            <Link>john doer</Link>
-            <Link>Log Out</Link>
-          </ul>
+        <div className='flex gap-8 text-[16px] font-montserrat font-bold '>
+            <Link>
+            <span>p img</span>
+            <span>john doer</span>
+            </Link>
+            <Link>Log Out</Link>    
         </div>
       </header>
     </div>

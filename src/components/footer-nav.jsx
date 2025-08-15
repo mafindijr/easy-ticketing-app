@@ -1,0 +1,43 @@
+import React from 'react'
+import {Facebook, Linkedin} from 'lucide-react'
+import { BsTwitterX  } from "react-icons/bs";
+import { Login } from "./auth/login";
+
+export default function FooterNav() {
+
+        const navLinks = [
+        { name: "About EasyTicketing", href: "#" },
+        { name: "Contact Us", href: "#" },
+        { name: "Privacy Policy", href: "#" },
+        { name: "Terms of Use", href: "#" },
+        ];
+
+  return (
+    <div>
+        <div className='font-montserrat bg-[#0D47A1] flex justify-between pr-30 pl-30 py-4'>
+
+        <div className='flex flex-col items-start text-gray-50'>
+
+         {navLinks.map((link) => (
+            <a key={link.name} href={link.href}>{link.name}</a>
+          ))}
+        </div>
+
+        <div className='text-gray-50'>
+          &copy; 2025 EasyTicket. All right reserved
+        </div>
+
+        <div className='flex items-center gap-4 text-gray-50 relative'>
+          <div className='flex flex-col items-start'>
+            <span className='mb-3'>Follow Us</span>
+            <div className='flex items-center gap-4'>
+              <div className='border-2 border-solid-gray-50 p-1 rounded-full'><a href="#"><Linkedin size={24} /></a></div>
+              <div className='border-2 border-solid-gray-50 p-1 rounded-full'><a href="#"><Facebook size={24} /></a></div>
+              <div className='border-2 border-solid-gray-50 p-2 text-xl rounded-full'><a href=""><BsTwitterX /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}

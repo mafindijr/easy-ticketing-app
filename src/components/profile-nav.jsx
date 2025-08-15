@@ -16,6 +16,7 @@ export default function ProfileNav() {
         style={{boxShadow: '0px 0px 4px rgba(2, 2, 2, 0.15)' }}
         >
         <div className="">
+        <Link to="/">
          <div id="title" className="flex items-center text-center font-pacifico leading-normal font-[400] text-[32px] flex-1 text-addeventbtn font-bold">
             EasyTickets
             <span>
@@ -24,6 +25,7 @@ export default function ProfileNav() {
               </svg>
             </span>
             </div>
+          </Link>
         </div>
         <div className='flex gap-4 m-2'>
           {

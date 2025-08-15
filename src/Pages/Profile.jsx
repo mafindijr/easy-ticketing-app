@@ -11,19 +11,8 @@ export default function Profile() {
 
 
   return (
-    <div className="relative">
-      
-      <ProfileNav />
+    <div className="mt-14">
 
-      <div className="grid grid-cols-5 h-[100dvh] mt-12">
-        <nav className="font-poppins p-10 font-[700] text-[16px] leading-[100%] bg-[#FAFAFA]">
-             <ul className="inline-block">
-              <li className="mb-6"><a href="#" className="font-bold">Personal info</a></li>
-              <li className="mb-6"><a href="#" className="font-bold">Tickets</a></li>
-              <li className="mb-6"><a href="#" className="font-bold">Notifications</a></li>
-              <li className="mb-6"><a href="#" className="font-bold">Settings</a></li>
-             </ul>
-        </nav>
         <main className="col-span-4 px-20 py-4">
           <div>
             <div className="w-[600px]"> 
@@ -98,7 +87,6 @@ export default function Profile() {
             </form>
             </div>
         </main>
-      </div>
     </div>
   )
 }

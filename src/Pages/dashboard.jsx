@@ -5,7 +5,9 @@ export default function Dashboard() {
 
   return (
     <div>
-      
+      <div>
+        <h1>dashboard</h1>
+      </div>
     </div>
   )
 }

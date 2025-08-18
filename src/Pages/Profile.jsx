@@ -3,7 +3,6 @@ import { Input } from "../components/input";
 import { Button } from "../components/button";
 import { Plus } from "lucide-react";
 import { MapPin } from "lucide-react";
-import ProfileNav from "../components/profile-nav";
 
 export default function Profile() {
 
@@ -13,16 +12,18 @@ export default function Profile() {
   return (
     <div className="mt-14">
 
-        <main className="col-span-4 px-20 py-4">
-          <div>
             <div className="w-[600px]"> 
                 <h1 className="font-montserrat font-[700] text-[56px] leading-[68px] mb-2">Personal Information</h1>
                 <p className="font-montserrat text-[18px] font-[400] mb-2 leading-[28px]">Update your details to stay connected and book events seamlessly</p>
             </div>
+        <main className="grid grid-cols-2">
 
+          <div>
+            
             <form>
 
                <div className="grid grid-cols-2 gap-6">
+                <div>
                   <Input
                       label="First name"
                       name="firstName"
@@ -32,7 +33,8 @@ export default function Profile() {
                       error={errors.firstName}
                       required
                   />
-
+                </div>
+                <div>
                   <Input
                       label="Last name"
                       name="lastName"
@@ -42,8 +44,10 @@ export default function Profile() {
                       error={errors.lastName}
                       required
                   />
+                  </div>
               </div>
               <div>
+                <div>
                 <Input
                     label="Email"
                     name="email"
@@ -53,27 +57,30 @@ export default function Profile() {
                     error={errors.email}
                     required
                 />
-
-                <Input
-                    label="Phone Number"
-                    name="phone number"
-                    type="text"
-                    placeholder="Enter your phone number"
-                    register={register}
-                    error={errors.email}
-                    required
-                />
-
-                <Input
-                      label="Location"
-                      name="location"
-                      type="text"
-                      placeholder="Enter your location"
-                      register={register}
-                      error={errors.location}
-                      required
-                      prefixIcon={MapPin}
-                  />
+                </div>
+                  <div>
+                    <Input
+                        label="Phone Number"
+                        name="phone number"
+                        type="text"
+                        placeholder="Enter your phone number"
+                        register={register}
+                        error={errors.email}
+                        required
+                    />
+                 </div>
+                 <div> 
+                  <Input
+                        label="Location"
+                        name="location"
+                        type="text"
+                        placeholder="Enter your location"
+                        register={register}
+                        error={errors.location}
+                        required
+                        prefixIcon={MapPin}
+                    />
+                  </div>
                   <span className="text-[#4B5563] font-montserrat font-[400] text-[12px] leading-[16px]">Help us recommend neary events</span>
               </div>
               <div>
@@ -85,6 +92,42 @@ export default function Profile() {
                     Save Changes
                 </Button>
             </form>
+            </div>
+            <div>
+              <form>
+                <Input 
+                 label="Current Password*"
+                 name="password"
+                 type="text"
+                 placeholder="Current Password"
+                 register={register}
+                 error={errors.password}
+                 required
+                //  prefixIcon={}
+                />
+
+                <Input 
+                 label="New Password*"
+                 name="newPassword"
+                 type="text"
+                 placeholder="New Password"
+                 register={register}
+                 error={errors.newPassword}
+                 required
+                //  prefixIcon={}
+                />
+
+                <Input 
+                 label="Confirm Password*"
+                 name="confirmPassword"
+                 type="text"
+                 placeholder="Confirm Password"
+                 register={register}
+                 error={errors.confirmPassword}
+                 required
+                //  prefixIcon={}
+                />
+              </form>
             </div>
         </main>
     </div>

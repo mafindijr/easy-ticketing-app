@@ -1,12 +1,14 @@
 import { useForm } from "react-hook-form";
 import { Input } from "../components/input";
 import { Button } from "../components/button";
-import { Plus } from "lucide-react";
 
 export default function Profile() {
 
   const { register, handleSubmit, formState: { errors } } = useForm();
 
+    const onSubmit = (data) => {
+      console.log("Form Submitted with: ", data);
+    };
 
   return (
     <div className=" my-20 mx-30">
@@ -14,7 +16,7 @@ export default function Profile() {
             <div className="w-[600px]"> 
                 <h2 className="font-montserrat font-[700] text-[56px] leading-[68px] mb-2">My Profile</h2>
             </div>
-       <form onSubmit={handleSubmit}>
+       <form onSubmit={handleSubmit(onSubmit)}>
         <main className="grid grid-cols-2 gap-8">
 
 
@@ -32,6 +34,7 @@ export default function Profile() {
                       className={`form-input ${errors.firstName ? "border-red-500 focus:ring-red-500" : ""}`}
                       required
                   />
+                  {errors.firstName && <span className="text-red-500">First Name field should not be empty</span> }
                 </div>
                 <div>
                   <Input
@@ -44,6 +47,7 @@ export default function Profile() {
                       className={`form-input ${errors.lastName ? "border-red-500 focus:ring-red-500" : ""}`}
                       required
                   />
+                  {errors.lastName && <span>Email field should not be empty</span>}
                   </div>
               </div>
               <div>
@@ -71,8 +75,8 @@ export default function Profile() {
                         required
                     />
 
-                     {/* {errors.phoneNumber && (
-                      <span>Please enter Phone Number </span>)}  */}
+                     {errors.phoneNumber && (
+                      <span>Please enter Phone Number </span>)}  
                  </div>
               </div>
             </div>

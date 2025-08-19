@@ -99,8 +99,11 @@ export default function Profile() {
                  required
                 //  prefixIcon={}
                 />
-               </div>
 
+                {errors.password && <span className="text-[12px] leading-[16px] text-[#d32f2f] font-montserrat font-[400]">Please enter your current password to update your password</span> }
+               </div>
+               
+               <div>
                 <Input 
                  label="New Password*"
                  name="newPassword"
@@ -113,6 +116,10 @@ export default function Profile() {
                 //  prefixIcon={}
                 />
 
+                {errors.newPassword && <span className="text-[12px] leading-[16px] text-[#d32f2f] font-montserrat font-[400]">New password must be at least 8 characters</span> }
+               </div>
+               
+               <div>
                 <Input 
                  label="Confirm Password*"
                  name="confirmPassword"
@@ -124,6 +131,9 @@ export default function Profile() {
                  required
                 //  prefixIcon={}
                 />
+
+                {errors.confirmPassword && <span className="text-[12px] leading-[16px] text-[#d32f2f] font-montserrat font-[400]">Passwords do not match</span> }
+               </div>
               </div>
             </div>
         </main>

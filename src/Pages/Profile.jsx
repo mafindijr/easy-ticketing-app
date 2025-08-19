@@ -34,7 +34,7 @@ export default function Profile() {
                       className={`form-input ${errors.firstName ? "border-red-500 focus:ring-red-500" : ""}`}
                       required
                   />
-                  {errors.firstName && <span className="text-red-500">First Name field should not be empty</span> }
+                  {errors.firstName && <span className="text-[12px] leading-[16px] text-[#d32f2f] font-montserrat font-[400]">Please enter your first name</span> }
                 </div>
                 <div>
                   <Input

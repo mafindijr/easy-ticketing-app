@@ -47,7 +47,7 @@ export default function Profile() {
                       className={`form-input ${errors.lastName ? "border-red-500 focus:ring-red-500" : ""}`}
                       required
                   />
-                  {errors.lastName && <span>Email field should not be empty</span>}
+                  {errors.lastName && <span className="text-[12px] leading-[16px] text-[#d32f2f] font-montserrat font-[400]">Please enter your last name</span> }
                   </div>
               </div>
               <div>
@@ -62,6 +62,7 @@ export default function Profile() {
                     className={`form-input ${errors.email ? "border-red-500 focus:ring-red-500" : ""}`}
                     required
                 />
+                {errors.email && <span className="text-[12px] leading-[16px] text-[#d32f2f] font-montserrat font-[400]">Please enter a valid email address</span> }
                 </div>
                   <div>
                     <Input
@@ -75,8 +76,7 @@ export default function Profile() {
                         required
                     />
 
-                     {errors.phoneNumber && (
-                      <span>Please enter Phone Number </span>)}  
+                    {errors.phoneNumber && <span className="text-[12px] leading-[16px] text-[#d32f2f] font-montserrat font-[400]">Please enter a valid phone number</span> }  
                  </div>
               </div>
             </div>
@@ -87,6 +87,7 @@ export default function Profile() {
 
             <div>
               <div className="border-[#cccccc] border-1 rounded-[8px] p-[32px]">
+                <div>
                 <Input 
                  label="Current Password*"
                  name="password"
@@ -98,6 +99,7 @@ export default function Profile() {
                  required
                 //  prefixIcon={}
                 />
+               </div>
 
                 <Input 
                  label="New Password*"

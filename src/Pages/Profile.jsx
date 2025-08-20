@@ -24,24 +24,7 @@ export default function Profile() {
           <div>
             <h4 className="text-[20px] leading-[30px] font-montserrat font-bold ">Personal Information</h4>
             <div className="border-[#cccccc] border-1 rounded-[8px] p-[32px]">
-              {/* <ProfileForm /> */}
               <ProfileUploader />
-              <div className="flex items-center border-[#cccccc] border-1 rounded-[8px] py-[16px] px-[8px]">
-                <div className="">profile</div>
-                <div className="flex flex-col">
-                  <div><h4>Profile Picture</h4></div>
-                  <div  className="flex items-center gap-[10px]">
-                     <Button className="w-[172px] bg-homeexplore text-[16px] text-white font-montserrat font-semibold rounded-[8px] px-[8px] py-[12px]"> 
-                      <span>icon</span>
-                      <span>Upload image</span>
-                     </Button>
-                    <button className="w-[92px] text-[16px] text-[#999999] font-montserrat font-semibold rounded-[8px] px-[8px] py-[12px]"
-                    style={{boxShadow: " 0px 2px 0px 1px rgba(0, 0, 0, 0.25)"}}
-                    >Remove</button>
-                  </div>
-                     <span>png*,jpeg*, files under 10mb</span>
-                </div>
-              </div>
                <div className="grid grid-cols-2 gap-6">
                 <div>
                   <Input

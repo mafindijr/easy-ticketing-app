@@ -40,8 +40,8 @@ const ProfileUploader = () => {
   return (
     <div>
 
-      <div className="border border-[#cccccc] p-4 rounded-lg flex flex-col items-center">
-        <div className="w-24 h-24 mb-3 rounded-full bg-gray-200 flex items-center justify-center text-4xl font-bold text-white overflow-hidden">
+      <div className="border border-[#cccccc] p-4 rounded-lg flex justify-center items-center gap-[10px]">
+        <div className="w-24 h-24 mb-3 rounded-full bg-homeexplore flex items-center justify-center text-4xl font-bold text-white overflow-hidden">
           {previewUrl ? (
             <img
               src={previewUrl}
@@ -53,48 +53,38 @@ const ProfileUploader = () => {
           )}
         </div>
             <div className="flex flex-col">
-              <h4>Profile Picture</h4>
+              <h4 className="font-montserrat font-semibold text-[18px] ">Profile Picture</h4>
                <div className="inline-flex gap-[10px]">
-                <label className="w-[172px] bg-homeexplore text-[16px] font-montserrat font-semibold rounded-[8px] px-[8px] py-[12px] cursor-pointer inline-flex items-center space-x-2 text-white">
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                >
-                    <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M12 12v9m0 0l-3-3m3 3l3-3M12 3v9m0 0l-3-3m3 3l3-3"
+                <label className="w-[172px] bg-homeexplore text-[16px] font-montserrat font-semibold rounded-[8px] px-[8px] py-[12px] gap-2 cursor-pointer inline-flex items-center space-x-2 text-white">
+                    <svg className="ml-2 font-bold " width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 5L5.41 6.41L8 3.83V14H10V3.83L12.58 6.41L14 5L9 0M2 18V10H0V18C0 19.1 0.9 20 2 20H16C17.1 20 18 19.1 18 18V10H16V18H2Z" fill="white"/>
+                    </svg>
+
+                    <span>Upload image</span>
+                    <input
+                        type="file"
+                        accept="image/png, image/jpeg"
+                        onChange={handleChange}
+                        className="hidden"
                     />
-                </svg>
-                <span>Upload image</span>
-                <input
-                    type="file"
-                    accept="image/png, image/jpeg"
-                    onChange={handleChange}
-                    className="hidden"
-                />
                 </label>
 
                 {imageFile && (
                 <button
                     onClick={handleRemove}
-                    className="w-[92px] text-[16px] text-[#999999] font-montserrat font-semibold rounded-[8px] px-[8px] py-[12px]"
+                    className="w-[92px] cursor-pointer text-[16px] text-[#000000] font-montserrat font-semibold rounded-[8px] px-[8px] py-[12px]"
                     style={{boxShadow: " 0px 2px 0px 1px rgba(0, 0, 0, 0.25)"}}
-                            
+                    id="remove-btn"        
                 >
                     Remove
                 </button>
                 )}
               </div>
-                <span>png*,jpeg*, files under 10mb</span>
+                <span className="font-montserrat font-[500] text-[14px] text-[#4b5563]">png*,jpeg*, files under 10mb</span>
             </div>
 
 
-        {error && <p className="text-red-600 text-sm mt-2">{error}</p>}
+        {error && <p className="text-[#d32f2f] text-sm mt-2">{error}</p>}
       </div>
     </div>
   );

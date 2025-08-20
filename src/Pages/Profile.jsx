@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { Input } from "../components/input";
 import { Button } from "../components/button";
+import ProfileUploader from "../components/test-profile";
 
 export default function Profile() {
 
@@ -23,6 +24,8 @@ export default function Profile() {
           <div>
             <h4 className="text-[20px] leading-[30px] font-montserrat font-bold ">Personal Information</h4>
             <div className="border-[#cccccc] border-1 rounded-[8px] p-[32px]">
+              {/* <ProfileForm /> */}
+              <ProfileUploader />
               <div className="flex items-center border-[#cccccc] border-1 rounded-[8px] py-[16px] px-[8px]">
                 <div className="">profile</div>
                 <div className="flex flex-col">

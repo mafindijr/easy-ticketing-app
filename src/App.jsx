@@ -1,5 +1,6 @@
 import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Toaster } from "react-hot-toast";
 import Home from './views/Home';
 import Profile from './Pages/Profile';
 import { AuthProvider } from './auth/AuthContext';
@@ -12,6 +13,8 @@ function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
+        <Toaster position="top-right" reverseOrder={false} />
+        
         <Routes>
           <Route path="/" element={<Home />} />
           {/* <Route path="/profile" element={<Profile />} /> */}

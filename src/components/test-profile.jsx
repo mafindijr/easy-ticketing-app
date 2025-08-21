@@ -55,7 +55,9 @@ const ProfileUploader = () => {
             <div className="flex flex-col">
               <h4 className="font-montserrat font-semibold text-[18px] ">Profile Picture</h4>
                <div className="inline-flex gap-[10px]">
-                <label className="w-[172px] bg-homeexplore text-[16px] font-montserrat font-semibold rounded-[8px] px-[8px] py-[12px] gap-2 cursor-pointer inline-flex items-center space-x-2 text-white">
+                <label className="w-[172px] bg-homeexplore text-[16px] font-montserrat font-semibold rounded-[8px] px-[8px] py-[12px] gap-2 cursor-pointer inline-flex items-center space-x-2 text-white"
+                style={{boxShadow: " 0px 4px 6px rgba(2, 2, 2, 0.40)"}}
+                >
                     <svg className="ml-2 font-bold " width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M4 5L5.41 6.41L8 3.83V14H10V3.83L12.58 6.41L14 5L9 0M2 18V10H0V18C0 19.1 0.9 20 2 20H16C17.1 20 18 19.1 18 18V10H16V18H2Z" fill="white"/>
                     </svg>
@@ -73,7 +75,7 @@ const ProfileUploader = () => {
                 <button
                     onClick={handleRemove}
                     className="w-[92px] cursor-pointer text-[16px] text-[#000000] font-montserrat font-semibold rounded-[8px] px-[8px] py-[12px]"
-                    style={{boxShadow: " 0px 2px 0px 1px rgba(0, 0, 0, 0.25)"}}
+                    style={{boxShadow: " 0px 4px 6px rgba(2, 2, 2, 0.25)"}}
                     id="remove-btn"        
                 >
                     Remove

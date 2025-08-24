@@ -1,6 +1,7 @@
 import { useState, useCallback, useEffect } from "react";
 import UseModal from "./UseModal";
 import PaymentPage from "./payment-page";
+import BookingConfirmed from './booking-confirmed'; // <-- import here
 import { 
   ChevronDown,
   Calendar, 
@@ -16,6 +17,7 @@ function Card({ name, date, location, price, image, description, organizers, tic
   const [isModalOpen, setModalOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [openPayment, setOpenPayment] = useState(false);
+  const [openConfirmed, setOpenConfirmed] = useState(false); // <-- move here
   const [selectValue, setSelectValue] = useState("Ticket Type");
   
   // Set initial select value based on tickets prop
@@ -36,6 +38,12 @@ function Card({ name, date, location, price, image, description, organizers, tic
     setSelectValue(value);
     setIsOpen(false);
   }, []);
+
+  // Handler to show confirmation modal after payment
+  const handlePaymentSuccess = () => {
+    setOpenPayment(false);
+    setTimeout(() => setOpenConfirmed(true), 200); // small delay for smooth transition
+  };
 
   return (
     <>
@@ -225,7 +233,10 @@ function Card({ name, date, location, price, image, description, organizers, tic
             Back to Ticket Selection
           </p>
         </div>
-        <PaymentPage />
+        <PaymentPage name={name} onClose={() => setOpenPayment(false)} onPaymentSuccess={handlePaymentSuccess} />
+      </UseModal>
+      <UseModal isOpen={openConfirmed} onClose={() => setOpenConfirmed(false)}>
+        <BookingConfirmed onDone={() => setOpenConfirmed(false)} />
       </UseModal>
     </>
   );

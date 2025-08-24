@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from './button';
 
-export default function BookingConfirmed() {
+export default function BookingConfirmed({ onDone }) {
 
   return (
     <div className='flex flex-col items-center justify-center gap-4'>
@@ -62,7 +62,10 @@ export default function BookingConfirmed() {
     
             <div className='flex flex-col gap-[8px] items-center justify-center text-center'>
     
-                <Button type='submit' className='font-montserrat text-[16px] font-bold bg-homeexplore rounded-[8px] w-[376px] py-[16px] px-[32px] text-white'
+                <Button
+                    type='button'
+                    className='font-montserrat text-[16px] font-bold bg-homeexplore rounded-[8px] w-[376px] py-[16px] px-[32px] text-white'
+                    onClick={onDone}
                 >
                     Done
                 </Button>

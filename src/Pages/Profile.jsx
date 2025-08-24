@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { Input } from "../components/input";
 import { Button } from "../components/button";
-import ProfileUploader from "../components/test-profile";
+import ProfileUploader from "../components/profile-upload";
 
 export default function Profile() {
 

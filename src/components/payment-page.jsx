@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { Input } from './input';
 import { Button } from './button';
 import UseModal from "./UseModal";
+import toast from 'react-hot-toast';
 import { LockKeyhole, CreditCard } from 'lucide-react';
 import BookingConfirmed from './booking-confirmed';
 
@@ -11,8 +12,14 @@ export default function PaymentPage({ name }) {
         const [openConfirmed, setOpenComfirm] = useState(false);
 
         const { register, handleSubmit, formState: {errors}, reset } = useForm();
-        const onSubmit = (e) => {
-            e.preventDefault();
+
+        const notify = () => toast.success(<div>
+            <h2>Payment Successful!</h2>
+            <span>Your ticket has been booked</span>
+        </div>);
+        const onSubmit = (data) => {
+            console.log('form submitted with', data);
+
             
         }
 
@@ -101,7 +108,10 @@ export default function PaymentPage({ name }) {
             <Button 
             type='submit' 
             className='font-montserrat mt-2 text-[16px] font-bold bg-homeexplore rounded-[8px] w-[376px] py-[16px] px-[32px] text-white'
-            onClick={() => setOpenComfirm(true)}
+            onClick={() => {
+                setOpenComfirm(true);
+                notify;
+            }}
             >
                 Place Order
             </Button>

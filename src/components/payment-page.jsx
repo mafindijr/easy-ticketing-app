@@ -108,6 +108,3 @@ export default function PaymentPage({ name, onClose, onPaymentSuccess }) {
    </div>
   )
 }
-//    </div>
-//   )
-// }

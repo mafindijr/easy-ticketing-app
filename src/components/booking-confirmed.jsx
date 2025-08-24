@@ -2,6 +2,7 @@ import React from 'react'
 import { Button } from './button';
 
 export default function BookingConfirmed() {
+
   return (
     <div className='flex flex-col items-center justify-center gap-4'>
         <div>
@@ -61,7 +62,8 @@ export default function BookingConfirmed() {
     
             <div className='flex flex-col gap-[8px] items-center justify-center text-center'>
     
-                <Button type='submit' className='font-montserrat text-[16px] font-bold bg-homeexplore rounded-[8px] w-[376px] py-[16px] px-[32px] text-white'>
+                <Button type='submit' className='font-montserrat text-[16px] font-bold bg-homeexplore rounded-[8px] w-[376px] py-[16px] px-[32px] text-white'
+                >
                     Done
                 </Button>
                 <p className='text-homeexplore cursor-pointer mt-2 font-montserrat font-[400] text-[18px] leading-[22px]'>View My Tickects</p>

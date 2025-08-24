@@ -225,7 +225,7 @@ function Card({ name, date, location, price, image, description, organizers, tic
             Back to Ticket Selection
           </p>
         </div>
-        <PaymentPage name={name} />
+        <PaymentPage />
       </UseModal>
     </>
   );

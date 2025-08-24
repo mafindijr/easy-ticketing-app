@@ -7,7 +7,7 @@ import toast from 'react-hot-toast';
 import { LockKeyhole, CreditCard } from 'lucide-react';
 import BookingConfirmed from './booking-confirmed';
 
-export default function PaymentPage({ onClose, name }) {
+export default function PaymentPage({ name }) {
 
         const [openConfirmed, setOpenConfirmed] = useState(false);
 

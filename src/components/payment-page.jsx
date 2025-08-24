@@ -7,20 +7,18 @@ import toast from 'react-hot-toast';
 import { LockKeyhole, CreditCard } from 'lucide-react';
 import BookingConfirmed from './booking-confirmed';
 
-export default function PaymentPage({ name }) {
+export default function PaymentPage({ onClose, name }) {
 
-        const [openConfirmed, setOpenComfirm] = useState(false);
+        const [openConfirmed, setOpenConfirmed] = useState(false);
 
         const { register, handleSubmit, formState: {errors}, reset } = useForm();
 
-        const notify = () => toast.success(<div>
-            <h2>Payment Successful!</h2>
-            <span>Your ticket has been booked</span>
-        </div>);
+        const notify = () => toast.success("Payment Successful!");
         const onSubmit = (data) => {
+        
+            notify;
+            setOpenConfirmed(true)
             console.log('form submitted with', data);
-
-            
         }
 
   return (
@@ -50,7 +48,6 @@ export default function PaymentPage({ name }) {
             error={errors.cardName}
             className={`form-input ${errors.cardName ? "border-red-500 focus:ring-red-500" : ""}`}
             required
-            // prefixIcon={}
             />
         </div>
 
@@ -79,7 +76,6 @@ export default function PaymentPage({ name }) {
                 error={errors.expiryDate}
                 className={`form-input ${errors.expiryDate ? "border-red-500 focus:ring-red-500" : ""}`}
                 required
-                // prefixIcon={}
                 />
                 <span className='block text-[14px] leading-[16px] text-[#1F2A44]'>MM/YY</span>
             </div>
@@ -92,7 +88,6 @@ export default function PaymentPage({ name }) {
                 error={errors.cvv}
                 className={`form-input ${errors.cvv ? "border-red-500 focus:ring-red-500" : ""}`}
                 required
-                // prefixIcon={}
                 />
             </div>
     
@@ -108,16 +103,12 @@ export default function PaymentPage({ name }) {
             <Button 
             type='submit' 
             className='font-montserrat mt-2 text-[16px] font-bold bg-homeexplore rounded-[8px] w-[376px] py-[16px] px-[32px] text-white'
-            onClick={() => {
-                setOpenComfirm(true);
-                notify;
-            }}
             >
                 Place Order
             </Button>
         </div>
     </form>
-    <UseModal isOpen={openConfirmed} onClose={() => setOpenComfirm(false)} >
+    <UseModal isOpen={openConfirmed} onClose={() => setOpenConfirmed(false)} >
         <BookingConfirmed />
     </UseModal>
    </div>

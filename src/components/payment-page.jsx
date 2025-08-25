@@ -99,7 +99,7 @@ export default function PaymentPage({ name, onClose, onPaymentSuccess }) {
 
             <Button 
             type='submit' 
-            className='font-montserrat mt-2 text-[16px] font-bold bg-homeexplore rounded-[8px] w-[376px] py-[16px] px-[32px] text-white'
+            className='font-montserrat mt-2 text-[16px] font-bold bg-homeexplore rounded-[8px] w-[376px] py-[16px] px-[32px] text-white outline-none'
             >
                 Place Order
             </Button>

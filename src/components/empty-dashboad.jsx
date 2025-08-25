@@ -5,7 +5,7 @@ export default function EmptyDashboadState() {
 
   return (
     <div className='flex items-center justify-center'>
-        <div className='flex flex-col gap-[16px] p-[24px] mt-20 items-center m-10 w-[458px] h-[478px] border-1 border-[#cccccc] rounded-[8px]'>
+        <div className='flex flex-col gap-[16px] p-[24px] items-center m-10 w-[458px] h-[478px] border-1 border-[#cccccc] rounded-[8px]'>
             <div>
                     <svg width="248" height="248" viewBox="0 0 248 248" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M248 189.67H0V189.794H248V189.67Z" fill="#EBEBEB"/>

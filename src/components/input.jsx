@@ -42,7 +42,7 @@ export const Input = ({
           className={`
             w-full p-2 ${PrefixIcon ? "pl-10" : "pl-2"} pr-10 border 
             border-[#D1D5DB] text-[#6B7280] text-base font-montserrat 
-            rounded-[4px] bg-[#ebebeb] focus:outline-none focus:ring-1 focus:ring-[#6B7280] 
+            rounded-[4px] bg-[#ebebeb] focus:outline-none focus:ring-1 focus:ring-[#93abdb] 
             ${className}
           `}
           {...(register ? register(name, { required }) : {})}

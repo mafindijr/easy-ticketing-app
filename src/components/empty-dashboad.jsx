@@ -164,7 +164,7 @@ export default function EmptyDashboadState() {
                     <span>Start by creating your first event and managing tickets.</span>
                 </div>
                 <div>
-                    <Button>Create Event</Button>
+                    <Button className='font-montserrat text-[16px] font-bold bg-homeexplore rounded-[8px] w-full py-[16px] px-[8px] text-white'>Create Event</Button>
                 </div>
             </div>
         </div>

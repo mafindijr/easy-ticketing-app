@@ -4,8 +4,8 @@ import { Button } from './button';
 export default function EmptyDashboadState() {
 
   return (
-    <div>
-        <div className='flex flex-col gap-8 mt-20 items-center m-10'>
+    <div className='flex items-center justify-center'>
+        <div className='flex flex-col gap-[16px] p-[24px] mt-20 items-center m-10 w-[458px] h-[478px] border-1 border-[#cccccc] rounded-[8px]'>
             <div>
                     <svg width="248" height="248" viewBox="0 0 248 248" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M248 189.67H0V189.794H248V189.67Z" fill="#EBEBEB"/>
@@ -158,12 +158,14 @@ export default function EmptyDashboadState() {
 
 
             </div>
-            <div>
+            <div className='flex flex-col gap-4 items-center'>
                 <div>
-                    <h4>No events created yet.</h4>
-                    <span>Start by creating your first event and managing tickets.</span>
+                    <h4 className='text-[18px] font-montserrat font-bold leading-[28px]'>No events created yet.</h4>
                 </div>
-                <div>
+                <div className='flex items-center text-center w-[410px]'>
+                    <span className='text-[18px] leading-[28px] font-montserrat font-[400]'>Start by creating your first event and managing tickets.</span>
+                </div>
+                <div className='w-full'>
                     <Button className='font-montserrat text-[16px] font-bold bg-homeexplore rounded-[8px] w-full py-[16px] px-[8px] text-white'>Create Event</Button>
                 </div>
             </div>

@@ -1,3 +1,4 @@
+import EmptyDashboadState from "../components/empty-dashboad"
 import DashboardLayout from "../layout/dashboard-layout"
 
 export default function Dashboard() {
@@ -7,6 +8,7 @@ export default function Dashboard() {
     <div>
       <div>
         <h1>dashboard</h1>
+        <EmptyDashboadState />
       </div>
     </div>
   )

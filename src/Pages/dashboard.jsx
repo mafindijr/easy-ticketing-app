@@ -34,7 +34,56 @@ export default function Dashboard() {
           <div>
             <h3 className="text-[24px] leading-[34px] font-montserrat font-bold">Your Events</h3>
           </div>
-            <EmptyDashboadState />
+          <div className="grid grid-cols-1 gap-[24px]">
+            {/* <EmptyDashboadState /> */}
+            <div className="inline-flex justify-between border-1 border-[#cccccc] rounded-[8px] gap-[24px] p-[32px]">
+              <div className="inline-flex gap-4">
+              <div>
+                <img src="" alt="event-image" />
+              </div>
+              <div>
+                <div><h4>Tech for Beginners - Online Bootcamp</h4></div>
+                <div>
+                  <p>
+                    <span>icon</span>
+                    <span>Sept 5, 2025</span>
+                  </p>
+                  <p>
+                    <span>icon</span>
+                    <span>10:00 AM - 12:30 PM</span>
+                  </p>
+                </div>
+                <div>
+                  <p>
+                    <span>icon</span>
+                    <span>Oniline (Zoom)</span>
+                  </p>
+                </div>
+                <div>
+                  <p>
+                    <span>icon</span>
+                    <span>Paid Ticket</span>
+                  </p>
+                  <p>
+                    <span>icon</span>
+                    <span>#5000</span>
+                  </p>
+                </div>
+                <div>
+                  <span>Edit</span>
+                  <span>View</span>
+                  <span>
+                    <span>Downloard Attendees CSV</span>
+                    <span>Downloard icon</span>
+                  </span>
+                </div>
+              </div>
+              </div>
+              <div>
+                <span>Upcoming</span>
+              </div>
+            </div>
+          </div>
       </div>
     </div>
   )

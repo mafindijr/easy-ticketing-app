@@ -5,8 +5,8 @@ export default function OrganizersDashboardEventsCards() {
     <>
         <div className="inline-flex justify-between border-1 border-[#cccccc] rounded-[8px] gap-[24px] p-[32px]">
               <div className="inline-flex gap-4">
-              <div>
-                <img src="./tech.jpg" alt="event-image" />
+              <div className="w-[280px] h-[210px] roundeed-[14.80px] overflow-hidden">
+                <img src="./tech.jpg" alt="event-image" className="rounded-[14.80px] object-cover" />
               </div>
               <div>
                 <div><h4>Tech for Beginners - Online Bootcamp</h4></div>

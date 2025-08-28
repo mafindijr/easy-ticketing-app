@@ -4,6 +4,7 @@ import {
     Clock,
     MapPin,
     Ticket,
+    Banknote
  } from 'lucide-react'
 
 export default function OrganizersDashboardEventsCards() {
@@ -22,28 +23,28 @@ export default function OrganizersDashboardEventsCards() {
               <div className="flex flex-col gap-2 text-[20px] font-montserrat font-[500] leading-full">
                 <div><h4 className="text-[20px] leading-[30px] font-bold font-montserrat mb-2">Tech for Beginners - Online Bootcamp</h4></div>
                 <div className='inline-flex gap-2'>
-                  <p className='inline-flex gap-1 items-center'>
+                  <p className='inline-flex gap-2 items-center'>
                     <span><CalendarDays className='w-[18px] h-[20px]' /></span>
                     <span>Sept 5, 2025</span>
                   </p>
-                  <p className='inline-flex gap-1 items-center'>
+                  <p className='inline-flex gap-2 items-center'>
                     <span><Clock className='w-[18px] h-[20px]' /></span>
                     <span>10:00 AM - 12:30 PM</span>
                   </p>
                 </div>
                 <div>
-                  <p className='inline-flex gap-1 items-center'>
+                  <p className='inline-flex gap-2 items-center'>
                     <span><MapPin className='w-[18px] h-[20px]' /></span>
                     <span>Oniline (Zoom)</span>
                   </p>
                 </div>
                 <div className='inline-flex gap-2'>
-                  <p className='inline-flex gap-1 items-center'>
+                  <p className='inline-flex gap-2 items-center'>
                     <span><Ticket className='w-[18px] h-[20px]' /></span>
                     <span>Paid Ticket</span>
                   </p>
-                  <p className='inline-flex gap-1'>
-                    <span>icon</span>
+                  <p className='inline-flex gap-2 items-center'>
+                    <span><Banknote className='w-[18px] h-[20px]' /></span>
                     <span>#5000</span>
                   </p>
                 </div>

@@ -7,6 +7,11 @@ import {
  } from 'lucide-react'
 
 export default function OrganizersDashboardEventsCards() {
+
+            const eventCards = [
+                {},
+            ]
+
   return (
     <>
         <div className="inline-flex justify-between border-1 border-[#cccccc] rounded-[8px] gap-[24px] p-[32px]">

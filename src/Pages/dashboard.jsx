@@ -28,7 +28,9 @@ export default function Dashboard() {
               </span>
               Total Revenue
             </h4>
-            <p className="text-[64px] font-montserrat font-bold leading-[100%]">$0</p>
+            <p className="text-[64px] font-montserrat font-bold leading-[100%]">
+              0
+            </p>
           </div>
         </div>
       <div>

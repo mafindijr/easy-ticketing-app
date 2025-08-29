@@ -4,7 +4,8 @@ import {
     Clock,
     MapPin,
     Ticket,
-    Banknote
+    Banknote,
+    Download
  } from 'lucide-react'
 
 export default function OrganizersDashboardEventsCards() {
@@ -48,18 +49,18 @@ export default function OrganizersDashboardEventsCards() {
                     <span>#5000</span>
                   </p>
                 </div>
-                <div className='inline-flex gap-8 mt-4 text-[16px] fonts-montserrat font-[600] leading-[100%] text-homeexplore'>
+                <div className='inline-flex gap-8 mt-4 text-[16px] fonts-montserrat font-[600] leading-[100%] text-homeexplore items-center'>
                   <span className='cursor-pointer'>Edit</span>
                   <span className='cursor-pointer'>View</span>
-                  <span>
-                    <span className='cursor-pointer'>Downloard Attendees CSV</span>
-                    <span className='cursor-pointer'>Downloard icon</span>
+                  <span className='inline-flex gap-1 items-center cursor-pointer'>
+                    <span>Downloard Attendees CSV</span>
+                    <span><Download className='text-black w-[18px] h-[20px] ' /></span>
                   </span>
                 </div>
               </div>
               </div>
-              <div>
-                <span>Upcoming</span>
+              <div className="">
+                <span className='w-[92px] h-[25px] rounded-[32px] border-1 border-[#007b8a] bg-[#e0f7fa] text-[#007b8a] py-[4px] px-[8px]'>Upcoming</span>
               </div>
             </div>
     </>

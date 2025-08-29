@@ -59,7 +59,7 @@ export default function OrganizersDashboardEventsCards() {
                 </div>
               </div>
               </div>
-              <div className="">
+              <div className="font-montserrat font-[500] text-[14px] leading-[100%]">
                 <span className='w-[92px] h-[25px] rounded-[32px] border-1 border-[#007b8a] bg-[#e0f7fa] text-[#007b8a] py-[4px] px-[8px]'>Upcoming</span>
               </div>
             </div>

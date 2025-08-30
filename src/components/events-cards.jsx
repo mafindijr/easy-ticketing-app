@@ -11,7 +11,19 @@ import {
 export default function OrganizersDashboardEventsCards() {
 
             const eventCards = [
-                {},
+                {
+                    name: "Tech for Beginners - Online Bootcamp",
+                    date: {
+                        date: "Sept 5, 2025",
+                        time: "10:00 AM - 12:30 PM"
+                    },
+                    location: "Online (Zoom)",
+                    ticket: {
+                        type: "Paid Ticket",
+                        price: "#5000"
+                    }
+
+                },
             ]
 
   return (

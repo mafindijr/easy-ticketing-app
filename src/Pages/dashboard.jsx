@@ -40,6 +40,7 @@ export default function Dashboard() {
           <div className="grid grid-cols-1 gap-[24px] py-[32px]">
             {/* <EmptyDashboadState /> */}
             <OrganizersDashboardEventsCards />
+            <OrganizersDashboardEventsCards />
           </div>
       </div>
     </div>

@@ -34,31 +34,31 @@ export default function OrganizersDashboardEventsCards() {
                 <img src="./tech.jpg" alt="event-image" className="rounded-[14.80px] object-cover" />
               </div>
               <div className="flex flex-col gap-2 text-[20px] font-montserrat font-[500] leading-full">
-                <div><h4 className="text-[20px] leading-[30px] font-bold font-montserrat mb-2">{name}</h4></div>
+                <div><h4 className="text-[20px] leading-[30px] font-bold font-montserrat mb-2">Tech for Beginners - Online Bootcamp</h4></div>
                 <div className='inline-flex gap-2'>
                   <p className='inline-flex gap-2 items-center'>
                     <span><CalendarDays className='w-[18px] h-[20px]' /></span>
-                    <span>{eventCards.date}</span>
+                    <span>Sept 5, 2025</span>
                   </p>
                   <p className='inline-flex gap-2 items-center'>
                     <span><Clock className='w-[18px] h-[20px]' /></span>
-                    <span>{eventCards.time}</span>
+                    <span>Sept 5, 2025</span>
                   </p>
                 </div>
                 <div>
                   <p className='inline-flex gap-2 items-center'>
                     <span><MapPin className='w-[18px] h-[20px]' /></span>
-                    <span>{eventCards.location}</span>
+                    <span>Online (Zoom)</span>
                   </p>
                 </div>
                 <div className='inline-flex gap-2'>
                   <p className='inline-flex gap-2 items-center'>
                     <span><Ticket className='w-[18px] h-[20px]' /></span>
-                    <span>{eventCards.type}</span>
+                    <span>Paid Ticket</span>
                   </p>
                   <p className='inline-flex gap-2 items-center'>
                     <span><Banknote className='w-[18px] h-[20px]' /></span>
-                    <span>{eventCards.price}</span>
+                    <span>#5000</span>
                   </p>
                 </div>
                 <div className='inline-flex gap-8 mt-4 text-[16px] fonts-montserrat font-[600] leading-[100%] text-homeexplore items-center'>

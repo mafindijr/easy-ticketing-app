@@ -1,6 +1,14 @@
 import React from 'react'
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { Button } from './button';
+import { Input } from './input';
+
 
 export default function createEventForm() {
+
+    const { register, handleSubmit, formState: {errors}, reset  } = useForm();
+    
   return (
     <>
         <div>

@@ -21,7 +21,7 @@ export default function createEventForm() {
                 <span>icon</span>
                 <span>Back to Events</span>
             </div>
-         <form>
+         <form onSubmit={handleSubmit}>
             <div>
                 <div>
                     <h4>Create Event</h4>
@@ -39,7 +39,7 @@ export default function createEventForm() {
                     <div></div>
                 </div>
             </div>
-            <Button></Button>
+            <Button>Create Event</Button>
          </form>
         </div>
     </>

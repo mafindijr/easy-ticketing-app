@@ -8,10 +8,19 @@ import { Input } from './input';
 export default function createEventForm() {
 
     const { register, handleSubmit, formState: {errors}, reset  } = useForm();
-    
+
+    const onSubmit = (data) => {
+
+        console.log("event created successfully", data);
+    }
+
   return (
     <>
         <div>
+            <div>
+                <span>icon</span>
+                <span>Back to Events</span>
+            </div>
          <form>
             <div>
                 <div>

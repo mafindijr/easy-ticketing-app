@@ -14,7 +14,7 @@ export default function FooterNav() {
 
   return (
     <div>
-        <div className='font-montserrat bg-[#0D47A1] flex justify-between pr-30 pl-30 py-4'>
+        <div className='font-montserrat bg-[#0D47A1] flex justify-between pr-[131px] pl-[131px] py-4'>
 
         <div className='flex flex-col items-start text-gray-50'>
 

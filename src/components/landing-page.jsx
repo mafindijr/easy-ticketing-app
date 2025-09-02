@@ -31,7 +31,7 @@ export default function LandingPage() {
     <>
       <header className="relative flex justify-center items-center mt-2">
 
-        <nav className=" fixed bg-white left-0 right-0 top-0 flex pr-30 pl-30 px-2 py-2 items-center px-10 top-0 justify-between z-12">
+        <nav className=" fixed bg-white left-0 right-0 top-0 flex pr-[131px] pl-[131px] px-2 py-2 items-center px-10 top-0 justify-between z-12">
           <div id="title" className="flex items-center text-center font-pacifico leading-normal font-[400] text-[32px] flex-1 text-addeventbtn font-bold">
             EasyTickets
             <span>
@@ -84,7 +84,7 @@ export default function LandingPage() {
 
         <SearchForm />
 
-        <div className="w-full mt-4 pr-30 pl-30 items-center justify-center">
+        <div className="w-full mt-4 pr-[129px] pl-[129px] items-center justify-center">
 
           <div
             id="hero-sect"

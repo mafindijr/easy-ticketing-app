@@ -6,7 +6,7 @@ function UpcomingEvents() {
   const upcomingEvents = events.filter((event) => event.type === "upcoming");
 
   return (
-    <div className="w-full pr-30 pl-30 my-8">
+    <section className="w-full pr-[129px] pl-[129px] my-8">
       <div className='inline-flex items-center gap-4'>
           <h2 className="font-poppins text-2xl font-bold mb-4">Upcoming Events</h2>
           <a href="#" className='font-montserrat text-homeexplohover inline-flex gap-1 items-center border-b-2 border-homeexplohover font-bold'> <IoLocationSharp size={15} /> Lagos </a>
@@ -18,7 +18,7 @@ function UpcomingEvents() {
           ))} 
       </div>
       
-    </div>
+    </section>
   );
 }
 

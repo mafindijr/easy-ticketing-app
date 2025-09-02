@@ -36,7 +36,7 @@ function TopEvents() {
 
   return (
     <section 
-      className="w-full px-4 sm:px-6 md:px-8 my-8" 
+      className="w-full pl-[129px] pr-[129px] px-4 sm:px-6 md:px-8 my-8" 
       aria-labelledby="top-events-heading"
     >
       <div className="flex justify-between items-center">

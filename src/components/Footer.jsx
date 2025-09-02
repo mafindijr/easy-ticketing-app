@@ -7,7 +7,7 @@ export default function Footer() {
 
 
   return (
-    <>
+    <section>
     <div className='bg-[#eeeeee] flex justify-center items-center h-[400px] py-8'>
       <div className='flex justify-center items-center w-[869px] h-[248px]'>
 
@@ -32,6 +32,6 @@ export default function Footer() {
 
       <FooterNav />
 
-    </>
+    </section>
   )
 }

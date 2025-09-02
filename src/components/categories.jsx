@@ -58,7 +58,7 @@ export default function Categories() {
         }
 
   return (
-    <div className='font-montserrat text-[14px] flex flex-row gap-4 items-center justify-around pl-30 pr-30 my-4'>
+    <div className='font-montserrat text-[14px] flex flex-row gap-4 items-center justify-around pl-[129px] pr-[129px] my-4'>
         
         {eventsCategory.map(category => (
             <div

@@ -17,7 +17,7 @@ function Card({ name, date, location, price, image, description, organizers, tic
   const [isModalOpen, setModalOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [openPayment, setOpenPayment] = useState(false);
-  const [openConfirmed, setOpenConfirmed] = useState(false); // <-- move here
+  const [openConfirmed, setOpenConfirmed] = useState(false); 
   const [selectValue, setSelectValue] = useState("Ticket Type");
   
   // Set initial select value based on tickets prop

@@ -1,6 +1,7 @@
 import React from 'react'
 import LandingPage from '../components/landing-page'
 import Footer from '../components/Footer'
+import createEventForm from '../components/create-event'
 
 export default function layout({ children }) {
   return (
@@ -14,6 +15,7 @@ export default function layout({ children }) {
       </main>
 
       <Footer />
+      <createEventForm />
         
     </div>
   )

@@ -7,6 +7,9 @@ import { Input } from './input';
 
 export default function createEventForm() {
 
+    const [isOpen, setIsOpen] = useState(false);
+    const [selectValue, setSelectValue] = useState("Ticket Type");
+
     const { register, handleSubmit, formState: {errors}, reset  } = useForm();
 
     const onSubmit = (data) => {
@@ -44,6 +47,74 @@ export default function createEventForm() {
                                         Click to browse, or drag and drop a file here, png*,jpeg* files under 10MB, 730 x 300px
                                     </p>
                                 </div>
+                            </div>
+                            <div>
+                                <label htmlFor="">
+                                    Event Title*
+                                    <Input type='text' />
+                                </label>
+                                <label htmlFor="">
+                                    Event Category*
+                                    
+                                      {tickets && tickets.length > 0 && (
+                                        <div className="mt-4">
+                                        <p className="font-montserrat font-bold mb-2">Select Ticket Type:</p>
+                                        <div className="relative">
+                                            <div 
+                                            className="inline-block border border-slate-300 outline-none cursor-pointer transition w-full rounded-md"
+                                            role="combobox"
+                                            aria-expanded={isOpen}
+                                            aria-haspopup="listbox"
+                                            aria-labelledby="ticket-type-label"
+                                            >
+                                            <div 
+                                                onClick={() => setIsOpen(!isOpen)} 
+                                                className="px-4 py-2 flex justify-between items-center hover:bg-gray-50"
+                                                onKeyDown={(e) => {
+                                                if (e.key === 'Enter' || e.key === ' ') {
+                                                    e.preventDefault();
+                                                    setIsOpen(!isOpen);
+                                                }
+                                                }}
+                                                tabIndex={0}
+                                            >
+                                                <span>{ selectValue }</span>
+                                                <div className={`transition-transform duration-200 ${isOpen ? 'rotate-180' : 'rotate-0'}`}>
+                                                <ChevronDown size={20}/>
+                                                </div>
+                                            </div>
+                                            
+                                            {isOpen && (
+                                                <ul 
+                                                className="absolute z-10 w-full bg-white border border-slate-300 mt-1 rounded-md shadow-lg max-h-60 overflow-auto"
+                                                role="listbox"
+                                                aria-labelledby="ticket-type-label"
+                                                >
+                                                {tickets.map((ticket, index) => (
+                                                    <li 
+                                                    key={index}
+                                                    className="px-4 py-2 hover:bg-gray-100 cursor-pointer font-montserrat"
+                                                    onClick={() => updateValue(ticket)}
+                                                    onKeyDown={(e) => {
+                                                        if (e.key === 'Enter' || e.key === ' ') {
+                                                        e.preventDefault();
+                                                        updateValue(ticket);
+                                                        }
+                                                    }}
+                                                    role="option"
+                                                    aria-selected={selectValue === ticket}
+                                                    tabIndex={0}
+                                                    >
+                                                    {ticket}
+                                                    </li>
+                                                ))}
+                                                </ul>
+                                            )}
+                                            </div>
+                                        </div>
+                                        </div>
+                                        )}
+                                </label>
                             </div>
                         </div>
                     </div>

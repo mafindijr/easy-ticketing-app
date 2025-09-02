@@ -5,7 +5,7 @@ import { Button } from './button';
 import { Input } from './input';
 
 
-export default function createEventForm() {
+export default function CreateEventForm() {
 
     const [isOpen, setIsOpen] = useState(false);
     const [selectValue, setSelectValue] = useState("Ticket Type");
@@ -55,7 +55,7 @@ export default function createEventForm() {
                                 </label>
                                 <label htmlFor="">
                                     Event Category*
-                                    
+
                                       {tickets && tickets.length > 0 && (
                                         <div className="mt-4">
                                         <p className="font-montserrat font-bold mb-2">Select Ticket Type:</p>

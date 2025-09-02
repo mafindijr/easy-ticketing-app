@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { Button } from './button';
 import { Input } from './input';
@@ -11,6 +11,15 @@ export default function CreateEventForm() {
     const [selectValue, setSelectValue] = useState("Ticket Type");
 
     const { register, handleSubmit, formState: {errors}, reset  } = useForm();
+
+     // Set initial select value based on tickets prop
+      useEffect(() => {
+        if (!tickets || tickets.length === 0) {
+          setSelectValue("");
+        }
+      }, [tickets]);
+    // const [imageError, setImageError] = useState(false);
+    
 
     const onSubmit = (data) => {
 

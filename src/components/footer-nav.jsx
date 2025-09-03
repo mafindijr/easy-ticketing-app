@@ -33,8 +33,8 @@ export default function FooterNav() {
           ))}
         </div>
 
-        <div className='text-gray-50'>
-          &copy; 2025 EasyTicket. All right reserved
+        <div className='text-white text-[16px] leading-[26px] text-center font-montserrat font-[400]'>
+          &copy; 2025 EasyTicket. All right reserved.
         </div>
       </div>
     </div>

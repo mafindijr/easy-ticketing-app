@@ -6,28 +6,16 @@ import { Login } from "./auth/login";
 export default function FooterNav() {
 
         const navLinks = [
-        { name: "About EasyTicketing", href: "#" },
-        { name: "Contact Us", href: "#" },
-        { name: "Privacy Policy", href: "#" },
-        { name: "Terms of Use", href: "#" },
+        { name: "About", href: "#" },
+        { name: "Terms & policies", href: "#" },
+        { name: "Contact us", href: "#" },
         ];
 
   return (
     <div>
-        <div className='font-montserrat bg-[#0D47A1] flex justify-between pr-[131px] pl-[131px] py-4'>
+        <div className=' bg-[#0D47A1] flex justify-between pr-[131px] pl-[131px] py-4'>
 
-        <div className='flex flex-col items-start text-gray-50'>
-
-         {navLinks.map((link) => (
-            <a key={link.name} href={link.href}>{link.name}</a>
-          ))}
-        </div>
-
-        <div className='text-gray-50'>
-          &copy; 2025 EasyTicket. All right reserved
-        </div>
-
-        <div className='flex items-center gap-4 text-gray-50 relative'>
+        <div className='flex items-center gap-4  relative'>
           <div className='flex flex-col items-start'>
             <span className='mb-3'>Follow Us</span>
             <div className='flex items-center gap-4'>
@@ -36,6 +24,17 @@ export default function FooterNav() {
               <div className='border-2 border-solid-gray-50 p-2 text-xl rounded-full'><a href=""><BsTwitterX /></a></div>
             </div>
           </div>
+        </div>
+
+        <div className='inline-flex items-start gap-8 text-white text-[14px] leading-[22px] font-montserrat font-[400]'>
+
+         {navLinks.map((link) => (
+            <a key={link.name} href={link.href}>{link.name}</a>
+          ))}
+        </div>
+
+        <div className='text-gray-50'>
+          &copy; 2025 EasyTicket. All right reserved
         </div>
       </div>
     </div>

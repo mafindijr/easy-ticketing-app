@@ -5,7 +5,7 @@ import { Button } from './button';
 import { Input } from './input';
 
 
-export default function CreateEventForm() {
+export default function CreateEventForm({ tickets }) {
 
     const [isOpen, setIsOpen] = useState(false);
     const [selectValue, setSelectValue] = useState("Ticket Type");

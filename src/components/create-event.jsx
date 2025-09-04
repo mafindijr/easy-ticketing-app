@@ -1,5 +1,4 @@
-import React from 'react'
-import { useState, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { Button } from './button';
 import { Input } from './input';
@@ -10,6 +9,9 @@ export default function CreateEventForm() {
 
     const [isOpen, setIsOpen] = useState(false);
     const [selectValue, setSelectValue] = useState("Ticket Type");
+    const [coverImage, setCoverImage] = useState(null);
+    const [coverError, setCoverError] = useState('');
+    const fileInputRef = useRef();
 
     const { register, handleSubmit, formState: {errors}, reset  } = useForm();
 
@@ -24,18 +26,53 @@ export default function CreateEventForm() {
             setIsOpen(false);
     }
 
-     // Set initial select value based on tickets prop
-    //   useEffect(() => {
-    //     if (!tickets || tickets.length === 0) {
-    //       setSelectValue("");
-    //     }
-    //   }, [tickets]);
-    // const [imageError, setImageError] = useState(false);
-    
+    const handleImageUpload = (e) => {
+        setCoverError('');
+        const file = e.target.files[0];
+        if (!file) return;
+
+        // Validate file type
+        if (!['image/png', 'image/jpeg'].includes(file.type)) {
+            setCoverError('Only PNG and JPEG files are allowed.');
+            setCoverImage(null);
+            return;
+        }
+        // Validate file size (<10MB)
+        if (file.size > 10 * 1024 * 1024) {
+            setCoverError('File size must be less than 10MB.');
+            setCoverImage(null);
+            return;
+        }
+        // Validate dimensions
+        const img = new window.Image();
+        img.onload = () => {
+            if (img.width !== 730 || img.height !== 300) {
+                setCoverError('Image dimensions must be 730 x 300px.');
+                setCoverImage(null);
+            } else {
+                setCoverImage(URL.createObjectURL(file));
+            }
+        };
+        img.onerror = () => {
+            setCoverError('Invalid image file.');
+            setCoverImage(null);
+        };
+        img.src = URL.createObjectURL(file);
+    };
+
+    const handleRemoveImage = () => {
+        setCoverImage(null);
+        setCoverError('');
+        if (fileInputRef.current) fileInputRef.current.value = '';
+    };
 
     const onSubmit = (data) => {
+        if (!coverImage) {
+            setCoverError('Cover image is required.');
+            return;
+        }
 
-        console.log("event created successfully", data);
+        console.log("event created successfully", { ...data, coverImage });
     }
 
   return (
@@ -53,22 +90,45 @@ export default function CreateEventForm() {
                 <div>
                     <span>Basic Info</span>
                     <div className='block border-1 border-[#cccccc] rounded-[8px] p-[32px] gap-[16px]'>
-                        <div id='coverImage'>
-                            <div>
-                                <div><h4>upload Cover Image</h4></div>
-                                <div>
-                                    <Button>
-                                        <span>icon</span>
-                                        <span>Upload image</span>
-                                    </Button>
-                                    <Button>Remove</Button>
-                                </div>
-                                <div>
-                                    <p>
-                                        Click to browse, or drag and drop a file here, png*,jpeg* files under 10MB, 730 x 300px
-                                    </p>
-                                </div>
-                            </div>
+                        {/* Upload button above preview */}
+                        <div>
+                            <Button
+                                type="button"
+                                onClick={() => fileInputRef.current && fileInputRef.current.click()}
+                            >
+                                <span>icon</span>
+                                <span>Upload image</span>
+                            </Button>
+                            <input
+                                type="file"
+                                accept="image/png, image/jpeg"
+                                style={{ display: 'none' }}
+                                ref={fileInputRef}
+                                onChange={handleImageUpload}
+                            />
+                            <Button type="button" onClick={handleRemoveImage}>Remove</Button>
+                        </div>
+                        {/* Cover image preview holder */}
+                        <div id="coverImage" className="mt-4 flex items-center justify-center w-full h-[180px] bg-gray-100 border border-dashed border-gray-300 rounded">
+                            {coverImage ? (
+                                <img
+                                    src={coverImage}
+                                    alt="Cover Preview"
+                                    className="object-cover w-[730px] h-[300px] rounded"
+                                    style={{ maxWidth: '100%', maxHeight: '100%' }}
+                                />
+                            ) : (
+                                <span className="text-gray-400">No cover image selected</span>
+                            )}
+                        </div>
+                        {coverError && (
+                            <div className="text-red-500 text-sm mt-2">{coverError}</div>
+                        )}
+                        <div>
+                            <p>
+                                Click to browse, or drag and drop a file here, png*,jpeg* files under 10MB, 730 x 300px
+                            </p>
+                        </div>
                             <div>
                                 <label htmlFor="">
                                     Event Title*
@@ -148,7 +208,6 @@ export default function CreateEventForm() {
                    <span>Set Ticketing Price</span>
                   <div></div>
                </div>
-            </div>
             <Button>Create Event</Button>
          </form>
         </div>

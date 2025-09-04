@@ -154,7 +154,10 @@ export default function CreateEventForm() {
                             <div className='grid grid-cols-2 gap-8'>
                                 <label>
                                     Event Title*
-                                    <Input type='text' />
+                                    <Input 
+                                    type='text'
+                                    placeholder='Event Title' 
+                                    />
                                 </label>
                                 <label>
                                     Event Category*

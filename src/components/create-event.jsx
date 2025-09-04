@@ -89,12 +89,16 @@ export default function CreateEventForm() {
                 </div>
                 <div>
                     <span>Basic Info</span>
-                    <div className='block border-1 border-[#cccccc] rounded-[8px] p-[32px] gap-[16px]'>
+                    <div className='w-[802px] h-[742px] block border-1 border-[#cccccc] rounded-[8px] p-[32px] gap-[16px]'>
                         {/* Cover image preview holder */}
-                        <div id="coverImage" className="relative mt-4 flex items-center justify-center w-full h-[180px] bg-gray-100 border border-dashed border-gray-300 rounded">
-                            <div className='absolute bg-white'>
-                                <div><h4>Upload Cover Image</h4></div>
-                                
+                        <div id="coverImage" className="w-[730px] h-[300px] relative mt-4 flex items-center justify-center bg-gray-100 border border-dashed border-gray-300 rounded">
+                            <div className='w-[464px] h-[170px] rounded-[8px] flex flex-col items-center p-[16px] pt-[32px] pl-[32px] gap-[16px] absolute bg-white'>
+                                <div>
+                                    <h4 
+                                    className='font-montserrat font-[600] text-[18px] text-center leading-[100%]'
+                                    >Upload Cover Image</h4>
+                                </div>
+
                             <div className="inline-flex gap-[10px]">
 
 
@@ -126,7 +130,7 @@ export default function CreateEventForm() {
                             </div>
 
                             <div>
-                                <p>
+                                <p className='text-[14px] text-[#999999] text-center font-montserrat font-[400] leading-[22px]'>
                                     Click to browse, or drag and drop a file here, png*,jpeg* files under 10MB, 730 x 300px
                                 </p>
                             </div>
@@ -147,7 +151,7 @@ export default function CreateEventForm() {
                             <div className="text-red-500 text-sm mt-2">{coverError}</div>
                         )}
                         
-                            <div>
+                            <div className='grid grid-cols-2 gap-8'>
                                 <label>
                                     Event Title*
                                     <Input type='text' />
@@ -156,8 +160,8 @@ export default function CreateEventForm() {
                                     Event Category*
 
                                       {/* {tickets && tickets.length > 0 && ( */}
-                                        <div className="mt-4">
-                                        <p className="font-montserrat font-bold mb-2">Select Ticket Type:</p>
+                                        <div className="mt-4 text-[#6B7280] text-base font-montserrat 
+                                         rounded-[4px] bg-[#ebebeb] focus:ring-[#93abdb]">
                                         <div className="relative">
                                             <div 
                                             className="inline-block border border-slate-300 outline-none cursor-pointer transition w-full rounded-md"

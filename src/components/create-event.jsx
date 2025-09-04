@@ -45,14 +45,14 @@ export default function CreateEventForm() {
         }
         // Validate dimensions
         const img = new window.Image();
-        img.onload = () => {
-            if (img.width !== 730 || img.height !== 300) {
-                setCoverError('Image dimensions must be 730 x 300px.');
-                setCoverImage(null);
-            } else {
-                setCoverImage(URL.createObjectURL(file));
-            }
-        };
+        // img.onload = () => {
+        //     if (img.width !== 730 || img.height !== 300) {
+        //         setCoverError('Image dimensions must be 730 x 300px.');
+        //         setCoverImage(null);
+        //     } else {
+        //         setCoverImage(URL.createObjectURL(file));
+        //     }
+        // };
         img.onerror = () => {
             setCoverError('Invalid image file.');
             setCoverImage(null);
@@ -90,26 +90,39 @@ export default function CreateEventForm() {
                 <div>
                     <span>Basic Info</span>
                     <div className='block border-1 border-[#cccccc] rounded-[8px] p-[32px] gap-[16px]'>
-                        {/* Upload button above preview */}
-                        <div>
-                            <Button
-                                type="button"
-                                onClick={() => fileInputRef.current && fileInputRef.current.click()}
-                            >
-                                <span>icon</span>
-                                <span>Upload image</span>
-                            </Button>
-                            <input
-                                type="file"
-                                accept="image/png, image/jpeg"
-                                style={{ display: 'none' }}
-                                ref={fileInputRef}
-                                onChange={handleImageUpload}
-                            />
-                            <Button type="button" onClick={handleRemoveImage}>Remove</Button>
-                        </div>
                         {/* Cover image preview holder */}
-                        <div id="coverImage" className="mt-4 flex items-center justify-center w-full h-[180px] bg-gray-100 border border-dashed border-gray-300 rounded">
+                        <div id="coverImage" className="relative mt-4 flex items-center justify-center w-full h-[180px] bg-gray-100 border border-dashed border-gray-300 rounded">
+                            <div className='absolute bg-white'>
+                            <div>
+
+                                <div><h4>Upload Cover Image</h4></div>
+
+                                <label
+                                    type="button"
+                                    className='cursor-pointer'
+                                    // onClick={() => fileInputRef.current && fileInputRef.current.click()}
+                                >
+                                    <span>icon</span>
+                                    <span>Upload image</span>
+                                    <input
+                                    type="file"
+                                    accept="image/png, image/jpeg"
+                                    className='hidden'
+                                    ref={fileInputRef}
+                                    onChange={handleImageUpload}
+                                />
+                                </label>
+
+                                 <Button type="button" onClick={handleRemoveImage}>Remove</Button>
+                            </div>
+
+                            <div>
+                                <p>
+                                    Click to browse, or drag and drop a file here, png*,jpeg* files under 10MB, 730 x 300px
+                                </p>
+                            </div>
+                        </div>
+
                             {coverImage ? (
                                 <img
                                     src={coverImage}
@@ -124,17 +137,13 @@ export default function CreateEventForm() {
                         {coverError && (
                             <div className="text-red-500 text-sm mt-2">{coverError}</div>
                         )}
-                        <div>
-                            <p>
-                                Click to browse, or drag and drop a file here, png*,jpeg* files under 10MB, 730 x 300px
-                            </p>
-                        </div>
+                        
                             <div>
-                                <label htmlFor="">
+                                <label>
                                     Event Title*
                                     <Input type='text' />
                                 </label>
-                                <label htmlFor="">
+                                <label>
                                     Event Category*
 
                                       {/* {tickets && tickets.length > 0 && ( */}

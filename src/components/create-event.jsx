@@ -52,8 +52,8 @@ export default function CreateEventForm() {
                 </div>
                 <div>
                     <span>Basic Info</span>
-                    <div>
-                        <div>
+                    <div className='block border-1 border-[#cccccc] rounded-[8px] p-[32px] gap-[16px]'>
+                        <div id='coverImage'>
                             <div>
                                 <div><h4>upload Cover Image</h4></div>
                                 <div>

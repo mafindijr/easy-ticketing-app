@@ -93,17 +93,22 @@ export default function CreateEventForm() {
                         {/* Cover image preview holder */}
                         <div id="coverImage" className="relative mt-4 flex items-center justify-center w-full h-[180px] bg-gray-100 border border-dashed border-gray-300 rounded">
                             <div className='absolute bg-white'>
-                            <div>
-
                                 <div><h4>Upload Cover Image</h4></div>
+                                
+                            <div className="inline-flex gap-[10px]">
+
 
                                 <label
                                     type="button"
-                                    className='cursor-pointer'
+                                     className="w-[172px] h-[40px] leading-[100%] gap-[10px] bg-homeexplore text-[16px] font-montserrat font-semibold rounded-[8px] px-[8px] py-[12px] gap-2 cursor-pointer inline-flex items-center text-white"
+                                     style={{boxShadow: " 0px 4px 6px rgba(2, 2, 2, 0.40)"}}
                                     // onClick={() => fileInputRef.current && fileInputRef.current.click()}
                                 >
-                                    <span>icon</span>
-                                    <span>Upload image</span>
+                                    <svg className="ml-2 mb-1 font-bold" width="20" height="18" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 5L5.41 6.41L8 3.83V14H10V3.83L12.58 6.41L14 5L9 0M2 18V10H0V18C0 19.1 0.9 20 2 20H16C17.1 20 18 19.1 18 18V10H16V18H2Z" fill="white"/>
+                                    </svg>
+
+                                    <span className='w-[116px] h-[20px]'>Upload image</span>
                                     <input
                                     type="file"
                                     accept="image/png, image/jpeg"
@@ -113,7 +118,11 @@ export default function CreateEventForm() {
                                 />
                                 </label>
 
-                                 <Button type="button" onClick={handleRemoveImage}>Remove</Button>
+                                 <Button 
+                                 type="button"
+                                 className="w-[92px] h-[40px] leading-[100%] cursor-pointer text-[16px] text-[#000000] font-montserrat font-semibold rounded-[8px] px-[8px] py-[12px]"
+                                 style={{boxShadow: " 0px 4px 6px rgba(2, 2, 2, 0.25)"}}
+                                 onClick={handleRemoveImage}>Remove</Button>
                             </div>
 
                             <div>

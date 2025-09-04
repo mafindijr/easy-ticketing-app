@@ -3,21 +3,33 @@ import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { Button } from './button';
 import { Input } from './input';
+import { ChevronDown } from 'lucide-react';
 
 
-export default function CreateEventForm({ tickets }) {
+export default function CreateEventForm() {
 
     const [isOpen, setIsOpen] = useState(false);
     const [selectValue, setSelectValue] = useState("Ticket Type");
 
     const { register, handleSubmit, formState: {errors}, reset  } = useForm();
 
+    const tickets = [
+         "General Admission" ,
+         "VIP",
+         "Student"
+    ];
+
+    const updateValue = (value) => {
+            setSelectValue(value);
+            setIsOpen(false);
+    }
+
      // Set initial select value based on tickets prop
-      useEffect(() => {
-        if (!tickets || tickets.length === 0) {
-          setSelectValue("");
-        }
-      }, [tickets]);
+    //   useEffect(() => {
+    //     if (!tickets || tickets.length === 0) {
+    //       setSelectValue("");
+    //     }
+    //   }, [tickets]);
     // const [imageError, setImageError] = useState(false);
     
 
@@ -65,7 +77,7 @@ export default function CreateEventForm({ tickets }) {
                                 <label htmlFor="">
                                     Event Category*
 
-                                      {tickets && tickets.length > 0 && (
+                                      {/* {tickets && tickets.length > 0 && ( */}
                                         <div className="mt-4">
                                         <p className="font-montserrat font-bold mb-2">Select Ticket Type:</p>
                                         <div className="relative">
@@ -94,13 +106,13 @@ export default function CreateEventForm({ tickets }) {
                                             </div>
                                             
                                             {isOpen && (
-                                                <ul 
+                                                <div
                                                 className="absolute z-10 w-full bg-white border border-slate-300 mt-1 rounded-md shadow-lg max-h-60 overflow-auto"
                                                 role="listbox"
                                                 aria-labelledby="ticket-type-label"
                                                 >
                                                 {tickets.map((ticket, index) => (
-                                                    <li 
+                                                    <div 
                                                     key={index}
                                                     className="px-4 py-2 hover:bg-gray-100 cursor-pointer font-montserrat"
                                                     onClick={() => updateValue(ticket)}
@@ -115,27 +127,27 @@ export default function CreateEventForm({ tickets }) {
                                                     tabIndex={0}
                                                     >
                                                     {ticket}
-                                                    </li>
+                                                    </div>
                                                 ))}
-                                                </ul>
+                                                </div>
                                             )}
                                             </div>
-                                        </div>
-                                        </div>
-                                        )}
+                                         </div>
+                                         </div>
+                                        {/* )} */}
                                 </label>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div>
-                    <span>Date and Location</span>
-                    <div></div>
-                </div>
+                <span>Date and Location</span>
+                <div></div>
+              </div>
                 <div>
-                    <span>Set Ticketing Price</span>
-                    <div></div>
-                </div>
+                   <span>Set Ticketing Price</span>
+                  <div></div>
+               </div>
             </div>
             <Button>Create Event</Button>
          </form>

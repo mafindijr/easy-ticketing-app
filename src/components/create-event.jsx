@@ -85,11 +85,11 @@ export default function CreateEventForm() {
          <form onSubmit={handleSubmit(onSubmit)}>
             <div>
                 <div>
-                    <h4>Create Event</h4>
+                    <h2>Create Event</h2>
                 </div>
                 <div>
                     <span>Basic Info</span>
-                    <div className='w-[802px] h-[742px] block border-1 border-[#cccccc] rounded-[8px] p-[32px] gap-[16px]'>
+                    <div className='w-[802px] h-[742px] flex flex-col border-1 border-[#cccccc] rounded-[8px] p-[32px] gap-[16px]'>
                         {/* Cover image preview holder */}
                         <div id="coverImage" className="w-[730px] h-[300px] relative mt-4 flex items-center justify-center bg-gray-100 border border-dashed border-gray-300 rounded">
                             <div className='w-[464px] h-[170px] rounded-[8px] flex flex-col items-center p-[16px] pt-[32px] pl-[32px] gap-[16px] absolute bg-white'>

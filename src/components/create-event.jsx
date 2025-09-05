@@ -84,11 +84,11 @@ export default function CreateEventForm() {
             </div>
          <form onSubmit={handleSubmit(onSubmit)}>
             <div>
-                <div>
-                    <h2>Create Event</h2>
+                <div className='mb-[28px]'>
+                    <h2 className='text-[32px] leading-[44px] font-montserrat font-bold'>Create Event</h2>
                 </div>
                 <div>
-                    <span>Basic Info</span>
+                    <h4 className='text-[20px] leading-[30px] font-montserrat font-bold'>Basic Info</h4>
                     <div className='w-[802px] h-[742px] flex flex-col border-1 border-[#cccccc] rounded-[8px] p-[32px] gap-[16px]'>
                         {/* Cover image preview holder */}
                         <div id="coverImage" className="w-[730px] h-[300px] relative mt-4 flex items-center justify-center bg-gray-100 border border-dashed border-gray-300 rounded">
@@ -154,10 +154,15 @@ export default function CreateEventForm() {
                             <div className='grid grid-cols-2 gap-8'>
                                 <label>
                                     Event Title*
-                                    <Input 
+                                    <Input
+                                    name='eventTitle' 
                                     type='text'
-                                    placeholder='Event Title' 
+                                    register={register}
+                                    placeholder='Event Title'
+                                    max="100"
+                                    required 
                                     />
+                                    <span className='text-[12px] text-[#4b5563] leading-[16px] font-montserrat font-[400]'>Maximum 100 characters</span>
                                 </label>
                                 <label>
                                     Event Category*

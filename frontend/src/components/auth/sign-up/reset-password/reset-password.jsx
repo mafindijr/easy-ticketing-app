@@ -67,7 +67,7 @@ export default function ResetPassword({ onClose }) {
                     {isSubmitting ? 'Sending...' : 'Send Reset Link'}
                 </Button>
                  <Button
-                      className="py-2 px-8 mt-4 w-full border border-blue-600 rounded-[8px] font-montserrat font-bold text-[700] text-[16px] text-blue-600 text-center hover:bg-gray-50 transition-colors duration-300 flex items-center justify-center gap-2"
+                      className="py-2 px-8 mt-4 w-full border border-blue-600 rounded-[8px] font-montserrat font-bold text-[700] text-[16px] text-white text-center hover:bg-gray-50 transition-colors duration-300 flex items-center justify-center gap-2"
                       style={{boxShadow: "0px 0px 2px 3px rgba(2, 2, 2, 0.15)"}}
                       onClick={onClose}
                       aria-label="Back to Log In"

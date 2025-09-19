@@ -19,7 +19,7 @@ export default function ResetPassword({ onClose }) {
         }, [reset]);
 
     return (
-        <>
+        <form>
           {!openResetPassword && (
             <div>
                 <h4 className='font-montserrat font-[700] text-[20px] leading-[30px] text-center mb-2 mt-2'>Reset Your Password</h4>
@@ -82,6 +82,6 @@ export default function ResetPassword({ onClose }) {
           <UseModal isOpen={openResetPassword} onClose={() => setOpenResetPassword(false)}>
             <SetPassword />
           </UseModal>
-        </>
+        </form>
     );
 };

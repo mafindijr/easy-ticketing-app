@@ -1,5 +1,5 @@
 import Card from './Cards';
-import events from "../components/javascript/events";
+import events from "../components/store/events";
 import { IoLocationSharp } from "react-icons/io5";
 
 function UpcomingEvents() {

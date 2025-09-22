@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect } from "react";
 import UseModal from "./UseModal";
 import PaymentPage from "./payment-page";
-import BookingConfirmed from './booking-confirmed'; // <-- import here
+import BookingConfirmed from './booking-confirmed';
 import { 
   ChevronDown,
   Calendar, 

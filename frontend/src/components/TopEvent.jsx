@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState, useCallback } from "react";
 import Card from "./Cards";
-import events from "../components/javascript/events";
+import events from "../components/store/events";
 import NavigationIcon from "./Navigation-icon";
 
 function TopEvents() {

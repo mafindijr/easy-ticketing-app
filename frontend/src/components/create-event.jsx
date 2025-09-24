@@ -224,8 +224,29 @@ export default function CreateEventForm() {
                                             </div>
                                          </div>
                                          </div>
-                                        {/* )} */}
+                            
                                 </label>
+                            </div>
+                            <div>
+                                <span>
+                                     Event Type*
+                                </span>
+                                <div>
+                                     <div>
+                                        <input 
+                                        type="radio" 
+                                        name="physical"
+                                        />
+                                        <span>Physical</span>
+                                     </div>
+                                     <div>
+                                        <input 
+                                        type="radio" 
+                                        name="virtual"
+                                        />
+                                        <span>Virtual</span>
+                                     </div>
+                                </div>
                             </div>
                         </div>
                     </div>

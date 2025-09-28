@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Toaster } from "react-hot-toast";
 import Home from './views/Home';
 import Profile from './Pages/Profile';
-import { AuthProvider } from './auth/AuthContext';
+import { AuthProvider } from './context/AuthContext';
 import DashboardLayout from './layout/dashboard-layout';
 import Dashboard from './Pages/dashboard';
 import Tickets from './Pages/tickets';

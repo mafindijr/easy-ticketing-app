@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../auth/AuthContext";
+import { useAuth } from "../context/AuthContext";
 import SearchForm from "./Search-form";
 import { Button } from "./button";
 import UseModal from "./UseModal";

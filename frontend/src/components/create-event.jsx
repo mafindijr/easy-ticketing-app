@@ -275,7 +275,7 @@ export default function CreateEventForm() {
                                 <div>
                                     <textarea 
                                         required
-                                        className="w-full h-[150px] bg-[#ebebeb] mt-2 border-1 h-[40px] w-[200px] rounded-[8px] border-[#cccccc]"
+                                        className="w-full h-[150px] bg-[#ebebeb] mt-2 border-1 h-[40px] w-[200px] rounded-[8px] border-[#cccccc] outline-none"
                                     ></textarea>
                                 </div>
                             </div>

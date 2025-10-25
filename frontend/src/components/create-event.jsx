@@ -153,7 +153,11 @@ export default function CreateEventForm() {
                         
                             <div className='grid grid-cols-2 gap-8'>
                                 <label>
-                                    Event Title*
+                                    <span 
+                                    className="text-[#263238] text-[14px] leading-[20px] font-montserrat font-[400]"
+                                    >
+                                        Event Title*
+                                    </span>
                                     <Input
                                     name='eventTitle' 
                                     type='text'
@@ -165,7 +169,11 @@ export default function CreateEventForm() {
                                     <span className='text-[12px] text-[#4b5563] leading-[16px] font-montserrat font-[400]'>Maximum 100 characters</span>
                                 </label>
                                 <label>
-                                    Event Category*
+                                    <span 
+                                    className="text-[#263238] text-[14px] leading-[20px] font-montserrat font-[400]"
+                                    >
+                                        Event Category*
+                                    </span>
 
                                       {/* {tickets && tickets.length > 0 && ( */}
                                         <div className="mt-4 text-[#6B7280] text-base font-montserrat 
@@ -228,29 +236,53 @@ export default function CreateEventForm() {
                                 </label>
                             </div>
                             <div>
-                                <span>
+                                <span 
+                                    className="text-[#1f2a44] text-[14px] leading-[20px] font-montserrat font-[400]"
+                                >
                                      Event Type*
                                 </span>
+                                <div 
+                                    className="flex items-center justify-center gap-[24px] mt-4 border-1 h-[40px] w-[200px] rounded-[8px] border-[#cccccc]"
+                                >
+                                     <div>
+                                        <label for="physical">
+                                        <input 
+                                            type="radio" 
+                                            name="eventType"
+                                            id='physical'
+                                        />
+                                        <span className="px-2">Physical</span>
+                                        </label>
+                                     </div>
+                                     <div>
+                                        <label for="virtual">
+                                        <input 
+                                            type="radio" 
+                                            name="eventType"
+                                            id="virtual"
+                                        />
+                                        <span className="px-2">Virtual</span>
+                                        </label>
+                                     </div>
+                                </div>
+                            </div>
+                            <div>
+                                <span 
+                                    className="text-[#263238] text-[14px] leading-[20px] font-montserrat font-[400]"
+                                >
+                                    Event Description*
+                                </span>
                                 <div>
-                                     <div>
-                                        <input 
-                                        type="radio" 
-                                        name="physical"
-                                        />
-                                        <span>Physical</span>
-                                     </div>
-                                     <div>
-                                        <input 
-                                        type="radio" 
-                                        name="virtual"
-                                        />
-                                        <span>Virtual</span>
-                                     </div>
+                                    <textarea 
+                                        required
+                                        className="w-full h-[150px] bg-[#ebebeb] mt-2 border-1 h-[40px] w-[200px] rounded-[8px] border-[#cccccc]"
+                                    ></textarea>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <div>
                 <span>Date and Location</span>
                 <div></div>

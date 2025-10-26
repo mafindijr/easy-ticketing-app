@@ -284,12 +284,123 @@ export default function CreateEventForm() {
                 </div>
 
                 <div>
-                <span>Date and Location</span>
-                <div></div>
+                  <span>Date and Location</span>
+                    <div className='w-[802px] flex flex-col border-1 border-[#cccccc] rounded-[8px] p-[32px] gap-[16px]'>
+                            <div className="grid grid-cols-2 gap-8">
+                                <label>
+                                    <span 
+                                    className="text-[#263238] text-[14px] leading-[20px] font-montserrat font-[400]"
+                                    >
+                                        Start Date*
+                                    </span>
+                                    <Input
+                                        name='startDate' 
+                                        type='text'
+                                        register={register}
+                                        placeholder=''
+                                        required 
+                                    />
+                                    {/* <span className='text-[12px] text-[#4b5563] leading-[16px] font-montserrat font-[400]'></span> */}
+                                </label>
+                                <label>
+                                    <span 
+                                    className="text-[#263238] text-[14px] leading-[20px] font-montserrat font-[400]"
+                                    >
+                                        End Date*
+                                    </span>
+                                    <Input
+                                        name='endDate' 
+                                        type='text'
+                                        register={register}
+                                        placeholder=''
+                                        required 
+                                    />
+                                    <span className='text-[12px] text-[#4b5563] leading-[16px] font-montserrat font-[400]'>End date cannot be befor start date</span>
+                                </label>
+                            </div>
+                            <div className="grid grid-cols-2 gap-8">
+                                <label>
+                                    <span 
+                                    className="text-[#263238] text-[14px] leading-[20px] font-montserrat font-[400]"
+                                    >
+                                        Start Time*
+                                    </span>
+                                    <Input
+                                        name='startTime' 
+                                        type='text'
+                                        register={register}
+                                        placeholder=''
+                                        required 
+                                    />
+                                    {/* <span className='text-[12px] text-[#4b5563] leading-[16px] font-montserrat font-[400]'></span> */}
+                                </label>
+                                <label>
+                                    <span 
+                                    className="text-[#263238] text-[14px] leading-[20px] font-montserrat font-[400]"
+                                    >
+                                        End Time*
+                                    </span>
+                                    <Input
+                                        name='endTime' 
+                                        type='text'
+                                        register={register}
+                                        placeholder=''
+                                        required 
+                                    />
+                                    <span className='text-[12px] text-[#4b5563] leading-[16px] font-montserrat font-[400]'>please enter a valid event times</span>
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    Location*
+                                    <Input
+                                        name='location' 
+                                        type='text'
+                                        register={register}
+                                        placeholder=''
+                                        required 
+                                    />
+                                    <span className='text-[12px] text-[#4b5563] leading-[16px] font-montserrat font-[400]'>please provide a valid address venue or link</span>
+                                </label>
+                            </div>
+                    </div>
               </div>
                 <div>
                    <span>Set Ticketing Price</span>
-                  <div></div>
+                  <div>
+                    <div>
+                        <label>
+                            <span 
+                            className="text-[#263238] text-[14px] leading-[20px] font-montserrat font-[400]"
+                            >
+                                Start Date*
+                            </span>
+                            <Input
+                                name='startDate' 
+                                type='text'
+                                register={register}
+                                placeholder=''
+                                required 
+                            />
+                            {/* <span className='text-[12px] text-[#4b5563] leading-[16px] font-montserrat font-[400]'></span> */}
+                        </label>
+                        <label>
+                            <span 
+                            className="text-[#263238] text-[14px] leading-[20px] font-montserrat font-[400]"
+                            >
+                                End Date*
+                            </span>
+                            <Input
+                                name='endDate' 
+                                type='text'
+                                register={register}
+                                placeholder=''
+                                required 
+                            />
+                            <span className='text-[12px] text-[#4b5563] leading-[16px] font-montserrat font-[400]'>End date cannot be befor start date</span>
+                        </label>
+                    </div>
+                  </div>
                </div>
             <Button>Create Event</Button>
          </form>

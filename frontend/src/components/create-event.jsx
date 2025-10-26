@@ -274,8 +274,8 @@ export default function CreateEventForm() {
                                 </span>
                                 <div>
                                     <textarea 
+                                        className="w-full h-[150px] bg-[#ebebeb] mt-2 border-1  rounded-[8px] border-[#cccccc] outline-none"
                                         required
-                                        className="w-full h-[150px] bg-[#ebebeb] mt-2 border-1 h-[40px] w-[200px] rounded-[8px] border-[#cccccc] outline-none"
                                     ></textarea>
                                 </div>
                             </div>
@@ -284,7 +284,7 @@ export default function CreateEventForm() {
                 </div>
 
                 <div>
-                  <span>Date and Location</span>
+                  <h4 className='text-[20px] leading-[30px] font-montserrat font-bold'>Date and Location</h4>
                     <div className='w-[802px] flex flex-col border-1 border-[#cccccc] rounded-[8px] p-[32px] gap-[16px]'>
                             <div className="grid grid-cols-2 gap-8">
                                 <label>
@@ -366,9 +366,9 @@ export default function CreateEventForm() {
                     </div>
               </div>
                 <div>
-                   <span>Set Ticketing Price</span>
-                  <div>
-                    <div>
+                   <h4 className='text-[20px] leading-[30px] font-montserrat font-bold'>Set Ticketing Price</h4>
+                  <div className='w-[802px] flex flex-col border-1 border-[#cccccc] rounded-[8px] p-[32px] gap-[16px]'>
+                    <div className='grid grid-cols-2 gap-8'>
                         <label>
                             <span 
                             className="text-[#263238] text-[14px] leading-[20px] font-montserrat font-[400]"

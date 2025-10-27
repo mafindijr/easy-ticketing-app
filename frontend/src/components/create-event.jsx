@@ -400,6 +400,24 @@ export default function CreateEventForm() {
                             <span className='text-[12px] text-[#4b5563] leading-[16px] font-montserrat font-[400]'>End date cannot be befor start date</span>
                         </label>
                     </div>
+                    <div className='grid grid-cols-2 gap-8'>
+                        <label>
+                            <span 
+                            className="text-[#263238] text-[14px] leading-[20px] font-montserrat font-[400]"
+                            >
+                                Start Date*
+                            </span>
+                            <Input
+                                name='startDate' 
+                                type='text'
+                                register={register}
+                                placeholder=''
+                                required 
+                            />
+                            {/* <span className='text-[12px] text-[#4b5563] leading-[16px] font-montserrat font-[400]'></span> */}
+                        </label>
+    
+                    </div>
                   </div>
                </div>
             <Button>Create Event</Button>

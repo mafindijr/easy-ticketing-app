@@ -8,6 +8,7 @@ import { ChevronDown } from 'lucide-react';
 export default function CreateEventForm() {
 
     const [isOpen, setIsOpen] = useState(false);
+    const [isOpenCategory, setIsOpenCategory] = useState(false);
     const [selectValue, setSelectValue] = useState("Select Ticket Type");
     const [selectCategory, setSelectCategory] = useState("Select event category");
     const [coverImage, setCoverImage] = useState(null);
@@ -33,9 +34,14 @@ export default function CreateEventForm() {
         "Art Fashion & Creative"
     ]
 
-    const updateValue = (value) => {
-            setSelectValue(value) | setSelectCategory(value);
+    const updateValue = (value, value2) => {
+            setSelectValue(value);
             setIsOpen(false);
+    }
+
+    const updateCategory = (value) => {
+            setSelectCategory(value);
+            setIsOpenCategory(false);
     }
 
     const handleImageUpload = (e) => {
@@ -100,7 +106,7 @@ export default function CreateEventForm() {
                     <h2 className='text-[32px] leading-[44px] font-montserrat font-bold'>Create Event</h2>
                 </div>
                 <div>
-                    <h4 className='text-[20px] leading-[30px] font-montserrat font-bold'>Basic Info</h4>
+                    <h4 className='text-[20px] leading-[30px] mb-[8px] font-montserrat font-bold'>Basic Info</h4>
                     <div className='w-[802px] h-[742px] flex flex-col border-1 border-[#cccccc] rounded-[8px] p-[32px] gap-[16px]'>
                         {/* Cover image preview holder */}
                         <div id="coverImage" className="w-[730px] h-[300px] relative mt-4 flex items-center justify-center bg-gray-100 border border-dashed border-gray-300 rounded">
@@ -194,49 +200,51 @@ export default function CreateEventForm() {
                                             <div 
                                             className="inline-block border border-slate-300 outline-none cursor-pointer transition w-full rounded-md"
                                             role="combobox"
-                                            aria-expanded={isOpen}
+                                            aria-expanded={isOpenCategory}
                                             aria-haspopup="listbox"
                                             aria-labelledby="ticket-type-label"
                                             >
                                             <div 
-                                                onClick={() => setIsOpen(!isOpen)} 
+                                                onClick={() => setIsOpenCategory(!isOpenCategory)} 
                                                 className="px-4 py-2 flex justify-between items-center hover:bg-gray-50"
                                                 onKeyDown={(e) => {
                                                 if (e.key === 'Enter' || e.key === ' ') {
                                                     e.preventDefault();
-                                                    setIsOpen(!isOpen);
+                                                    setIsOpenCategory(!isOpenCategory);
                                                 }
                                                 }}
                                                 tabIndex={0}
                                             >
                                                 <span>{ selectCategory }</span>
-                                                <div className={`transition-transform duration-200 ${isOpen ? 'rotate-180' : 'rotate-0'}`}>
-                                                <ChevronDown size={20}/>
+                                                <div 
+                                                    className={`transition-transform duration-200 ${isOpenCategory ? 'rotate-180' : 'rotate-0'}`}
+                                                >
+                                                    <ChevronDown size={20}/>
                                                 </div>
                                             </div>
                                             
-                                            {isOpen && (
+                                            {isOpenCategory && (
                                                 <div
-                                                className="absolute z-10 w-full bg-white border border-slate-300 mt-1 rounded-md shadow-lg max-h-60 overflow-auto"
-                                                role="listbox"
-                                                aria-labelledby="ticket-type-label"
+                                                    className="absolute z-10 w-full bg-white border border-slate-300 mt-1 rounded-md shadow-lg max-h-60 overflow-auto"
+                                                    role="listbox"
+                                                    aria-labelledby="ticket-type-label"
                                                 >
                                                 {categories.map((category, index) => (
                                                     <div 
-                                                    key={index}
-                                                    className="px-4 py-2 hover:bg-gray-100 cursor-pointer font-montserrat"
-                                                    onClick={() => updateValue(category)}
-                                                    onKeyDown={(e) => {
-                                                        if (e.key === 'Enter' || e.key === ' ') {
-                                                        e.preventDefault();
-                                                        updateValue(category);
-                                                        }
-                                                    }}
-                                                    role="option"
-                                                    aria-selected={selectCategory === category}
-                                                    tabIndex={0}
+                                                        key={index}
+                                                        className="px-4 py-2 hover:bg-gray-100 cursor-pointer font-montserrat"
+                                                        onClick={() => updateCategory(category)}
+                                                        onKeyDown={(e) => {
+                                                            if (e.key === 'Enter' || e.key === ' ') {
+                                                            e.preventDefault();
+                                                            updateCategory(category);
+                                                            }
+                                                        }}
+                                                        role="option"
+                                                        aria-selected={selectCategory === category}
+                                                        tabIndex={0}
                                                     >
-                                                    {category}
+                                                     {category}
                                                     </div>
                                                 ))}
                                                 </div>
@@ -296,7 +304,7 @@ export default function CreateEventForm() {
                 </div>
 
                 <div>
-                  <h4 className='text-[20px] leading-[30px] font-montserrat font-bold'>Date and Location</h4>
+                  <h4 className='text-[20px] leading-[30px] mb-[8px] mt-[16px] font-montserrat font-bold'>Date and Location</h4>
                     <div className='w-[802px] flex flex-col border-1 border-[#cccccc] rounded-[8px] p-[32px] gap-[16px]'>
                             <div className="grid grid-cols-2 gap-8">
                                 <label>
@@ -378,7 +386,7 @@ export default function CreateEventForm() {
                     </div>
               </div>
                 <div>
-                   <h4 className='text-[20px] leading-[30px] font-montserrat font-bold'>Set Ticketing Price</h4>
+                   <h4 className='text-[20px] leading-[30px] mb-[8px] mt-[16px] font-montserrat font-bold'>Set Ticketing Price</h4>
                   <div className='w-[802px] flex flex-col border-1 border-[#cccccc] rounded-[8px] p-[32px] gap-[16px]'>
                     <div className='grid grid-cols-2 gap-8'>
                         <label>
@@ -485,7 +493,7 @@ export default function CreateEventForm() {
                   </div>
                </div>
             <Button 
-              className='w-[183px] h-[40px] leading-[100%] gap-[10px] bg-homeexplore text-[16px] font-poppins font-bold text-center text-white py-[16px] px-[32px] rounded-[8px]'
+              className='w-[183px] h-[40px] leading-[100%] gap-[10px] bg-homeexplore text-[16px] font-poppins font-bold text-center text-white mb-[8px] mt-[24px] py-[16px] px-[32px] rounded-[8px]'
             >Create Event</Button>
          </form>
         </div>

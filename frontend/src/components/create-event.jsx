@@ -8,7 +8,8 @@ import { ChevronDown } from 'lucide-react';
 export default function CreateEventForm() {
 
     const [isOpen, setIsOpen] = useState(false);
-    const [selectValue, setSelectValue] = useState("Ticket Type");
+    const [selectValue, setSelectValue] = useState("Select Ticket Type");
+    const [selectCategory, setSelectCategory] = useState("Select event category");
     const [coverImage, setCoverImage] = useState(null);
     const [coverError, setCoverError] = useState('');
     const fileInputRef = useRef();
@@ -21,8 +22,19 @@ export default function CreateEventForm() {
          "Student"
     ];
 
+    const categories = [
+        "Technology",
+        "Sport & Outdoor",
+        "Music & Concerts",
+        "Cultural & Traditional Festival",
+        "Trade & Shows Expos",
+        "Religios & Community",
+        "Wellness & Lifestyle",
+        "Art Fashion & Creative"
+    ]
+
     const updateValue = (value) => {
-            setSelectValue(value);
+            setSelectValue(value) | setSelectCategory(value);
             setIsOpen(false);
     }
 
@@ -197,7 +209,7 @@ export default function CreateEventForm() {
                                                 }}
                                                 tabIndex={0}
                                             >
-                                                <span>{ selectValue }</span>
+                                                <span>{ selectCategory }</span>
                                                 <div className={`transition-transform duration-200 ${isOpen ? 'rotate-180' : 'rotate-0'}`}>
                                                 <ChevronDown size={20}/>
                                                 </div>
@@ -209,22 +221,22 @@ export default function CreateEventForm() {
                                                 role="listbox"
                                                 aria-labelledby="ticket-type-label"
                                                 >
-                                                {tickets.map((ticket, index) => (
+                                                {categories.map((category, index) => (
                                                     <div 
                                                     key={index}
                                                     className="px-4 py-2 hover:bg-gray-100 cursor-pointer font-montserrat"
-                                                    onClick={() => updateValue(ticket)}
+                                                    onClick={() => updateValue(category)}
                                                     onKeyDown={(e) => {
                                                         if (e.key === 'Enter' || e.key === ' ') {
                                                         e.preventDefault();
-                                                        updateValue(ticket);
+                                                        updateValue(category);
                                                         }
                                                     }}
                                                     role="option"
-                                                    aria-selected={selectValue === ticket}
+                                                    aria-selected={selectCategory === category}
                                                     tabIndex={0}
                                                     >
-                                                    {ticket}
+                                                    {category}
                                                     </div>
                                                 ))}
                                                 </div>
@@ -373,22 +385,74 @@ export default function CreateEventForm() {
                             <span 
                             className="text-[#263238] text-[14px] leading-[20px] font-montserrat font-[400]"
                             >
-                                Start Date*
+                                Ticket Type*
                             </span>
-                            <Input
-                                name='startDate' 
-                                type='text'
-                                register={register}
-                                placeholder=''
-                                required 
-                            />
-                            {/* <span className='text-[12px] text-[#4b5563] leading-[16px] font-montserrat font-[400]'></span> */}
+                            
+                            
+                            {/* {tickets && tickets.length > 0 && ( */}
+                            <div className="mt-4 text-[#6B7280] text-base font-montserrat 
+                                rounded-[4px] bg-[#ebebeb] focus:ring-[#93abdb]">
+                                <div className="relative">
+                                    <div 
+                                        className="inline-block border border-slate-300 outline-none cursor-pointer transition w-full rounded-md"
+                                        role="combobox"
+                                        aria-expanded={isOpen}
+                                        aria-haspopup="listbox"
+                                        aria-labelledby="ticket-type-label"
+                                    >
+                                        <div 
+                                            onClick={() => setIsOpen(!isOpen)} 
+                                            className="px-4 py-2 flex justify-between items-center hover:bg-gray-50"
+                                            onKeyDown={(e) => {
+                                            if (e.key === 'Enter' || e.key === ' ') {
+                                                e.preventDefault();
+                                                setIsOpen(!isOpen);
+                                            }
+                                            }}
+                                            tabIndex={0}
+                                        >
+                                            <span>{ selectValue }</span>
+                                            <div className={`transition-transform duration-200 ${isOpen ? 'rotate-180' : 'rotate-0'}`}>
+                                                <ChevronDown size={20}/>
+                                            </div>
+                                        </div>
+                                    
+                                    {isOpen && (
+                                        <div
+                                            className="absolute z-10 w-full bg-white border border-slate-300 mt-1 rounded-md shadow-lg max-h-60 overflow-auto"
+                                            role="listbox"
+                                            aria-labelledby="ticket-type-label"
+                                        >
+                                        {tickets.map((ticket, index) => (
+                                            <div 
+                                                key={index}
+                                                className="px-4 py-2 hover:bg-gray-100 cursor-pointer font-montserrat"
+                                                onClick={() => updateValue(ticket)}
+                                                onKeyDown={(e) => {
+                                                    if (e.key === 'Enter' || e.key === ' ') {
+                                                    e.preventDefault();
+                                                    updateValue(ticket);
+                                                    }
+                                                }}
+                                                role="option"
+                                                aria-selected={selectValue === ticket}
+                                                tabIndex={0}
+                                            >
+                                              {ticket}
+                                            </div>
+                                        ))}
+                                     </div>
+                                    )}
+                                    </div>
+                                </div>
+                          </div>
+                          <span className='text-[12px] text-[#4b5563] leading-[16px] font-montserrat font-[400]'>Select a ticket type</span>
                         </label>
                         <label>
                             <span 
                             className="text-[#263238] text-[14px] leading-[20px] font-montserrat font-[400]"
                             >
-                                End Date*
+                                Ticket Quantity*
                             </span>
                             <Input
                                 name='endDate' 
@@ -397,7 +461,7 @@ export default function CreateEventForm() {
                                 placeholder=''
                                 required 
                             />
-                            <span className='text-[12px] text-[#4b5563] leading-[16px] font-montserrat font-[400]'>End date cannot be befor start date</span>
+                            <span className='text-[12px] text-[#4b5563] leading-[16px] font-montserrat font-[400]'>Enter how many tickets are available</span>
                         </label>
                     </div>
                     <div className='grid grid-cols-2 gap-8'>
@@ -405,22 +469,24 @@ export default function CreateEventForm() {
                             <span 
                             className="text-[#263238] text-[14px] leading-[20px] font-montserrat font-[400]"
                             >
-                                Start Date*
+                                Ticket Price (#)*
                             </span>
                             <Input
-                                name='startDate' 
+                                name='ticketPrice' 
                                 type='text'
                                 register={register}
                                 placeholder=''
                                 required 
                             />
-                            {/* <span className='text-[12px] text-[#4b5563] leading-[16px] font-montserrat font-[400]'></span> */}
+                            <span className='text-[12px] text-[#4b5563] leading-[16px] font-montserrat font-[400]'>Enter a valid ticket price</span>
                         </label>
     
                     </div>
                   </div>
                </div>
-            <Button>Create Event</Button>
+            <Button 
+              className='w-[183px] h-[40px] leading-[100%] gap-[10px] bg-homeexplore text-[16px] font-poppins font-bold text-center text-white py-[16px] px-[32px] rounded-[8px]'
+            >Create Event</Button>
          </form>
         </div>
     </>

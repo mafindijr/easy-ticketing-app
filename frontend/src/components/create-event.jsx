@@ -91,6 +91,7 @@ export default function CreateEventForm() {
         }
 
         console.log("event created successfully", { ...data, coverImage });
+        console.log("Form Submitted with: ", data);
     }
 
   return (
@@ -265,7 +266,7 @@ export default function CreateEventForm() {
                                     className="flex items-center justify-center gap-[24px] mt-4 border-1 h-[40px] w-[200px] rounded-[8px] border-[#cccccc]"
                                 >
                                      <div>
-                                        <label for="physical">
+                                        <label htmlFor="physical">
                                         <input 
                                             type="radio" 
                                             name="eventType"
@@ -275,7 +276,7 @@ export default function CreateEventForm() {
                                         </label>
                                      </div>
                                      <div>
-                                        <label for="virtual">
+                                        <label htmlFor="virtual">
                                         <input 
                                             type="radio" 
                                             name="eventType"
@@ -295,10 +296,13 @@ export default function CreateEventForm() {
                                 <div>
                                     <textarea
                                         name='eventDescription'
-                                        error={errors.eventDescription} 
-                                        className={`w-full h-[150px] bg-[#ebebeb] mt-2 border-1  rounded-[8px] border-[#cccccc] outline-none form-input ${errors.email ? "border-red-500 focus:ring-red-500" : ""}`}
-                                        required
+                                        error={errors.eventDescription}
+                                        // register={register}
+                                        className={`w-full h-[150px] bg-[#ebebeb] mt-2 border-1  rounded-[8px] border-[#cccccc] outline-none form-input ${errors.eventDescription ? "border-red-500 focus:ring-red-500" : ""}`}
+                                        // required
                                     ></textarea>
+
+                                    {errors.eventDescription && <span>Please provide a short description of your event</span>} 
                                 </div>
                             </div>
                         </div>
@@ -491,16 +495,20 @@ export default function CreateEventForm() {
                                 name='ticketPrice' 
                                 type='text'
                                 register={register}
+                                error={errors.tickectPrice}
                                 placeholder=''
                                 required 
+                                className={`form-input ${errors.ticketPrice ? "border-red-500 focus:ring-red-500" : ""}`}
                             />
-                            <span className='text-[12px] text-[#4b5563] leading-[16px] font-montserrat font-[400]'>Enter a valid ticket price</span>
+
+                            {errors.ticketPrice && <span className="text-[12px] leading-[16px] text-[#d32f2f] font-montserrat font-[400]">Enter a valid ticket price</span> }
                         </label>
     
                     </div>
                   </div>
                </div>
             <Button 
+              type='submit'
               className='w-[183px] h-[40px] leading-[100%] gap-[10px] bg-homeexplore text-[16px] font-poppins font-bold text-center text-white mb-[8px] mt-[24px] py-[16px] px-[32px] rounded-[8px]'
             >Create Event</Button>
          </form>

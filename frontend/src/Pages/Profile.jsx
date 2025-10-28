@@ -99,7 +99,7 @@ export default function Profile() {
                  placeholder="Current Password"
                  register={register}
                  error={errors.password}
-                 className={`form-input ${errors.phoneNumber ? "border-red-500 focus:ring-red-500" : ""}`}
+                 className={`form-input ${errors.password ? "border-red-500 focus:ring-red-500" : ""}`}
                  required
                 //  prefixIcon={}
                 />
@@ -115,7 +115,7 @@ export default function Profile() {
                  placeholder="New Password"
                  register={register}
                  error={errors.newPassword}
-                 className={`form-input ${errors.phoneNumber ? "border-red-500 focus:ring-red-500" : ""}`}
+                 className={`form-input ${errors.newPassword ? "border-red-500 focus:ring-red-500" : ""}`}
                  required
                 //  prefixIcon={}
                 />
@@ -131,7 +131,7 @@ export default function Profile() {
                  placeholder="Confirm Password"
                  register={register}
                  error={errors.confirmPassword}
-                 className={`form-input ${errors.phoneNumber ? "border-red-500 focus:ring-red-500" : ""}`}
+                 className={`form-input ${errors.confirmPassword ? "border-red-500 focus:ring-red-500" : ""}`}
                  required
                 //  prefixIcon={}
                 />

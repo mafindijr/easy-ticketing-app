@@ -12,8 +12,8 @@ export default function ProfileNav() {
   return (
     <div>
         <header 
-        className="bg-white flex justify-between items-center h-18 px-30 font-montserrat font-bold fixed top-0 left-0 right-0 z-12"
-        style={{boxShadow: '0px 0px 4px rgba(2, 2, 2, 0.15)' }}
+          className="bg-white flex justify-between items-center h-18 px-30 font-montserrat font-bold fixed top-0 left-0 right-0 z-12"
+          style={{boxShadow: '0px 0px 4px rgba(2, 2, 2, 0.15)' }}
         >
         <div className="">
         <Link to="/">

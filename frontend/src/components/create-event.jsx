@@ -168,90 +168,90 @@ export default function CreateEventForm() {
                         {coverError && (
                             <div className="text-red-500 text-sm mt-2">{coverError}</div>
                         )}
-                        
-                            <div className='grid grid-cols-2 gap-8'>
-                                <label>
-                                    <span 
-                                    className="text-[#263238] text-[14px] leading-[20px] font-montserrat font-[400]"
-                                    >
-                                        Event Title*
-                                    </span>
-                                    <Input
+                    
+                        <div className='grid grid-cols-2 gap-8'>
+                            <label>
+                                <span 
+                                className="text-[#263238] text-[14px] leading-[20px] font-montserrat font-[400]"
+                                >
+                                    Event Title*
+                                </span>
+                                <Input
                                     name='eventTitle' 
                                     type='text'
                                     register={register}
                                     placeholder='Event Title'
                                     max="100"
                                     required 
-                                    />
-                                    <span className='text-[12px] text-[#4b5563] leading-[16px] font-montserrat font-[400]'>Maximum 100 characters</span>
-                                </label>
-                                <label>
-                                    <span 
-                                    className="text-[#263238] text-[14px] leading-[20px] font-montserrat font-[400]"
-                                    >
-                                        Event Category*
-                                    </span>
+                                />
+                                <span className='text-[12px] text-[#4b5563] leading-[16px] font-montserrat font-[400]'>Maximum 100 characters</span>
+                            </label>
+                            <label>
+                                <span 
+                                     className="text-[#263238] text-[14px] leading-[20px] font-montserrat font-[400]"
+                                >
+                                    Event Category*
+                                </span>
 
-                                      {/* {tickets && tickets.length > 0 && ( */}
-                                        <div className="mt-4 text-[#6B7280] text-base font-montserrat 
-                                         rounded-[4px] bg-[#ebebeb] focus:ring-[#93abdb]">
-                                        <div className="relative">
-                                            <div 
+                                    {/* {tickets && tickets.length > 0 && ( */}
+                                    <div className="mt-4 text-[#6B7280] text-base font-montserrat 
+                                        rounded-[4px] bg-[#ebebeb] focus:ring-[#93abdb]">
+                                    <div className="relative">
+                                        <div 
                                             className="inline-block border border-slate-300 outline-none cursor-pointer transition w-full rounded-md"
                                             role="combobox"
                                             aria-expanded={isOpenCategory}
                                             aria-haspopup="listbox"
                                             aria-labelledby="ticket-type-label"
-                                            >
+                                        >
+                                        <div 
+                                            onClick={() => setIsOpenCategory(!isOpenCategory)} 
+                                            className="px-4 py-2 flex justify-between items-center hover:bg-gray-50"
+                                            onKeyDown={(e) => {
+                                            if (e.key === 'Enter' || e.key === ' ') {
+                                                e.preventDefault();
+                                                setIsOpenCategory(!isOpenCategory);
+                                            }
+                                            }}
+                                            tabIndex={0}
+                                        >
+                                            <span>{ selectCategory }</span>
                                             <div 
-                                                onClick={() => setIsOpenCategory(!isOpenCategory)} 
-                                                className="px-4 py-2 flex justify-between items-center hover:bg-gray-50"
-                                                onKeyDown={(e) => {
-                                                if (e.key === 'Enter' || e.key === ' ') {
-                                                    e.preventDefault();
-                                                    setIsOpenCategory(!isOpenCategory);
-                                                }
-                                                }}
-                                                tabIndex={0}
+                                                className={`transition-transform duration-200 ${isOpenCategory ? 'rotate-180' : 'rotate-0'}`}
                                             >
-                                                <span>{ selectCategory }</span>
+                                                <ChevronDown size={20}/>
+                                            </div>
+                                        </div>
+                                        
+                                        {isOpenCategory && (
+                                            <div
+                                                className="absolute z-10 w-full bg-white border border-slate-300 mt-1 rounded-md shadow-lg max-h-60 overflow-auto"
+                                                role="listbox"
+                                                aria-labelledby="ticket-type-label"
+                                            >
+                                            {categories.map((category, index) => (
                                                 <div 
-                                                    className={`transition-transform duration-200 ${isOpenCategory ? 'rotate-180' : 'rotate-0'}`}
+                                                    key={index}
+                                                    className="px-4 py-2 hover:bg-gray-100 cursor-pointer font-montserrat"
+                                                    onClick={() => updateCategory(category)}
+                                                    onKeyDown={(e) => {
+                                                        if (e.key === 'Enter' || e.key === ' ') {
+                                                        e.preventDefault();
+                                                        updateCategory(category);
+                                                        }
+                                                    }}
+                                                    role="option"
+                                                    aria-selected={selectCategory === category}
+                                                    tabIndex={0}
                                                 >
-                                                    <ChevronDown size={20}/>
+                                                    {category}
                                                 </div>
+                                            ))}
                                             </div>
-                                            
-                                            {isOpenCategory && (
-                                                <div
-                                                    className="absolute z-10 w-full bg-white border border-slate-300 mt-1 rounded-md shadow-lg max-h-60 overflow-auto"
-                                                    role="listbox"
-                                                    aria-labelledby="ticket-type-label"
-                                                >
-                                                {categories.map((category, index) => (
-                                                    <div 
-                                                        key={index}
-                                                        className="px-4 py-2 hover:bg-gray-100 cursor-pointer font-montserrat"
-                                                        onClick={() => updateCategory(category)}
-                                                        onKeyDown={(e) => {
-                                                            if (e.key === 'Enter' || e.key === ' ') {
-                                                            e.preventDefault();
-                                                            updateCategory(category);
-                                                            }
-                                                        }}
-                                                        role="option"
-                                                        aria-selected={selectCategory === category}
-                                                        tabIndex={0}
-                                                    >
-                                                     {category}
-                                                    </div>
-                                                ))}
-                                                </div>
-                                            )}
-                                            </div>
-                                         </div>
-                                         </div>
+                                        )}
+                                        </div>
+                                     </div>
+                                   </div>
                             
                                 </label>
                             </div>
@@ -293,8 +293,10 @@ export default function CreateEventForm() {
                                     Event Description*
                                 </span>
                                 <div>
-                                    <textarea 
-                                        className="w-full h-[150px] bg-[#ebebeb] mt-2 border-1  rounded-[8px] border-[#cccccc] outline-none"
+                                    <textarea
+                                        name='eventDescription'
+                                        error={errors.eventDescription} 
+                                        className={`w-full h-[150px] bg-[#ebebeb] mt-2 border-1  rounded-[8px] border-[#cccccc] outline-none form-input ${errors.email ? "border-red-500 focus:ring-red-500" : ""}`}
                                         required
                                     ></textarea>
                                 </div>
@@ -372,15 +374,21 @@ export default function CreateEventForm() {
                             </div>
                             <div>
                                 <label>
-                                    Location*
+                                    <span 
+                                    className="text-[#263238] text-[14px] leading-[20px] font-montserrat font-[400]"
+                                    >
+                                        Location*
+                                    </span>
                                     <Input
                                         name='location' 
                                         type='text'
                                         register={register}
+                                        error={errors.location}
                                         placeholder=''
                                         required 
+                                        className={`form-input ${errors.location ? "border-red-500 focus:ring-red-500" : ""}`}
                                     />
-                                    <span className='text-[12px] text-[#4b5563] leading-[16px] font-montserrat font-[400]'>please provide a valid address venue or link</span>
+                                    <span className='text-[12px] text-[#4b5563] leading-[16px] font-montserrat font-[400]'>Enter the venue address for physical events (e.g., 20 Admiralty Way, Lagos), or a link for virtual events (e.g., Zoom/Google Meet</span>
                                 </label>
                             </div>
                     </div>
@@ -391,7 +399,7 @@ export default function CreateEventForm() {
                     <div className='grid grid-cols-2 gap-8'>
                         <label>
                             <span 
-                            className="text-[#263238] text-[14px] leading-[20px] font-montserrat font-[400]"
+                               className="text-[#263238] text-[14px] leading-[20px] font-montserrat font-[400]"
                             >
                                 Ticket Type*
                             </span>

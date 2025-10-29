@@ -181,11 +181,14 @@ export default function CreateEventForm() {
                                     name='eventTitle' 
                                     type='text'
                                     register={register}
+                                    className={`form-input ${errors.eventTitle ? "border-red-500 focus:ring-red-500" : ""}`}
                                     placeholder='Event Title'
                                     max="100"
                                     required 
                                 />
-                                <span className='text-[12px] text-[#4b5563] leading-[16px] font-montserrat font-[400]'>Maximum 100 characters</span>
+
+                                {errors.eventTitle ? <span className="text-[12px] leading-[16px] text-[#d32f2f] font-montserrat font-[400]">Please enter a valid event title(max 100 characters)</span> :
+                                <span className='text-[12px] text-[#4b5563] leading-[16px] font-montserrat font-[400]'>Maximum 100 characters</span>}
                             </label>
                             <label>
                                 <span 
@@ -267,25 +270,33 @@ export default function CreateEventForm() {
                                 >
                                      <div>
                                         <label htmlFor="physical">
-                                        <input 
+                                        <Input 
                                             type="radio" 
                                             name="eventType"
+                                            register={register}
+                                            className={`form-input ${errors.eventType ? "border-red-500 focus:ring-red-500" : ""}`}
                                             id='physical'
+                                            required
                                         />
                                         <span className="px-2">Physical</span>
                                         </label>
                                      </div>
                                      <div>
                                         <label htmlFor="virtual">
-                                        <input 
+                                        <Input 
                                             type="radio" 
                                             name="eventType"
+                                            register={register}
+                                            className={`form-input ${errors.eventType ? "border-red-500 focus:ring-red-500" : ""}`}
                                             id="virtual"
+                                            required
                                         />
                                         <span className="px-2">Virtual</span>
                                         </label>
                                      </div>
                                 </div>
+
+                                    {errors.eventType && <span className="text-[12px] leading-[16px] text-[#d32f2f] font-montserrat font-[400]">Please select an event type</span>}
                             </div>
                             <div>
                                 <span 
@@ -301,6 +312,7 @@ export default function CreateEventForm() {
                                         className={`w-full h-[150px] bg-[#ebebeb] mt-2 border-1  rounded-[8px] border-[#cccccc] outline-none form-input ${errors.eventDescription ? "border-red-500 focus:ring-red-500" : ""}`}
                                         // required
                                     ></textarea>
+
 
                                     {errors.eventDescription && <span>Please provide a short description of your event</span>} 
                                 </div>
@@ -338,10 +350,12 @@ export default function CreateEventForm() {
                                         name='endDate' 
                                         type='text'
                                         register={register}
+                                        className={`form-input ${errors.endDate ? "border-red-500 focus:ring-red-500" : ""}`}
                                         placeholder=''
                                         required 
                                     />
-                                    <span className='text-[12px] text-[#4b5563] leading-[16px] font-montserrat font-[400]'>End date cannot be befor start date</span>
+
+                                    {errors.endTime && <span className="text-[12px] leading-[16px] text-[#d32f2f] font-montserrat font-[400]">End date cannot be befor start date</span>}
                                 </label>
                             </div>
                             <div className="grid grid-cols-2 gap-8">
@@ -370,10 +384,12 @@ export default function CreateEventForm() {
                                         name='endTime' 
                                         type='text'
                                         register={register}
+                                        className={`form-input ${errors.endTime ? "border-red-500 focus:ring-red-500" : ""}`}
                                         placeholder=''
                                         required 
                                     />
-                                    <span className='text-[12px] text-[#4b5563] leading-[16px] font-montserrat font-[400]'>please enter a valid event times</span>
+
+                                    {errors.endTime && <span className="text-[12px] leading-[16px] text-[#d32f2f] font-montserrat font-[400]">please enter a valid event times</span> }
                                 </label>
                             </div>
                             <div>
@@ -392,7 +408,13 @@ export default function CreateEventForm() {
                                         required 
                                         className={`form-input ${errors.location ? "border-red-500 focus:ring-red-500" : ""}`}
                                     />
-                                    <span className='text-[12px] text-[#4b5563] leading-[16px] font-montserrat font-[400]'>Enter the venue address for physical events (e.g., 20 Admiralty Way, Lagos), or a link for virtual events (e.g., Zoom/Google Meet</span>
+  
+                                    
+                                     {errors.location ? <span className="text-[12px] leading-[16px] text-[#d32f2f] font-montserrat font-[400]">Please provide a valid venue address or link</span> : <span className='text-[12px] text-[#4b5563] leading-[16px] font-montserrat font-[400]'>
+                                        Enter the venue address for physical   events (e.g., 20 Admiralty Way, Lagos), or a link for virtual events (e.g., Zoom/Google Meet
+                                         </span>
+                                      }
+                                    
                                 </label>
                             </div>
                     </div>
@@ -481,7 +503,8 @@ export default function CreateEventForm() {
                                 placeholder=''
                                 required 
                             />
-                            <span className='text-[12px] text-[#4b5563] leading-[16px] font-montserrat font-[400]'>Enter how many tickets are available</span>
+
+                            {errors.endTime && <span className="text-[12px] leading-[16px] text-[#d32f2f] font-montserrat font-[400]">Enter how many tickets are available</span> }
                         </label>
                     </div>
                     <div className='grid grid-cols-2 gap-8'>

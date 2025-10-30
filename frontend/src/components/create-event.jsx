@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { Button } from './button';
 import { Input } from './input';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, ChevronLeft } from 'lucide-react';
 
 
 export default function CreateEventForm() {
@@ -98,8 +98,12 @@ export default function CreateEventForm() {
     <>
         <div>
             <div>
-                <span>icon</span>
-                <span>Back to Events</span>
+                <button 
+                    className='inline-flex items-center gap-4 font-montserrat font-bold text-[20px] text-homeexplohover leading-[30px] cursor-pointer'
+                >
+                    <ChevronLeft size={20} />
+                    <span>Back to Events</span>
+                </button>
             </div>
          <form onSubmit={handleSubmit(onSubmit)}>
             <div>
@@ -269,29 +273,36 @@ export default function CreateEventForm() {
                                     className="flex items-center justify-center gap-[24px] mt-4 border-1 h-[40px] w-[200px] rounded-[8px] border-[#cccccc]"
                                 >
                                      <div>
-                                        <label htmlFor="physical">
+                                        <label 
+                                            htmlFor="physical"
+                                            className='inline-flex items-center justify-center'
+                                        >
                                         <Input 
                                             type="radio" 
                                             name="eventType"
                                             register={register}
-                                            className={`form-input ${errors.eventType ? "border-red-500 focus:ring-red-500" : ""}`}
+                                            className={`form-input inline-flex items-center justify-center mb-4 ${errors.eventType ? "border-red-500 focus:ring-red-500" : ""}`}
                                             id='physical'
                                             required
                                         />
-                                        <span className="px-2">Physical</span>
+                                        <span className="px-2 text-center">Physical</span>
                                         </label>
                                      </div>
                                      <div>
-                                        <label htmlFor="virtual">
+                                        <label 
+                                            htmlFor="virtual"
+                                            className='inline-flex items-center justify-center'
+                                        >
                                         <Input 
                                             type="radio" 
                                             name="eventType"
                                             register={register}
-                                            className={`form-input ${errors.eventType ? "border-red-500 focus:ring-red-500" : ""}`}
+                                            className={`form-input inline-flex items-center justify-center mb-4 ${errors.eventType ? "border-red-500 focus:ring-red-500" : ""}`}
                                             id="virtual"
                                             required
-                                        />
-                                        <span className="px-2">Virtual</span>
+                                        /> 
+                                        
+                                        <span className="px-2 text-center">Virtual</span>
                                         </label>
                                      </div>
                                 </div>

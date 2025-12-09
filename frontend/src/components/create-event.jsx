@@ -235,8 +235,7 @@ export default function CreateEventForm() {
                                                 <ChevronDown size={20}/>
                                             </div>
                                         </div>
--                                        
-+                                        
+                                                                           
                                         {isOpenCategory && (
                                             <div
                                                 className="absolute z-10 w-full bg-white border border-slate-300 mt-1 rounded-md shadow-lg max-h-60 overflow-auto"

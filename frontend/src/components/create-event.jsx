@@ -9,13 +9,15 @@ export default function CreateEventForm() {
 
     const [isOpen, setIsOpen] = useState(false);
     const [isOpenCategory, setIsOpenCategory] = useState(false);
-    const [selectValue, setSelectValue] = useState("Select Ticket Type");
-    const [selectCategory, setSelectCategory] = useState("Select event category");
+    // start empty so required validation fails until user picks a value
+    const [selectValue, setSelectValue] = useState("");
+    const [selectCategory, setSelectCategory] = useState("");
     const [coverImage, setCoverImage] = useState(null);
     const [coverError, setCoverError] = useState('');
     const fileInputRef = useRef();
 
-    const { register, handleSubmit, formState: {errors}, reset  } = useForm();
+    // include setValue and clearErrors so we can update form values and clear validation on selection
+    const { register, handleSubmit, formState: {errors}, reset, setValue, clearErrors } = useForm();
 
     const tickets = [
          "General Admission" ,
@@ -37,11 +39,15 @@ export default function CreateEventForm() {
     const updateValue = (value, value2) => {
             setSelectValue(value);
             setIsOpen(false);
+            setValue('ticketType', value); // update react-hook-form field
+            clearErrors('ticketType'); // clear validation error immediately
     }
 
     const updateCategory = (value) => {
             setSelectCategory(value);
             setIsOpenCategory(false);
+            setValue('eventCategory', value); // update react-hook-form field
+            clearErrors('eventCategory'); // clear validation error immediately
     }
 
     const handleImageUpload = (e) => {
@@ -201,12 +207,11 @@ export default function CreateEventForm() {
                                     Event Category*
                                 </span>
 
-                                    {/* {tickets && tickets.length > 0 && ( */}
                                     <div className="mt-4 text-[#6B7280] text-base font-montserrat 
                                         rounded-[4px] bg-[#ebebeb] focus:ring-[#93abdb]">
                                     <div className="relative">
                                         <div 
-                                            className="inline-block border border-slate-300 outline-none cursor-pointer transition w-full rounded-md"
+                                            className={`inline-block border ${errors.eventCategory ? 'border-red-500' : 'border-slate-300'} outline-none cursor-pointer transition w-full rounded-md`}
                                             role="combobox"
                                             aria-expanded={isOpenCategory}
                                             aria-haspopup="listbox"
@@ -223,14 +228,15 @@ export default function CreateEventForm() {
                                             }}
                                             tabIndex={0}
                                         >
-                                            <span>{ selectCategory }</span>
+                                            <span>{ selectCategory || 'Select event category' }</span>
                                             <div 
                                                 className={`transition-transform duration-200 ${isOpenCategory ? 'rotate-180' : 'rotate-0'}`}
                                             >
                                                 <ChevronDown size={20}/>
                                             </div>
                                         </div>
-                                        
+-                                        
++                                        
                                         {isOpenCategory && (
                                             <div
                                                 className="absolute z-10 w-full bg-white border border-slate-300 mt-1 rounded-md shadow-lg max-h-60 overflow-auto"
@@ -260,7 +266,12 @@ export default function CreateEventForm() {
                                         </div>
                                      </div>
                                    </div>
-                            
+
+                                {/* hidden input registered for validation */}
+                                <input type="hidden" {...register('eventCategory', { required: true })} />
+                                {errors.eventCategory ? (
+                                    <span className="text-[12px] leading-[16px] text-[#d32f2f] font-montserrat font-[400]">Please select an event category</span>
+                                ) : null}
                                 </label>
                             </div>
                             <div>
@@ -317,15 +328,16 @@ export default function CreateEventForm() {
                                 </span>
                                 <div>
                                     <textarea
+                                        {...register('eventDescription', { required: true, maxLength: 1000 })}
                                         name='eventDescription'
-                                        error={errors.eventDescription}
-                                        // register={register}
-                                        className={`w-full h-[150px] bg-[#ebebeb] mt-2 border-1  rounded-[8px] border-[#cccccc] outline-none form-input ${errors.eventDescription ? "border-red-500 focus:ring-red-500" : ""}`}
-                                        // required
-                                    ></textarea>
+                                        className={`w-full h-[150px] bg-[#ebebeb] mt-2 border-1 rounded-[8px] border-[#cccccc] outline-none form-input ${errors.eventDescription ? "border-red-500 focus:ring-red-500" : ""}`}
+                                    />
 
-
-                                    {errors.eventDescription && <span>Please provide a short description of your event</span>} 
+                                    {errors.eventDescription ? (
+                                        <span className="text-[12px] leading-[16px] text-[#d32f2f] font-montserrat font-[400]">Please provide a short description of your event</span>
+                                    ) : (
+                                        <span className='text-[12px] text-[#4b5563] leading-[16px] font-montserrat font-[400]'>Provide a short description of your event</span>
+                                    )}
                                 </div>
                             </div>
                         </div>
@@ -442,12 +454,11 @@ export default function CreateEventForm() {
                             </span>
                             
                             
-                            {/* {tickets && tickets.length > 0 && ( */}
                             <div className="mt-4 text-[#6B7280] text-base font-montserrat 
                                 rounded-[4px] bg-[#ebebeb] focus:ring-[#93abdb]">
                                 <div className="relative">
                                     <div 
-                                        className="inline-block border border-slate-300 outline-none cursor-pointer transition w-full rounded-md"
+                                        className={`inline-block border ${errors.ticketType ? 'border-red-500' : 'border-slate-300'} outline-none cursor-pointer transition w-full rounded-md`}
                                         role="combobox"
                                         aria-expanded={isOpen}
                                         aria-haspopup="listbox"
@@ -463,43 +474,49 @@ export default function CreateEventForm() {
                                             }
                                             }}
                                             tabIndex={0}
-                                        >
-                                            <span>{ selectValue }</span>
-                                            <div className={`transition-transform duration-200 ${isOpen ? 'rotate-180' : 'rotate-0'}`}>
-                                                <ChevronDown size={20}/>
-                                            </div>
-                                        </div>
-                                    
-                                    {isOpen && (
-                                        <div
-                                            className="absolute z-10 w-full bg-white border border-slate-300 mt-1 rounded-md shadow-lg max-h-60 overflow-auto"
-                                            role="listbox"
-                                            aria-labelledby="ticket-type-label"
-                                        >
-                                        {tickets.map((ticket, index) => (
-                                            <div 
-                                                key={index}
-                                                className="px-4 py-2 hover:bg-gray-100 cursor-pointer font-montserrat"
-                                                onClick={() => updateValue(ticket)}
-                                                onKeyDown={(e) => {
-                                                    if (e.key === 'Enter' || e.key === ' ') {
-                                                    e.preventDefault();
-                                                    updateValue(ticket);
-                                                    }
-                                                }}
-                                                role="option"
-                                                aria-selected={selectValue === ticket}
-                                                tabIndex={0}
                                             >
-                                              {ticket}
-                                            </div>
-                                        ))}
+                                            <span>{ selectValue || 'Select Ticket Type' }</span>
+                                             <div className={`transition-transform duration-200 ${isOpen ? 'rotate-180' : 'rotate-0'}`}>
+                                                 <ChevronDown size={20}/>
+                                             </div>
+                                         </div>
+                                     
+                                     {isOpen && (
+                                         <div
+                                             className="absolute z-10 w-full bg-white border border-slate-300 mt-1 rounded-md shadow-lg max-h-60 overflow-auto"
+                                             role="listbox"
+                                             aria-labelledby="ticket-type-label"
+                                         >
+                                         {tickets.map((ticket, index) => (
+                                             <div 
+                                                 key={index}
+                                                 className="px-4 py-2 hover:bg-gray-100 cursor-pointer font-montserrat"
+                                                 onClick={() => updateValue(ticket)}
+                                                 onKeyDown={(e) => {
+                                                     if (e.key === 'Enter' || e.key === ' ') {
+                                                     e.preventDefault();
+                                                     updateValue(ticket);
+                                                     }
+                                                 }}
+                                                 role="option"
+                                                 aria-selected={selectValue === ticket}
+                                                 tabIndex={0}
+                                             >
+                                               {ticket}
+                                             </div>
+                                         ))}
+                                      </div>
+                                     )}
                                      </div>
-                                    )}
-                                    </div>
-                                </div>
-                          </div>
-                          <span className='text-[12px] text-[#4b5563] leading-[16px] font-montserrat font-[400]'>Select a ticket type</span>
+                                 </div>
+                           </div>
+                          {/* hidden input registered for validation */}
+                          <input type="hidden" {...register('ticketType', { required: true })} />
+                          {errors.ticketType ? (
+                              <span className="text-[12px] leading-[16px] text-[#d32f2f] font-montserrat font-[400]">Please select a ticket type</span>
+                          ) : (
+                              <span className='text-[12px] text-[#4b5563] leading-[16px] font-montserrat font-[400]'>Select a ticket type</span>
+                          )}
                         </label>
                         <label>
                             <span 

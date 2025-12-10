@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { Button } from './button';
 import { Input } from './input';
+import toast from 'react-hot-toast';
 import { ChevronDown, ChevronLeft } from 'lucide-react';
 
 
@@ -96,6 +97,7 @@ export default function CreateEventForm() {
             return;
         }
 
+        toast.success("Event Created Successfully");
         console.log("event created successfully", { ...data, coverImage });
         console.log("Form Submitted with: ", data);
     }
@@ -235,7 +237,7 @@ export default function CreateEventForm() {
                                                 <ChevronDown size={20}/>
                                             </div>
                                         </div>
-                                                                           
+
                                         {isOpenCategory && (
                                             <div
                                                 className="absolute z-10 w-full bg-white border border-slate-300 mt-1 rounded-md shadow-lg max-h-60 overflow-auto"

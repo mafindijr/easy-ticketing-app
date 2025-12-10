@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link, NavLink } from "react-router-dom";
 
 export default function ProfileNav() {
@@ -8,6 +8,34 @@ export default function ProfileNav() {
       { to: "/tickets", name: "Tickets"},
       { to: "/profile", name: "Profile"}
     ]
+
+    const [profileImage, setProfileImage] = useState(null);
+    const [firstName, setFirstName] = useState("John"); // Track first name from profile
+
+    // load any persisted profile image and listen for updates from other components
+    useEffect(() => {
+      try {
+        const stored = localStorage.getItem('profileImage');
+        if (stored) setProfileImage(stored);
+      } catch (err) { /* ignore */ }
+
+      const onStorage = (e) => {
+        if (e.key === 'profileImage') {
+          setProfileImage(e.newValue);
+        }
+      };
+      const onCustom = (e) => {
+        // e.detail contains the preview URL or null
+        setProfileImage(e.detail);
+      };
+
+      window.addEventListener('storage', onStorage);
+      window.addEventListener('profileImageChanged', onCustom);
+      return () => {
+        window.removeEventListener('storage', onStorage);
+        window.removeEventListener('profileImageChanged', onCustom);
+      };
+    }, []);
 
   return (
     <div>
@@ -40,12 +68,24 @@ export default function ProfileNav() {
         </div>
         <div className='flex gap-8 text-[16px] font-montserrat font-bold '>
             <Link>
-            <span>p img</span>
-            <span>john doer</span>
+            <div id="profile-image" className="w-10 h-10 rounded-full bg-homeexplore flex items-center justify-center text-white font-bold overflow-hidden">
+              {profileImage ? (
+                <img
+                  src={profileImage}
+                  alt="profile"
+                  className="object-cover w-full h-full rounded-full"
+                />
+              ) : (
+                <span id="name">{firstName ? firstName.charAt(0).toUpperCase() : "JD"}</span>
+              )}
+            </div>
+            <span>{firstName || "john doer"}</span>
             </Link>
             <Link>Log Out</Link>    
         </div>
       </header>
+      
+      {/* no inline uploader here — header updates only when Profile page saves */}
     </div>
   )
 }

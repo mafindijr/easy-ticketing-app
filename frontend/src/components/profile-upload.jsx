@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ProfileUploader = () => {
+const ProfileUploader = ({ onPreview }) => {
   const [imageFile, setImageFile] = useState(null);
   const [previewUrl, setPreviewUrl] = useState(null);
   const [error, setError] = useState("");
@@ -15,6 +15,7 @@ const ProfileUploader = () => {
       setError("File type not supported. Please upload a png, jpeg, or jpg");
       setImageFile(null);
       setPreviewUrl(null);
+      if (onPreview) onPreview(null);
       return;
     }
 
@@ -23,23 +24,26 @@ const ProfileUploader = () => {
       setError("File too large. Max 10MB");
       setImageFile(null);
       setPreviewUrl(null);
+      if (onPreview) onPreview(null);
       return;
     }
 
     setError("");
     setImageFile(file);
-    setPreviewUrl(URL.createObjectURL(file));
+    const preview = URL.createObjectURL(file);
+    setPreviewUrl(preview);
+    if (onPreview) onPreview(preview);
   };
 
   const handleRemove = () => {
     setImageFile(null);
     setPreviewUrl(null);
     setError("");
+    if (onPreview) onPreview(null);
   };
 
   return (
     <div>
-
       <div className="border border-[#cccccc] p-4 rounded-lg flex justify-center items-center gap-[10px]">
         <div className="w-24 h-24 mb-3 rounded-full bg-homeexplore flex items-center justify-center text-4xl font-bold text-white overflow-hidden">
           {previewUrl ? (
@@ -52,39 +56,57 @@ const ProfileUploader = () => {
             "J"
           )}
         </div>
-            <div className="flex flex-col">
-              <h4 className="font-montserrat font-semibold text-[18px] ">Profile Picture</h4>
-               <div className="inline-flex gap-[10px]">
-                <label className="w-[172px] h-[40px] leading-[100%] gap-[10px] bg-homeexplore text-[16px] font-montserrat font-semibold rounded-[8px] px-[8px] py-[12px] gap-2 cursor-pointer inline-flex items-center text-white"
-                style={{boxShadow: " 0px 4px 6px rgba(2, 2, 2, 0.40)"}}
-                >
-                    <svg className="ml-2 mb-1 font-bold" width="20" height="18" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4 5L5.41 6.41L8 3.83V14H10V3.83L12.58 6.41L14 5L9 0M2 18V10H0V18C0 19.1 0.9 20 2 20H16C17.1 20 18 19.1 18 18V10H16V18H2Z" fill="white"/>
-                    </svg>
+        <div className="flex flex-col">
+          <h4 className="font-montserrat font-semibold text-[18px] ">
+            Profile Picture
+          </h4>
+          <div className="inline-flex gap-[10px]">
+            <label
+              className="w-[172px] h-[40px] leading-[100%] gap-[10px] bg-homeexplore text-[16px] font-montserrat font-semibold rounded-[8px] px-[8px] py-[12px] gap-2 cursor-pointer inline-flex items-center text-white"
+              style={{
+                boxShadow: " 0px 4px 6px rgba(2, 2, 2, 0.40)",
+              }}
+            >
+              <svg
+                className="ml-2 mb-1 font-bold"
+                width="20"
+                height="18"
+                viewBox="0 0 18 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4 5L5.41 6.41L8 3.83V14H10V3.83L12.58 6.41L14 5L9 0M2 18V10H0V18C0 19.1 0.9 20 2 20H16C17.1 20 18 19.1 18 18V10H16V18H2Z"
+                  fill="white"
+                />
+              </svg>
 
-                    <span className="w-[116px] h-[20px]">Upload image</span>
-                    <input
-                        type="file"
-                        accept="image/png, image/jpeg"
-                        onChange={handleChange}
-                        className="hidden"
-                    />
-                </label>
+              <span className="w-[116px] h-[20px]">Upload image</span>
+              <input
+                type="file"
+                accept="image/png, image/jpeg"
+                onChange={handleChange}
+                className="hidden"
+              />
+            </label>
 
-                {imageFile && (
-                <button
-                    onClick={handleRemove}
-                    className="w-[92px] h-[40px] leading-[100%] cursor-pointer text-[16px] text-[#000000] font-montserrat font-semibold rounded-[8px] px-[8px] py-[12px]"
-                    style={{boxShadow: " 0px 4px 6px rgba(2, 2, 2, 0.25)"}}
-                    id="remove-btn"        
-                >
-                    <span className="w-[68px] h-[20px]">Remove</span>
-                </button>
-                )}
-              </div>
-                <span className="font-montserrat font-[500] text-[14px] text-[#4b5563]">png*,jpeg*, files under 10mb</span>
-            </div>
-
+            {imageFile && (
+              <button
+                onClick={handleRemove}
+                className="w-[92px] h-[40px] leading-[100%] cursor-pointer text-[16px] text-[#000000] font-montserrat font-semibold rounded-[8px] px-[8px] py-[12px]"
+                style={{
+                  boxShadow: " 0px 4px 6px rgba(2, 2, 2, 0.25)",
+                }}
+                id="remove-btn"
+              >
+                <span className="w-[68px] h-[20px]">Remove</span>
+              </button>
+            )}
+          </div>
+          <span className="font-montserrat font-[500] text-[14px] text-[#4b5563]">
+            png*,jpeg*, files under 10mb
+          </span>
+        </div>
 
         {error && <p className="text-[#d32f2f] text-sm mt-2">{error}</p>}
       </div>
@@ -93,8 +115,6 @@ const ProfileUploader = () => {
 };
 
 export default ProfileUploader;
-
-
 
 // import React, { useState } from "react";
 // import { useForm, Controller } from "react-hook-form";

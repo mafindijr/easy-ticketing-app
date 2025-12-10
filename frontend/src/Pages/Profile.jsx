@@ -2,14 +2,37 @@ import { useForm } from "react-hook-form";
 import { Input } from "../components/input";
 import { Button } from "../components/button";
 import ProfileUploader from "../components/profile-upload";
+import { useState } from "react";
+import toast from "react-hot-toast";
 
 export default function Profile() {
 
   const { register, handleSubmit, formState: { errors } } = useForm();
+  const [profilePreview, setProfilePreview] = useState(null);
 
-    const onSubmit = (data) => {
-      console.log("Form Submitted with: ", data);
-    };
+  const onSubmit = (data) => {
+    // save profile data...
+    // only persist and broadcast profile image when user clicks Save
+    if (profilePreview) {
+      try {
+        localStorage.setItem('profileImage', profilePreview);
+      } catch (err) { /* ignore */ }
+      try {
+        window.dispatchEvent(new CustomEvent('profileImageChanged', { detail: profilePreview }));
+      } catch (err) { /* ignore */ }
+    } else {
+      // if user removed image and saved, remove stored image
+      try {
+        localStorage.removeItem('profileImage');
+      } catch (err) { /* ignore */ }
+      try {
+        window.dispatchEvent(new CustomEvent('profileImageChanged', { detail: null }));
+      } catch (err) { /* ignore */ }
+    }
+
+    toast.success("Profile saved");
+    console.log("Form Submitted with: ", data, "profilePreview:", profilePreview);
+  };
 
   return (
     <div className=" my-20 mx-30">
@@ -24,7 +47,8 @@ export default function Profile() {
           <div>
             <h4 className="text-[20px] leading-[30px] font-montserrat font-bold ">Personal Information</h4>
             <div className="border-[#cccccc] border-1 rounded-[8px] p-[32px]">
-              <ProfileUploader />
+              {/* Pass preview callback to uploader; uploader does NOT persist */}
+              <ProfileUploader onPreview={setProfilePreview} />
                <div className="grid grid-cols-2 gap-6">
                 <div>
                   <Input

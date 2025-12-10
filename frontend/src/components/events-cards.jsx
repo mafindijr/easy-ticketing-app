@@ -17,7 +17,22 @@ export default function OrganizersDashboardEventsCards() {
                         date: "Sept 5, 2025",
                         time: "10:00 AM - 12:30 PM"
                     },
+                    image: "./tech.jpg",
                     location: "Online (Zoom)",
+                    ticket: {
+                        type: "Paid Ticket",
+                        price: "#5000"
+                    }
+
+                },
+                {
+                    name: "Afrobeats Live 2025",
+                    date: {
+                        date: "Aug 20, 2025",
+                        time: "6:00 PM - 10:00 PM"
+                    },
+                    image: "./afrobeats.jpg",
+                    location: "Landmark Event Center",
                     ticket: {
                         type: "Paid Ticket",
                         price: "#5000"

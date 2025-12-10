@@ -97,7 +97,7 @@ export default function CreateEventForm() {
             return;
         }
 
-        toast.success("Event Created Successfully");
+        toast.success("Your event was created successfully");
         console.log("event created successfully", { ...data, coverImage });
         console.log("Form Submitted with: ", data);
     }

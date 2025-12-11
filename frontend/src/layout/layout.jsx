@@ -1,4 +1,3 @@
-import React from 'react'
 import LandingPage from '../components/landing-page'
 import Footer from '../components/Footer'
 

@@ -1,7 +1,6 @@
 import CreateEventForm from "../components/create-event";
 import EmptyDashboadState from "../components/empty-dashboad";
 import OrganizersDashboardEventsCards from "../components/events-cards";
-import DashboardLayout from "../layout/dashboard-layout"
 import { Ticket } from "lucide-react";
 
 export default function Dashboard() {

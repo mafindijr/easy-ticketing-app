@@ -1,3 +1,4 @@
+import CreateEventForm from "../components/create-event";
 import EmptyDashboadState from "../components/empty-dashboad";
 import OrganizersDashboardEventsCards from "../components/events-cards";
 import DashboardLayout from "../layout/dashboard-layout"
@@ -40,6 +41,7 @@ export default function Dashboard() {
           <div className="grid grid-cols-1 gap-[24px] py-[32px]">
             {/* <EmptyDashboadState /> */}
             <OrganizersDashboardEventsCards />
+            <CreateEventForm />
           </div>
       </div>
     </div>

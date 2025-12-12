@@ -41,6 +41,7 @@ export default function Dashboard() {
             {/* <EmptyDashboadState /> */}
             <OrganizersDashboardEventsCards />
             <CreateEventForm />
+            <EmptyDashboadState />
           </div>
       </div>
     </div>

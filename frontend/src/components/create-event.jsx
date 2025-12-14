@@ -105,14 +105,14 @@ export default function CreateEventForm() {
   return (
     <>
         <div>
-            <div>
-                <button 
-                    className='inline-flex items-center gap-4 font-montserrat font-bold text-[20px] text-homeexplohover leading-[30px] cursor-pointer'
-                >
-                    <ChevronLeft size={20} />
-                    <span>Back to Events</span>
-                </button>
-            </div>
+            <button 
+                className='inline-flex items-center gap-4 font-montserrat font-bold text-[20px] text-homeexplohover leading-[30px] cursor-pointer'
+            >
+                <ChevronLeft size={20} />
+                <span>Back to Events</span>
+            </button>
+        </div>
+        <div className='flex items-center justify-center'>
          <form onSubmit={handleSubmit(onSubmit)}>
             <div>
                 <div className='mb-[28px]'>

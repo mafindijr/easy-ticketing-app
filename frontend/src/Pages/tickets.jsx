@@ -10,7 +10,7 @@ export default function Tickets() {
         <h1 className="text-[32px] leading-[44px] font-montserrat font-bold mb-6">My Tickets</h1>
         
         {/* Tab Navigation */}
-        <div className="flex gap-4 border-b border-[#cccccc]">
+        <div className="flex gap-4 items-cneter justify-center">
           <button
             onClick={() => setActiveTab('all')}
             className={`pb-4 font-montserrat font-semibold text-[16px] cursor-pointer transition-colors ${

@@ -6,7 +6,7 @@ export default function Tickets() {
 
   return (
     <div className="p-8">
-      <div className="mb-8">
+      <div className="mb-8 pt-10">
         <h1 className="text-[32px] leading-[44px] font-montserrat font-bold mb-6">My Tickets</h1>
         
         {/* Tab Navigation */}
@@ -46,7 +46,9 @@ export default function Tickets() {
 
       {/* Tab Content */}
       <div className="mt-8">
-        {activeTab === 'all' && <div>All Tickets Content</div>}
+        {activeTab === 'all' && <div 
+        className='flex items-center justify-center'
+        >All Tickets Content</div>}
         {activeTab === 'upcoming' && <div>Upcoming Tickets Content</div>}
         {activeTab === 'past' && <div>Past Tickets Content</div>}
       </div>

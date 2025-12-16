@@ -1,9 +1,13 @@
+import { useSate } from "react"
 import CreateEventForm from "../components/create-event";
 import EmptyDashboadState from "../components/empty-dashboad";
 import OrganizersDashboardEventsCards from "../components/events-cards";
 import { Ticket } from "lucide-react";
 
 export default function Dashboard() {
+
+
+  //  const [isDashboardEmpty, setIsDashboardEmpty] = useSate(false);
 
 
   return (
@@ -39,9 +43,10 @@ export default function Dashboard() {
           </div>
           <div className="grid grid-cols-1 gap-[24px] py-[32px]">
             {/* <EmptyDashboadState /> */}
+            
+            <EmptyDashboadState />
             <OrganizersDashboardEventsCards />
             <CreateEventForm />
-            <EmptyDashboadState />
           </div>
       </div>
     </div>

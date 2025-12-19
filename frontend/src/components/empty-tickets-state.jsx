@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from './button';
 
-export default function EmptyDashboadState() {
+export default function EmptyTicketState() {
 
   return (
     <div className='flex items-center justify-center'>
@@ -160,10 +160,10 @@ export default function EmptyDashboadState() {
             </div>
             <div className='flex flex-col gap-4 items-center'>
                 <div>
-                    <h4 className='text-[18px] font-montserrat font-bold leading-[28px]'>No events created yet.</h4>
+                    <h4 className='text-[18px] font-montserrat font-bold leading-[28px]'>No tickets purchased yet.</h4>
                 </div>
                 <div className='flex items-center text-center w-[410px]'>
-                    <span className='text-[18px] leading-[28px] font-montserrat font-[400]'>Start by creating your first event and managing tickets.</span>
+                    <span className='text-[18px] leading-[28px] font-montserrat font-[400]'>You haven't booked any events yet. Start exploring exciting tech meetups, concerts, and more!</span>
                 </div>
                 <div className='w-full'>
                     <Button className='font-montserrat text-[16px] font-bold bg-homeexplore rounded-[8px] w-full py-[16px] px-[8px] text-white'>Browse Events</Button>

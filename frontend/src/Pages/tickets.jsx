@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
+import EmptyTicketState from '../components/empty-tickets-state';
 
 export default function Tickets() {
   const [activeTab, setActiveTab] = useState('all');
@@ -48,7 +49,9 @@ export default function Tickets() {
       <div className="mt-8">
         {activeTab === 'all' && <div 
         className='flex items-center justify-center'
-        >All Tickets Content</div>}
+        >
+          <EmptyTicketState /> 
+        </div>}
         {activeTab === 'upcoming' && <div>Upcoming Tickets Content</div>}
         {activeTab === 'past' && <div>Past Tickets Content</div>}
       </div>

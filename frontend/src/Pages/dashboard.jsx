@@ -1,6 +1,6 @@
 import { useSate } from "react"
 import CreateEventForm from "../components/create-event";
-import EmptyDashboadState from "../components/empty-dashboad";
+import EmptyDashboadState from "../components/empty-state";
 import OrganizersDashboardEventsCards from "../components/events-cards";
 import { Ticket } from "lucide-react";
 
@@ -44,7 +44,7 @@ export default function Dashboard() {
           <div className="grid grid-cols-1 gap-[24px] py-[32px]">
             {/* <EmptyDashboadState /> */}
             
-            <EmptyDashboadState />
+            <EmptyState />
             <OrganizersDashboardEventsCards />
             <CreateEventForm />
           </div>

@@ -50,7 +50,7 @@ export default function Tickets() {
         {activeTab === 'all' && <div 
         className='flex items-center justify-center'
         >
-          <EmptyState /> 
+          <EmptyState name={"No tickets purchased yet."} description={"You haven't booked any events yet. Start exploring exciting tech meetups, concerts, and more!"} callToAction={"Browse Events"} /> 
         </div>}
         {activeTab === 'upcoming' && <div>Upcoming Tickets Content</div>}
         {activeTab === 'past' && <div>Past Tickets Content</div>}
